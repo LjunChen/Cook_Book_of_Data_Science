@@ -1,16 +1,40 @@
 {
   "title": "数据科学实用手册",
   "author": "陈刘军",
-  "pluginsConfig": {
-    "fontSettings": {
-      "theme": "white",
-      "family": "msyh",
-      "size": 2
-    }
-  },
    "structure": {
         "summary": "SUMMARY.md"
     },
+	"plugins": [
+        "katex",
+		"copy-code-button",
+		"github",
+		"github-buttons",
+		"splitter",
+		"-sharing"
+    ],
+	"pluginsConfig": {
+	    "theme-default": {
+            "showLevel": true
+        },
+		"fontSettings": {
+			"theme": "white",
+			"family": "msyh",
+			"size": 2
+		},
+		"github": {
+            "url": "https://github.com/LjunChen/Cook_Book_of_Data_Science"
+        },
+		"github-buttons": {
+            "repo": "LjunChen/Cook_Book_of_Data_Science",
+            "types": [
+                "star",
+				"watch",
+				"fork"
+            ],
+			"size": "small"
+        }
+		
+	},
   "pdf": {
     "pageNumbers": true, 
     "fontFamily": "Arial",
@@ -23,4 +47,7 @@
       "bottom": 56
     }
   }
+  
+
 }
+  

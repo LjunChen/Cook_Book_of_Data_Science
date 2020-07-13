@@ -1,7 +1,6 @@
 {
-  "title": "Python实用手册",
+  "title": "数据科学实用手册",
   "author": "陈刘军",
-  "plugins": ["katex"],
   "pluginsConfig": {
     "fontSettings": {
       "theme": "white",

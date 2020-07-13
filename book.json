@@ -8,6 +8,9 @@
       "size": 2
     }
   },
+   "structure": {
+        "readme": "README.md"
+    },
   "pdf": {
     "pageNumbers": true, 
     "fontFamily": "Arial",

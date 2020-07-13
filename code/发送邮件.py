@@ -7,7 +7,7 @@ from email.header import Header
 host_server='smtp.163.com'
 sender='chenliujun0556@163.com'
 pwd='*****'
-receivers_list=[['sven163','chenliujun0556@163.com'],['svenfudan','19110690005@fudan.edu.cn']]
+receivers_list=[['sven1',',mail'],['sven2','mail']]
 
 for receiver in receivers_list:
     mail_title = 'python办公自动化的邮件'

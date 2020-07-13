@@ -10,7 +10,10 @@
 		"github",
 		"github-buttons",
 		"splitter",
-		"-sharing"
+		"-sharing",
+		"expandable-chapters-small",
+		"back-to-top-button"
+		
     ],
 	"pluginsConfig": {
 	    "theme-default": {

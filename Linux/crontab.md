@@ -2,6 +2,24 @@
 
 Ubuntu的定时任务主要通过crontab命令来管理
 
+安装cron, 一般已经默认安装了.
+
+```
+sudo apt-get install cron
+```
+
+检测是否启动了服务
+
+```
+pgrep cron
+```
+
+如果没有反应就
+
+```
+service cron start
+```
+
 其主要用法是:
 
 ```

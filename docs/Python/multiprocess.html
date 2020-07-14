@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>MySQL · 数据科学实用手册</title>
+        <title>多进程和多线程 · 数据科学实用手册</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -70,10 +70,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="Mongodb.html" />
+    <link rel="next" href="Exception.html" />
     
     
-    <link rel="prev" href="../DSA/readme.html" />
+    <link rel="prev" href="OS.html" />
     
 
     <style>
@@ -128,9 +128,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2" data-path="../Python/readme.html">
+        <li class="chapter " data-level="1.2" data-path="readme.html">
             
-                <a href="../Python/readme.html">
+                <a href="readme.html">
             
                     
                         <b>1.2.</b>
@@ -144,9 +144,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.2.1" data-path="../Python/files.html">
+        <li class="chapter " data-level="1.2.1" data-path="files.html">
             
-                <a href="../Python/files.html">
+                <a href="files.html">
             
                     
                         <b>1.2.1.</b>
@@ -159,9 +159,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.2" data-path="../Python/OS.html">
+        <li class="chapter " data-level="1.2.2" data-path="OS.html">
             
-                <a href="../Python/OS.html">
+                <a href="OS.html">
             
                     
                         <b>1.2.2.</b>
@@ -174,9 +174,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.3" data-path="../Python/multiprocess.html">
+        <li class="chapter active" data-level="1.2.3" data-path="multiprocess.html">
             
-                <a href="../Python/multiprocess.html">
+                <a href="multiprocess.html">
             
                     
                         <b>1.2.3.</b>
@@ -189,9 +189,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.4" data-path="../Python/Exception.html">
+        <li class="chapter " data-level="1.2.4" data-path="Exception.html">
             
-                <a href="../Python/Exception.html">
+                <a href="Exception.html">
             
                     
                         <b>1.2.4.</b>
@@ -204,9 +204,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.5" data-path="../Python/Email.html">
+        <li class="chapter " data-level="1.2.5" data-path="Email.html">
             
-                <a href="../Python/Email.html">
+                <a href="Email.html">
             
                     
                         <b>1.2.5.</b>
@@ -219,9 +219,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.6" data-path="../Python/OOP.html">
+        <li class="chapter " data-level="1.2.6" data-path="OOP.html">
             
-                <a href="../Python/OOP.html">
+                <a href="OOP.html">
             
                     
                         <b>1.2.6.</b>
@@ -394,9 +394,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter active" data-level="2.2.1" data-path="MySQL.html">
+        <li class="chapter " data-level="2.2.1" data-path="../Database/MySQL.html">
             
-                <a href="MySQL.html">
+                <a href="../Database/MySQL.html">
             
                     
                         <b>2.2.1.</b>
@@ -409,9 +409,9 @@
             
         </li>
     
-        <li class="chapter " data-level="2.2.2" data-path="Mongodb.html">
+        <li class="chapter " data-level="2.2.2" data-path="../Database/Mongodb.html">
             
-                <a href="Mongodb.html">
+                <a href="../Database/Mongodb.html">
             
                     
                         <b>2.2.2.</b>
@@ -613,7 +613,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >MySQL</a>
+        <a href=".." >多进程和多线程</a>
     </h1>
 </div>
 
@@ -628,19 +628,7 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h2 id="&#x7D22;&#x5F15;">&#x7D22;&#x5F15;</h2>
-<p>&#x7D22;&#x5F15;&#x53EF;&#x4EE5;&#x5E2E;&#x52A9;&#x5FEB;&#x901F;&#x7684;&#x67E5;&#x627E;&#x6570;&#x636E;&#xFF0C;&#x63D0;&#x9AD8;&#x67E5;&#x8BE2;&#x7684;&#x6548;&#x7387;&#x3002;</p>
-<p>&#x7D22;&#x5F15;&#x5EFA;&#x7ACB;&#x65B9;&#x6CD5;, &#x5982;&#x679C;&#x8981;&#x5EFA;&#x7ACB;&#x7684;&#x7D22;&#x5F15;&#x5B57;&#x6BB5;&#x662F;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6700;&#x597D;&#x5199;&#x4E0A;&#x5B57;&#x7B26;&#x4E32;&#x7684;&#x957F;&#x5EA6;&#x3002;&#x4EE5;&#x4E0B;&#x662F;&#x5728;test&#x8868;&#x4E2D;&#x5BF9;id&#x5B57;&#x6BB5;&#x5EFA;&#x7ACB;&#x7D22;&#x5F15;&#x3002;</p>
-<pre><code class="lang-mysql">create index &#x7D22;&#x5F15;&#x540D;&#x79F0; on &#x8868;&#x540D;(&#x5B57;&#x6BB5;&#x540D;(&#x957F;&#x5EA6;))
-</code></pre>
-<p>&#x5220;&#x9664;&#x7D22;&#x5F15;</p>
-<pre><code class="lang-mysql">drop index &#x7D22;&#x5F15;&#x540D;&#x79F0; on &#x8868;&#x540D;
-</code></pre>
-<p>&#x67E5;&#x770B;&#x7D22;&#x5F15;</p>
-<pre><code class="lang-mysql">show index from &#x8868;&#x540D;
-</code></pre>
-<p>&#x4E3B;&#x952E;&#xFF0C;&#x5916;&#x952E;&#x5176;&#x5B9E;&#x90FD;&#x662F;&#x4E00;&#x79CD;&#x7D22;&#x5F15;</p>
-<p>&#x5E38;&#x7528;&#x7684;&#x5217;&#xFF0C;&#x5E76;&#x4E14;&#x6570;&#x636E;&#x91CF;&#x5F88;&#x5927;&#xFF0C;&#x624D;&#x4F1A;&#x8003;&#x8651;&#x4F7F;&#x7528;&#x7D22;&#x5F15;&#x3002;&#x7D22;&#x5F15;&#x592A;&#x591A;&#x5BB9;&#x6613;&#x5F71;&#x54CD;&#x66F4;&#x65B0;&#x548C;&#x63D2;&#x5165;&#x7684;&#x901F;&#x5EA6;&#x3002;</p>
+                                <h1 id="&#x591A;&#x8FDB;&#x7A0B;&#x548C;&#x591A;&#x7EBF;&#x7A0B;">&#x591A;&#x8FDB;&#x7A0B;&#x548C;&#x591A;&#x7EBF;&#x7A0B;</h1>
 
                                 
                                 </section>
@@ -668,12 +656,12 @@
 
             
                 
-                <a href="../DSA/readme.html" class="navigation navigation-prev " aria-label="Previous page: 数据库">
+                <a href="OS.html" class="navigation navigation-prev " aria-label="Previous page: OS模块">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="Mongodb.html" class="navigation navigation-next " aria-label="Next page: Mongodb">
+                <a href="Exception.html" class="navigation navigation-next " aria-label="Next page: 异常处理">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -684,7 +672,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"MySQL","level":"2.2.1","depth":2,"next":{"title":"Mongodb","level":"2.2.2","depth":2,"path":"Database/Mongodb.md","ref":"Database/Mongodb.md","articles":[]},"previous":{"title":"数据库","level":"2.2","depth":1,"path":"DSA/readme.md","ref":"DSA/readme.md","articles":[{"title":"MySQL","level":"2.2.1","depth":2,"path":"Database/MySQL.md","ref":"Database/MySQL.md","articles":[]},{"title":"Mongodb","level":"2.2.2","depth":2,"path":"Database/Mongodb.md","ref":"Database/Mongodb.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["katex","copy-code-button","github","github-buttons","splitter","-sharing","back-to-top-button"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/LjunChen/Cook_Book_of_Data_Science"},"splitter":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"fontSettings":{"theme":"white","family":"msyh","size":2},"highlight":{},"back-to-top-button":{},"github-buttons":{"repo":"LjunChen/Cook_Book_of_Data_Science","types":["star","watch","fork"],"size":"small"},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true}},"theme":"default","author":"陈刘军","pdf":{"pageNumbers":true,"fontSize":14,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"数据科学实用手册","gitbook":"*"},"file":{"path":"Database/MySQL.md","mtime":"2020-06-16T14:59:52.391Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-07-14T14:42:17.726Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"多进程和多线程","level":"1.2.3","depth":2,"next":{"title":"异常处理","level":"1.2.4","depth":2,"path":"Python/Exception.md","ref":"Python/Exception.md","articles":[]},"previous":{"title":"OS模块","level":"1.2.2","depth":2,"path":"Python/OS.md","ref":"Python/OS.md","articles":[]},"dir":"ltr"},"config":{"plugins":["katex","copy-code-button","github","github-buttons","splitter","-sharing","back-to-top-button"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/LjunChen/Cook_Book_of_Data_Science"},"splitter":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"fontSettings":{"theme":"white","family":"msyh","size":2},"highlight":{},"back-to-top-button":{},"github-buttons":{"repo":"LjunChen/Cook_Book_of_Data_Science","types":["star","watch","fork"],"size":"small"},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true}},"theme":"default","author":"陈刘军","pdf":{"pageNumbers":true,"fontSize":14,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"数据科学实用手册","gitbook":"*"},"file":{"path":"Python/multiprocess.md","mtime":"2020-07-14T14:42:10.007Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-07-14T14:42:17.726Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

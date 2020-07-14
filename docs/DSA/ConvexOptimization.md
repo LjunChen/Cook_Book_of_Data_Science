@@ -45,7 +45,7 @@ $$
 
 > Backtracking 步长搜索策略
 >
-> 给定一个初始的 $$\beta\in (0,1)$$ 和 $t_k$,
+> 给定一个初始的 $$\beta\in (0,1)$$ 和 $$t_k$$,
 >
 > While $$f(x_k+t_k^{(0)}\Delta x)> f(x)$$,               $$t_k=\beta t_k$$.
 

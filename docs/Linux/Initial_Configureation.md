@@ -126,7 +126,7 @@ conda create --name sven-Linux python=3.6.2
 
   ```python
   
-  c.NotebookApp.ip='你的IP地址'                       # 就是多个用户使用ip地址访问
+  c.NotebookApp.ip='你的IP地址'              
   c.NotebookApp.password = u'sha:...'      # 刚才复制的那个密文，
   c.NotebookApp.open_browser = False         # 禁止自动打开浏览器
   c.NotebookApp.port =8888       

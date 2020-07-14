@@ -253,12 +253,27 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.3.1" data-path="../DSA/sort.html">
+        <li class="chapter " data-level="1.3.1" data-path="../DSA/DataStructure.html">
+            
+                <a href="../DSA/DataStructure.html">
+            
+                    
+                        <b>1.3.1.</b>
+                    
+                    数据结构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../DSA/sort.html">
             
                 <a href="../DSA/sort.html">
             
                     
-                        <b>1.3.1.</b>
+                        <b>1.3.2.</b>
                     
                     排序算法
             
@@ -268,12 +283,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.2" data-path="../DSA/递归算法.html">
+        <li class="chapter " data-level="1.3.3" data-path="../DSA/recursive.html">
             
-                <a href="../DSA/递归算法.html">
+                <a href="../DSA/recursive.html">
             
                     
-                        <b>1.3.2.</b>
+                        <b>1.3.3.</b>
                     
                     递归算法
             
@@ -283,14 +298,29 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.3" data-path="../DSA/Proximal.html">
+        <li class="chapter " data-level="1.3.4" data-path="../DSA/ConvexOptimization.html">
             
-                <a href="../DSA/Proximal.html">
+                <a href="../DSA/ConvexOptimization.html">
             
                     
-                        <b>1.3.3.</b>
+                        <b>1.3.4.</b>
                     
-                    Proximal Gradient Decent
+                    凸优化理论
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../DSA/Proximal_ADMM.html">
+            
+                <a href="../DSA/Proximal_ADMM.html">
+            
+                    
+                        <b>1.3.5.</b>
+                    
+                    Proximal Gradient  and ADMM
             
                 </a>
             
@@ -601,7 +631,7 @@
 <ul>
 <li><p>&#x516C;&#x5F0F;&#x4E0D;&#x80FD;&#x7528;&#x662F;&#x6CA1;&#x6709; mathjax/katex&#x3002;&#x5EFA;&#x8BAE;&#x4F7F;&#x7528;katex (mathjax&#x5728;&#x751F;&#x6210;html&#x7684;&#x65F6;&#x5019;&#x8FD8;&#x53EF;&#x4EE5;&#xFF0C;&#x4F46;&#x662F;&#x5BFC;&#x51FA;&#x6210;pdf&#x7684;&#x65F6;&#x5019;&#x683C;&#x5F0F;&#x5F88;&#x6A21;&#x7CCA;), &#x4F46;&#x662F;katex&#x5BF9;&#x6A21;&#x578B;latex&#x8BED;&#x6CD5;&#x4E0D;&#x8BA4;&#x8BC6;&#xFF0C;&#x5F97;&#x4FEE;&#x6539;&#x4F7F;&#x5176;&#x66F4;&#x7B26;&#x5408;&#x89C4;&#x8303;&#x3002; &#x5728;&#x6839;&#x76EE;&#x5F55;&#x4E0B;&#x5EFA;&#x7ACB;book.json, &#x7136;&#x540E;&#x5728;&#x91CC;&#x9762;&#x6DFB;&#x52A0;</p>
 <pre><code>  &quot;plugins&quot;: [
-      &quot;mathjax&quot;
+      &quot;katex&quot;
     ],
 </code></pre><p>&#x7136;&#x540E;&#x8FD0;&#x884C; </p>
 <pre><code>gitbook install ./
@@ -621,10 +651,16 @@
 </li>
 <li><p>gitbook &#x53EF;&#x4EE5;&#x5BFC;&#x51FA;&#x672C;&#x5730;&#x7684;html</p>
 <pre><code>gitbook build
-</code></pre><p>&#x4F46;&#x662F;&#x5BFC;&#x51FA;&#x7684; html &#x4E0D;&#x652F;&#x6301;&#x8DF3;&#x8F6C;&#xFF0C; &#x5177;&#x4F53;&#x539F;&#x56E0;&#x662F;&#x7531;&#x4E8E;&#x70B9;&#x51FB;&#x4E8B;&#x4EF6;&#x88AB;js&#x4EE3;&#x7801;&#x7981;&#x7528;&#xFF0C;&#x6240;&#x4EE5;&#x70B9;&#x51FB;&#x6CA1;&#x6709;&#x53CD;&#x5E94;&#xFF0C;&#x4F46;&#x662F;&#x5982;&#x679C;&#x53F3;&#x952E;&#xFF0C;&#x5728;&#x65B0;&#x7A97;&#x53E3;/&#x65B0;&#x6807;&#x7B7E;&#x9875;&#x6253;&#x5F00;&#x7684;&#x8BDD;&#x662F;&#x53EF;&#x4EE5;&#x8DF3;&#x8F6C;&#x7684;&#x3002;</p>
-<p>&#x53BB; /_book/gitbook &#x76EE;&#x5F55;&#x4E0B;&#x627E;&#x5230; <code>theme.js</code>&#x6587;&#x4EF6;, &#x641C;&#x7D22;<code>if(m)for(n.handler&amp;&amp;</code>, &#x5C06;<code>if(m)</code> &#x6539;&#x4E3A; <code>if(false)</code></p>
-<p>&#x6B63;&#x5E38;&#x8FD8;&#x662F;&#x7528; <code>gitbook serve</code>&#x65B9;&#x4FBF;</p>
+</code></pre><blockquote>
+<p>&#x751F;&#x6210;&#x672C;&#x5730;&#x7684;&#x4E3B;&#x8981;&#x76EE;&#x7684;&#x662F;&#x4E3A;&#x4E86;&#x76F4;&#x63A5;&#x7528;master&#x5206;&#x652F;&#x4F20;&#x5230;Github&#x4E0A;&#xFF0C;&#x7136;&#x540E;Github Pages&#x5C31;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x770B;&#x5230;&#x6574;&#x4E2A;&#x7684;&#x5185;&#x5BB9;&#x4E86;</p>
+</blockquote>
 </li>
+</ul>
+<p>&#x4F46;&#x662F;&#x5BFC;&#x51FA;&#x7684; html &#x4E0D;&#x652F;&#x6301;&#x8DF3;&#x8F6C;&#xFF0C; &#x5177;&#x4F53;&#x539F;&#x56E0;&#x662F;&#x7531;&#x4E8E;&#x70B9;&#x51FB;&#x4E8B;&#x4EF6;&#x88AB;js&#x4EE3;&#x7801;&#x7981;&#x7528;&#xFF0C;&#x6240;&#x4EE5;&#x70B9;&#x51FB;&#x6CA1;&#x6709;&#x53CD;&#x5E94;&#xFF0C;&#x4F46;&#x662F;&#x5982;&#x679C;&#x53F3;&#x952E;&#xFF0C;&#x5728;&#x65B0;&#x7A97;&#x53E3;/&#x65B0;&#x6807;&#x7B7E;&#x9875;&#x6253;&#x5F00;&#x7684;&#x8BDD;&#x662F;&#x53EF;&#x4EE5;&#x8DF3;&#x8F6C;&#x7684;&#x3002;</p>
+<p>&#x53BB; /_book/gitbook &#x76EE;&#x5F55;&#x4E0B;&#x627E;&#x5230; <code>theme.js</code>&#x6587;&#x4EF6;, &#x641C;&#x7D22;<code>if(m)for(n.handler&amp;&amp;</code>, &#x5C06;<code>if(m)</code> &#x6539;&#x4E3A; <code>if(false)</code></p>
+<p>&#x6B63;&#x5E38;&#x8FD8;&#x662F;&#x7528; <code>gitbook serve</code>&#x65B9;&#x4FBF; </p>
+<ul>
+<li>gitbook &#x4E0A;&#x7528;github&#x8D26;&#x6237;&#x767B;&#x5F55;&#xFF0C;&#x7136;&#x540E;&#x5BFC;&#x5165;github&#x9879;&#x76EE;&#xFF0C;&#x5C31;&#x53EF;&#x4EE5;&#x5728;gitbook &#x4E0A;&#x770B;&#x5230;&#x81EA;&#x5DF1;&#x7684;&#x4E66;&#x4E86;</li>
 </ul>
 
                                 
@@ -665,7 +701,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Gitbook使用","level":"3.2.1","depth":2,"next":{"title":"git使用","level":"3.2.2","depth":2,"path":"Other/git.md","ref":"Other/git.md","articles":[]},"previous":{"title":"其他软件介绍","level":"3.2","depth":1,"ref":"","articles":[{"title":"Gitbook使用","level":"3.2.1","depth":2,"path":"Other/Gitbook.md","ref":"Other/Gitbook.md","articles":[]},{"title":"git使用","level":"3.2.2","depth":2,"path":"Other/git.md","ref":"Other/git.md","articles":[]},{"title":"Pandoc使用","level":"3.2.3","depth":2,"path":"Other/pandoc.md","ref":"Other/pandoc.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["katex","copy-code-button","github","github-buttons","splitter","-sharing","back-to-top-button"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/LjunChen/Cook_Book_of_Data_Science"},"splitter":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"fontSettings":{"theme":"white","family":"msyh","size":2},"highlight":{},"back-to-top-button":{},"github-buttons":{"repo":"LjunChen/Cook_Book_of_Data_Science","types":["star","watch","fork"],"size":"small"},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true}},"theme":"default","author":"陈刘军","pdf":{"pageNumbers":true,"fontSize":14,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"数据科学实用手册","gitbook":"*"},"file":{"path":"Other/Gitbook.md","mtime":"2020-07-13T09:15:49.843Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-07-14T04:45:52.948Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Gitbook使用","level":"3.2.1","depth":2,"next":{"title":"git使用","level":"3.2.2","depth":2,"path":"Other/git.md","ref":"Other/git.md","articles":[]},"previous":{"title":"其他软件介绍","level":"3.2","depth":1,"ref":"","articles":[{"title":"Gitbook使用","level":"3.2.1","depth":2,"path":"Other/Gitbook.md","ref":"Other/Gitbook.md","articles":[]},{"title":"git使用","level":"3.2.2","depth":2,"path":"Other/git.md","ref":"Other/git.md","articles":[]},{"title":"Pandoc使用","level":"3.2.3","depth":2,"path":"Other/pandoc.md","ref":"Other/pandoc.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["katex","copy-code-button","github","github-buttons","splitter","-sharing","back-to-top-button"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/LjunChen/Cook_Book_of_Data_Science"},"splitter":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"fontSettings":{"theme":"white","family":"msyh","size":2},"highlight":{},"back-to-top-button":{},"github-buttons":{"repo":"LjunChen/Cook_Book_of_Data_Science","types":["star","watch","fork"],"size":"small"},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true}},"theme":"default","author":"陈刘军","pdf":{"pageNumbers":true,"fontSize":14,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"数据科学实用手册","gitbook":"*"},"file":{"path":"Other/Gitbook.md","mtime":"2020-07-14T05:08:13.776Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-07-14T08:49:22.749Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

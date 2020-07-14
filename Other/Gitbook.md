@@ -6,7 +6,7 @@
 
   ```
     "plugins": [
-        "mathjax"
+        "katex"
       ],
   ```
 
@@ -48,13 +48,17 @@
   gitbook build
   ```
 
-  但是导出的 html 不支持跳转， 具体原因是由于点击事件被js代码禁用，所以点击没有反应，但是如果右键，在新窗口/新标签页打开的话是可以跳转的。
+  > 生成本地的主要目的是为了直接用master分支传到Github上，然后Github Pages就可以直接看到整个的内容了
 
-  去 /_book/gitbook 目录下找到 `theme.js`文件, 搜索`if(m)for(n.handler&&`, 将`if(m)` 改为 `if(false)`
+但是导出的 html 不支持跳转， 具体原因是由于点击事件被js代码禁用，所以点击没有反应，但是如果右键，在新窗口/新标签页打开的话是可以跳转的。
 
-  正常还是用 `gitbook serve`方便
+去 /_book/gitbook 目录下找到 `theme.js`文件, 搜索`if(m)for(n.handler&&`, 将`if(m)` 改为 `if(false)`
 
+正常还是用 `gitbook serve`方便 
+
+*  gitbook 上用github账户登录，然后导入github项目，就可以在gitbook 上看到自己的书了
   
 
   
 
+  

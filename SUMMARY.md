@@ -9,9 +9,11 @@
     * [发送邮件](Python/Email.md)
     * [面向对象编程](Python/OOP.md)
 * [数据结构与算法](DSA/readme.md)
+    * [数据结构](DSA/DataStructure.md)
     * [排序算法](DSA/sort.md)
-    * [递归算法](DSA/递归算法.md)
-    * [Proximal Gradient Decent](DSA/Proximal.md)
+    * [递归算法](DSA/recursive.md)
+    * [凸优化理论](DSA/ConvexOptimization.md)
+    * [Proximal Gradient  and ADMM](DSA/Proximal_ADMM.md)
 
 -----
 * [统计学习](Statistical_Learning/Readme.md)

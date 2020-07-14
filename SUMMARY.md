@@ -4,7 +4,7 @@
 * [Python基础](Python/readme.md)
     * [文件读写](Python/files.md)
     * [OS模块](Python/OS.md)
-    * [多进程和多线程](Python/Multicores.md)
+    * [多进程和多线程](Python/multiprocess.md)
     * [异常处理](Python/Exception.md)
     * [发送邮件](Python/Email.md)
     * [面向对象编程](Python/OOP.md)

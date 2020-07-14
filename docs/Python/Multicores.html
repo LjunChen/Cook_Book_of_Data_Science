@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>权限管理 · 数据科学实用手册</title>
+        <title>多进程和多线程 · 数据科学实用手册</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -70,10 +70,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="files.html" />
+    <link rel="next" href="Exception.html" />
     
     
-    <link rel="prev" href="Initial_Configureation.html" />
+    <link rel="prev" href="OS.html" />
     
 
     <style>
@@ -128,9 +128,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2" data-path="../Python/readme.html">
+        <li class="chapter " data-level="1.2" data-path="readme.html">
             
-                <a href="../Python/readme.html">
+                <a href="readme.html">
             
                     
                         <b>1.2.</b>
@@ -144,9 +144,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.2.1" data-path="../Python/files.html">
+        <li class="chapter " data-level="1.2.1" data-path="files.html">
             
-                <a href="../Python/files.html">
+                <a href="files.html">
             
                     
                         <b>1.2.1.</b>
@@ -159,9 +159,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.2" data-path="../Python/OS.html">
+        <li class="chapter " data-level="1.2.2" data-path="OS.html">
             
-                <a href="../Python/OS.html">
+                <a href="OS.html">
             
                     
                         <b>1.2.2.</b>
@@ -174,9 +174,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.3" data-path="../Python/Multicores.html">
+        <li class="chapter active" data-level="1.2.3" data-path="Multicores.html">
             
-                <a href="../Python/Multicores.html">
+                <a href="Multicores.html">
             
                     
                         <b>1.2.3.</b>
@@ -189,9 +189,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.4" data-path="../Python/Exception.html">
+        <li class="chapter " data-level="1.2.4" data-path="Exception.html">
             
-                <a href="../Python/Exception.html">
+                <a href="Exception.html">
             
                     
                         <b>1.2.4.</b>
@@ -204,9 +204,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.5" data-path="../Python/Email.html">
+        <li class="chapter " data-level="1.2.5" data-path="Email.html">
             
-                <a href="../Python/Email.html">
+                <a href="Email.html">
             
                     
                         <b>1.2.5.</b>
@@ -219,9 +219,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.6" data-path="../Python/OOP.html">
+        <li class="chapter " data-level="1.2.6" data-path="OOP.html">
             
-                <a href="../Python/OOP.html">
+                <a href="OOP.html">
             
                     
                         <b>1.2.6.</b>
@@ -452,9 +452,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="3.1.1" data-path="Initial_Configureation.html">
+        <li class="chapter " data-level="3.1.1" data-path="../Linux/Initial_Configureation.html">
             
-                <a href="Initial_Configureation.html">
+                <a href="../Linux/Initial_Configureation.html">
             
                     
                         <b>3.1.1.</b>
@@ -467,9 +467,9 @@
             
         </li>
     
-        <li class="chapter active" data-level="3.1.2" data-path="Authorization.html">
+        <li class="chapter " data-level="3.1.2" data-path="../Linux/Authorization.html">
             
-                <a href="Authorization.html">
+                <a href="../Linux/Authorization.html">
             
                     
                         <b>3.1.2.</b>
@@ -482,9 +482,9 @@
             
         </li>
     
-        <li class="chapter " data-level="3.1.3" data-path="files.html">
+        <li class="chapter " data-level="3.1.3" data-path="../Linux/files.html">
             
-                <a href="files.html">
+                <a href="../Linux/files.html">
             
                     
                         <b>3.1.3.</b>
@@ -497,9 +497,9 @@
             
         </li>
     
-        <li class="chapter " data-level="3.1.4" data-path="crontab.html">
+        <li class="chapter " data-level="3.1.4" data-path="../Linux/crontab.html">
             
-                <a href="crontab.html">
+                <a href="../Linux/crontab.html">
             
                     
                         <b>3.1.4.</b>
@@ -613,7 +613,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >权限管理</a>
+        <a href=".." >多进程和多线程</a>
     </h1>
 </div>
 
@@ -628,20 +628,7 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h4 id="linux&#x6743;&#x9650;">Linux&#x6743;&#x9650;</h4>
-<h4 id="&#x6587;&#x4EF6;&#x6743;&#x9650;">&#x6587;&#x4EF6;&#x6743;&#x9650;</h4>
-<p>&#x7528;ls -lh&#x53EF;&#x4EE5;&#x770B;&#x5230;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#x7684;&#x6743;&#x9650;</p>
-<p>e.g. drwxr-xr-x</p>
-<ul>
-<li>&#x7B2C;&#x4E00;&#x4F4D;&#x4EE3;&#x8868; type: d&#x8868;&#x793A;&#x6587;&#x4EF6;&#x5939;, -&#x8868;&#x793A;&#x6587;&#x4EF6;</li>
-<li>2-4&#x4F4D;&#x4EE3;&#x8868;&#x7684;user&#x7684;&#x6743;&#x9650;&#xFF0C;5-7&#x4F4D;&#x4EE3;&#x8868;&#x7684;&#x662F;group&#x7684;&#x6743;&#x9650;&#xFF0C;8-10&#x4F4D;&#x4EE3;&#x8868;&#x7684;&#x662F;others&#x7684;&#x6743;&#x9650;</li>
-<li>r: read, w:write, x:excute</li>
-<li>&#x4FEE;&#x6539;&#x6587;&#x4EF6;&#x7684;&#x6743;&#x9650; <ul>
-<li>chmod u+r t1.py (chmod &#x662F;change mod&#x7684;&#x7F29;&#x5199;, u&#x4EE3;&#x8868;user, r&#x662F;read,&#x5168;&#x90E8;&#x547D;&#x4EE4;&#x5C31;&#x662F;&#x8D4B;&#x4E88;user&#x5BF9;t1.py&#x7684;read&#x6743;&#x9650;&#xFF0C; &#x8FD9;&#x91CC;+&#x53EF;&#x4EE5;&#x6362;&#x6210;-,&#x8868;&#x793A;&#x5220;&#x9664;&#x5BF9;&#x5E94;&#x7684;&#x6743;&#x9650;)</li>
-<li>u&#x4EE3;&#x8868;user, g&#x4EE3;&#x8868;group, o&#x4EE3;&#x8868;others, a&#x4EE3;&#x8868;&#x6240;&#x6709;, &#x4E5F;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;ug&#x8868;&#x793A;(user+group)</li>
-</ul>
-</li>
-</ul>
+                                <h1 id="&#x591A;&#x8FDB;&#x7A0B;&#x548C;&#x591A;&#x7EBF;&#x7A0B;">&#x591A;&#x8FDB;&#x7A0B;&#x548C;&#x591A;&#x7EBF;&#x7A0B;</h1>
 
                                 
                                 </section>
@@ -669,12 +656,12 @@
 
             
                 
-                <a href="Initial_Configureation.html" class="navigation navigation-prev " aria-label="Previous page: 服务器配置">
+                <a href="OS.html" class="navigation navigation-prev " aria-label="Previous page: OS模块">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="files.html" class="navigation navigation-next " aria-label="Next page: 文件操作">
+                <a href="Exception.html" class="navigation navigation-next " aria-label="Next page: 异常处理">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -685,7 +672,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"权限管理","level":"3.1.2","depth":2,"next":{"title":"文件操作","level":"3.1.3","depth":2,"path":"Linux/files.md","ref":"Linux/files.md","articles":[]},"previous":{"title":"服务器配置","level":"3.1.1","depth":2,"path":"Linux/Initial_Configureation.md","ref":"Linux/Initial_Configureation.md","articles":[]},"dir":"ltr"},"config":{"plugins":["katex","copy-code-button","github","github-buttons","splitter","-sharing","back-to-top-button"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/LjunChen/Cook_Book_of_Data_Science"},"splitter":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"fontSettings":{"theme":"white","family":"msyh","size":2},"highlight":{},"back-to-top-button":{},"github-buttons":{"repo":"LjunChen/Cook_Book_of_Data_Science","types":["star","watch","fork"],"size":"small"},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true}},"theme":"default","author":"陈刘军","pdf":{"pageNumbers":true,"fontSize":14,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"数据科学实用手册","gitbook":"*"},"file":{"path":"Linux/Authorization.md","mtime":"2020-07-11T15:45:32.380Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-07-14T14:36:58.639Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"多进程和多线程","level":"1.2.3","depth":2,"next":{"title":"异常处理","level":"1.2.4","depth":2,"path":"Python/Exception.md","ref":"Python/Exception.md","articles":[]},"previous":{"title":"OS模块","level":"1.2.2","depth":2,"path":"Python/OS.md","ref":"Python/OS.md","articles":[]},"dir":"ltr"},"config":{"plugins":["katex","copy-code-button","github","github-buttons","splitter","-sharing","back-to-top-button"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/LjunChen/Cook_Book_of_Data_Science"},"splitter":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"fontSettings":{"theme":"white","family":"msyh","size":2},"highlight":{},"back-to-top-button":{},"github-buttons":{"repo":"LjunChen/Cook_Book_of_Data_Science","types":["star","watch","fork"],"size":"small"},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true}},"theme":"default","author":"陈刘军","pdf":{"pageNumbers":true,"fontSize":14,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"数据科学实用手册","gitbook":"*"},"file":{"path":"Python/Multicores.md","mtime":"2020-07-14T13:25:07.408Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-07-14T14:36:58.639Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

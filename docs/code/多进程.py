@@ -1,6 +1,6 @@
 import time
 import numpy as np
-from multiprocessing import Pool
+from multiprocessing.dummy import Pool
 
 
 def run(name):

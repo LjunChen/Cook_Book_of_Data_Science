@@ -629,6 +629,65 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="python&#x591A;&#x8FDB;&#x7A0B;">Python&#x591A;&#x8FDB;&#x7A0B;</h1>
+<h4 id="python&#x5F00;&#x542F;&#x8FDB;&#x7A0B;&#x7684;&#x65B9;&#x6CD5;">Python&#x5F00;&#x542F;&#x8FDB;&#x7A0B;&#x7684;&#x65B9;&#x6CD5;</h4>
+<pre><code class="lang-python"><span class="hljs-keyword">import</span> time 
+<span class="hljs-keyword">from</span> multiprocessing <span class="hljs-keyword">import</span> Process
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">run</span><span class="hljs-params">(name)</span>:</span>
+    print(<span class="hljs-string">&apos;Process {} runing &apos;</span>.format(name))
+    time.sleep(<span class="hljs-number">3</span>)
+    print(<span class="hljs-string">&apos;Process {} running end &apos;</span>.format(name))
+
+
+<span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&apos;__main__&apos;</span>:
+    p1=Process(target=run,args=(<span class="hljs-string">&apos;A&apos;</span>,)) <span class="hljs-comment">#&#x5FC5;&#x987B;&#x52A0;,&#x53F7;</span>
+    p2=Process(target=run,args=(<span class="hljs-string">&apos;B&apos;</span>,))
+    p3=Process(target=run,args=(<span class="hljs-string">&apos;C&apos;</span>,))
+    p4=Process(target=run,args=(<span class="hljs-string">&apos;D&apos;</span>,))
+
+    <span class="hljs-keyword">for</span> p <span class="hljs-keyword">in</span> [p1,p2,p3,p4]:
+        p.start()
+    print(<span class="hljs-string">&apos;&#x4E3B;&#x7EBF;&#x7A0B;&apos;</span>)
+</code></pre>
+<p>&#x5927;&#x90E8;&#x5206;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x6211;&#x4EEC;&#x90FD;&#x60F3;&#x8BA9;&#x4E3B;&#x8FDB;&#x7A0B;&#x7B49;&#x5F85;&#x5B50;&#x8FDB;&#x7A0B;&#x7ED3;&#x675F;&#xFF0C;&#x8FD9;&#x5C31;&#x9700;&#x8981;&#x8FDB;&#x7A0B;&#x7684;<code>join</code>&#x65B9;&#x6CD5;&#xFF0C;<code>join</code>&#x65B9;&#x6CD5;&#x7B49;&#x5F85;&#x7684;&#x662F;&#x4E3B;&#x8FDB;&#x7A0B;&#xFF0C;&#x6240;&#x4EE5;&#x7B49;&#x5F85;&#x7684;&#x603B;&#x65F6;&#x95F4;&#x662F;&#x5B50;&#x8FDB;&#x7A0B;&#x4E2D;&#x8017;&#x65F6;&#x6700;&#x957F;&#x7684;&#x90A3;&#x4E2A;&#x3002;&#x5C06;&#x4EE5;&#x4E0A;&#x4EE3;&#x7801;&#x6539;&#x6210;&#x4E0B;&#x9762;&#x8FD9;&#x6837;&#x65E2;&#x53EF;&#x3002;</p>
+<pre><code class="lang-python"><span class="hljs-keyword">for</span> p <span class="hljs-keyword">in</span> [p1,p2,p3,p4]:
+    p.start()
+<span class="hljs-keyword">for</span> p <span class="hljs-keyword">in</span> [p1,p2,p3,p4]:
+    p.join()
+print(<span class="hljs-string">&apos;&#x4E3B;&#x7EBF;&#x7A0B;&apos;</span>)
+</code></pre>
+<p>&#x503C;&#x5F97;&#x6CE8;&#x610F;&#x7684;&#x662F;&#xFF0C;&#x4E24;&#x4E2A;<code>for</code>&#x5FAA;&#x73AF;&#x662F;&#x4E0D;&#x53EF;&#x5C11;&#x7684;&#xFF0C;&#x8981;&#x7B49;&#x6240;&#x6709;&#x7684;&#x8FDB;&#x7A0B;<code>start</code>&#x4E86;&#x4E4B;&#x540E;&#x624D;&#x5F00;&#x59CB;<code>join</code>&#xFF0C;&#x6240;&#x4EE5;&#x4E0D;&#x80FD;&#x662F; <code>p.start();p.join()</code>.</p>
+<h4 id="&#x8FDB;&#x7A0B;&#x6C60;">&#x8FDB;&#x7A0B;&#x6C60;</h4>
+<p>&#x5F53;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x64CD;&#x4F5C;&#x7684;&#x5BF9;&#x8C61;&#x4E0D;&#x591A;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x8FD8;&#x53EF;&#x4EE5;&#x7528;&#x4E0A;&#x9762;&#x7684;&#x65B9;&#x6CD5;&#x6765;&#x521B;&#x5EFA;&#x8FDB;&#x7A0B;&#xFF0C;&#x4F46;&#x662F;&#x5982;&#x679C;&#x6570;&#x76EE;&#x592A;&#x591A;&#xFF0C;&#x7528;&#x624B;&#x52A8;&#x7684;&#x65B9;&#x5F0F;&#x53BB;&#x521B;&#x5EFA;&#x8FDB;&#x7A0B;&#x592A;&#x8FC7;&#x7E41;&#x7410;&#xFF0C;&#x56E0;&#x6B64;&#x6211;&#x4EEC;&#x8003;&#x8651;&#x7528;&#x8FDB;&#x7A0B;&#x6C60;&#x7684;&#x65B9;&#x5F0F;&#x6765;&#x521B;&#x5EFA;&#x3002;&#x5176;&#x4E3B;&#x8981;&#x8BED;&#x6CD5;&#x5982;&#x4E0B;</p>
+<ul>
+<li><p><code>Pool.apply(func,args)</code></p>
+</li>
+<li><p><code>Pool.apply_async(func,args)</code></p>
+<p>&#x4E00;&#x4E2A;&#x5947;&#x602A;&#x7684;&#x70B9;&#x5728;&#x4E8E; <code>Pool.apply(func,args)</code>&#x5176;&#x5B9E;&#x662F;&#x4E0D;&#x80FD;&#x5E76;&#x884C;&#x8BA1;&#x7B97;&#x7684;&#xFF0C;&#x770B;&#x8FC7;&#x4E00;&#x4E9B;&#x6750;&#x6599;&#xFF0C;&#x6CA1;&#x770B;&#x7684;&#x5F88;&#x660E;&#x767D;&#x3002;&#x63A8;&#x8350;&#x4F7F;&#x7528;&#x7684;&#x662F; <code>Pool.apply_sync(func,args)</code>.</p>
+</li>
+</ul>
+<pre><code class="lang-python"><span class="hljs-keyword">import</span> time
+<span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np
+<span class="hljs-keyword">from</span> multiprocessing <span class="hljs-keyword">import</span> Pool
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">run</span><span class="hljs-params">(name)</span>:</span>
+    a=np.random.randint(<span class="hljs-number">0</span>,<span class="hljs-number">10</span>)
+    print(<span class="hljs-string">&apos;Process {} runing, this needs {} seconds &apos;</span>.format(name,a))
+    time.sleep(a)
+    print(<span class="hljs-string">&apos;Process {} running end, The return value is {}&apos;</span>.format(name,a))
+    <span class="hljs-keyword">return</span> (a)
+
+<span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&apos;__main__&apos;</span>:
+
+    p=Pool(<span class="hljs-number">4</span>)
+    res=[]
+    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(<span class="hljs-number">8</span>):
+        res_temp=p.apply_async(run,args=(i,))
+        res.append(res_temp)
+    p.close()
+    p.join()
+    print(<span class="hljs-string">&apos;&#x4E3B;&#x7EBF;&#x7A0B;&apos;</span>)
+       <span class="hljs-keyword">for</span> res_temp <span class="hljs-keyword">in</span> res:
+        print(res_temp.get())
+</code></pre>
 <h4 id="&#x8E29;&#x5751;">&#x8E29;&#x5751;</h4>
 <h5 id="&#x5751;&#x4E00;&#xFF1A;-&#x5173;&#x4E8E;-if-namemain-&#x7684;&#x5E94;&#x7528;">&#x5751;&#x4E00;&#xFF1A; &#x5173;&#x4E8E; <code>if name==&apos;__main__&apos;</code> &#x7684;&#x5E94;&#x7528;</h5>
 <p>&#x5728;&#x6211;&#x4EEC;&#x76EE;&#x524D;&#x770B;&#x5230;&#x7684;&#x6240;&#x6709;&#x7684;&#x4EE3;&#x7801;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x53D1;&#x73B0;&#xFF0C;&#x6240;&#x6709;&#x521B;&#x5EFA;&#x5B50;&#x8FDB;&#x7A0B;&#x7684;&#x8FC7;&#x7A0B;&#x90FD;&#x4F1A;&#x51FA;&#x73B0; <code>if name==&apos;__main__&apos;</code> &#x8FD9;&#x53E5;&#x3002;</p>
@@ -641,6 +700,13 @@
 <p><strong>&#x4F46;&#x662F;&#x5728;&#x591A;&#x8FDB;&#x7A0B;&#x7684;&#x65F6;&#x5019;&#x8FD9;&#x4E2A;&#x5C31;&#x6210;&#x4E86;&#x5927;&#x5751;&#x4E86;&#x3002;</strong></p>
 <p>&#x56E0;&#x4E3A;python&#x5728;&#x521B;&#x5EFA;&#x5B50;&#x8FDB;&#x7A0B;&#x7684;&#x65F6;&#x5019;&#xFF0C; &#x8FDB;&#x7A0B;&#x4F1A;&#x9ED8;&#x8BA4;&#x5BFC;&#x5165;&#x76EE;&#x524D;&#x6B63;&#x5728;&#x8FD0;&#x884C;&#x7684;&#x6587;&#x4EF6;&#xFF08;&#x4E5F;&#x5C31;&#x662F;&#x5C06;&#x672C;&#x6587;&#x4EF6;&#x4ECE;&#x5934;&#x5230;&#x5C3E;&#x5F00;&#x59CB;&#x8FD0;&#x884C;&#xFF09;&#xFF0C;&#x4F46;&#x662F;&#x5982;&#x679C;&#x6211;&#x4EEC;&#x4E0D;&#x7528; <code>if name==&apos;__main__&apos;</code>&#x7684;&#x8BDD;&#xFF0C;&#x5B50;&#x8FDB;&#x7A0B;&#x4F1A;&#x8FD0;&#x884C;&#x5230;&#x521B;&#x5EFA;&#x5B50;&#x8FDB;&#x7A0B;&#x8FD9;&#x53E5;&#x4EE3;&#x7801;&#xFF08;&#x4E5F;&#x662F;&#x8FD9;&#x4E2A;&#x6587;&#x4EF6;&#x7684;&#x4E00;&#x90E8;&#x5206;&#xFF09;&#xFF0C;&#x8FD9;&#x5C31;&#x9677;&#x5165;&#x4E86;&#x4E00;&#x4E2A;&#x65E0;&#x9650;&#x7684;&#x5FAA;&#x73AF;&#xFF0C;&#x800C;&#x88AB;python&#x6240;&#x5236;&#x6B62;&#xFF0C;&#x6240;&#x4EE5;&#x4E00;&#x5B9A;&#x8981;&#x52A0; <code>if name==&apos;__main__&apos;</code>. </p>
 <p>&#x4F46;&#x662F;&#x95EE;&#x9898;&#x6765;&#x4E86;&#xFF0C;&#x90A3;&#x4E9B;&#x6210;&#x719F;&#x7684;module &#x5982; sklearn, &#x4ED6;&#x4EEC;&#x662F;&#x600E;&#x4E48;&#x5B9E;&#x73B0;&#x5728;&#x51FD;&#x6570;&#x4E2D;&#x8FDB;&#x884C;&#x591A;&#x8FDB;&#x7A0B;&#x7684;&#x5462;&#xFF1F;&#xFF1F;&#xFF1F;&#x7565;&#x5FAE;&#x67E5;&#x4E86;&#x4E00;&#x4E0B;&#xFF0C;sklearn &#x5E94;&#x7528;&#x7684;&#x4E3B;&#x8981;&#x662F; joblib&#x5E93;&#xFF0C;&#x90A3; joblib&#x5E93;&#x600E;&#x4E48;&#x5B9E;&#x73B0;&#x7684;&#x5462;&#xFF1F;&#xFF1F;&#xFF1F;&#x6682;&#x65F6;&#x6211;&#x4E5F;&#x4E0D;&#x77E5;&#x9053;....&#x5DE8;&#x5751;&#x554A;.....</p>
+<h2 id="python-&#x591A;&#x7EBF;&#x7A0B;">Python &#x591A;&#x7EBF;&#x7A0B;</h2>
+<p>&#x591A;&#x7EBF;&#x7A0B;&#x6700;&#x7B80;&#x5355;&#x7684;&#x65B9;&#x6CD5;&#x662F;&#x76F4;&#x63A5;</p>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> multiprocessing.dummpy <span class="hljs-keyword">import</span> Pool
+</code></pre>
+<p>&#x5176;&#x4ED6;&#x7528;&#x6CD5;&#x548C;&#x591A;&#x8FDB;&#x7A0B;&#x4E00;&#x81F4;&#x3002; &#x5F53;&#x7136;&#x591A;&#x7EBF;&#x7A0B;&#x8FD8;&#x53EF;&#x4EE5;&#x7528; threading &#x6A21;&#x5757;&#xFF0C;threading&#x6A21;&#x5757;&#x7684;&#x7528;&#x6CD5;&#x548C;&#x524D;&#x9762;&#x7684;Process&#x6BD4;&#x8F83;&#x63A5;&#x8FD1;&#x3002;&#x5927;&#x591A;&#x6570;&#x65F6;&#x5019;&#xFF0C;&#x5176;&#x5B9E;&#x8FDB;&#x7A0B;&#x6C60;/&#x7EBF;&#x7A0B;&#x6C60;&#x66F4;&#x52A0;&#x65B9;&#x4FBF;&#xFF0C; right? &#x8D77;&#x7801;&#x6211;&#x78B0;&#x5230;&#x7684;&#x4EFB;&#x52A1;&#x5927;&#x591A;&#x6570;&#x662F;&#x8FD9;&#x6837;&#x7684;&#x3002;</p>
+<p>&#x591A;&#x7EBF;&#x7A0B;&#x6709;&#x4E2A;&#x4E0D;&#x597D;&#x7684;&#x5730;&#x65B9;&#xFF0C;&#x5728;&#x4E8E;&#x591A;&#x7EBF;&#x7A0B;&#x5176;&#x5B9E;&#x662F;<code>&#x5E76;&#x53D1;</code>&#x800C;&#x4E0D;&#x662F;<code>&#x5E76;&#x884C;</code>&#xFF0C;&#x5173;&#x4E8E;&#x8FD9;&#x4E24;&#x4E2A;&#x6982;&#x5FF5;&#x7684;&#x533A;&#x522B;&#x53EF;&#x4EE5;&#x767E;&#x5EA6;&#x627E;&#x4E00;&#x4E0B;&#xFF0C;&#x591A;&#x7EBF;&#x7A0B;&#x5728;&#x5904;&#x7406;CPU&#x5BC6;&#x96C6;&#x578B;&#x7684;&#x4EFB;&#x52A1;&#x6548;&#x679C;&#x4E00;&#x822C;&#x822C;&#xFF0C;&#x53EA;&#x6709;&#x5728;&#x5904;&#x7406;I/O&#x5BC6;&#x96C6;&#x578B;&#x7684;&#x4EFB;&#x52A1;&#x624D;&#x80FD;&#x771F;&#x6B63;&#x8FBE;&#x5230;&#x591A;&#x7EBF;&#x7A0B;&#x7684;&#x6548;&#x679C;&#x3002;</p>
+<p>&#x4F46;&#x662F;&#x8FD9;&#x4E2A;&#x4E5F;&#x907F;&#x514D;&#x4E86;&#x4E4B;&#x524D;&#x591A;&#x8FDB;&#x7A0B;&#x7684;&#x90A3;&#x4E2A;&#x5927;&#x5751;&#x4E86;&#x3002;</p>
 
                                 
                                 </section>
@@ -684,7 +750,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"多进程和多线程","level":"1.2.3","depth":2,"next":{"title":"异常处理","level":"1.2.4","depth":2,"path":"Python/Exception.md","ref":"Python/Exception.md","articles":[]},"previous":{"title":"OS模块","level":"1.2.2","depth":2,"path":"Python/OS.md","ref":"Python/OS.md","articles":[]},"dir":"ltr"},"config":{"plugins":["katex","copy-code-button","github","github-buttons","splitter","-sharing","back-to-top-button"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/LjunChen/Cook_Book_of_Data_Science"},"splitter":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"fontSettings":{"theme":"white","family":"msyh","size":2},"highlight":{},"back-to-top-button":{},"github-buttons":{"repo":"LjunChen/Cook_Book_of_Data_Science","types":["star","watch","fork"],"size":"small"},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true}},"theme":"default","author":"陈刘军","pdf":{"pageNumbers":true,"fontSize":14,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"数据科学实用手册","gitbook":"*"},"file":{"path":"Python/multiprocess.md","mtime":"2020-07-14T14:44:05.058Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-07-14T15:12:30.754Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"多进程和多线程","level":"1.2.3","depth":2,"next":{"title":"异常处理","level":"1.2.4","depth":2,"path":"Python/Exception.md","ref":"Python/Exception.md","articles":[]},"previous":{"title":"OS模块","level":"1.2.2","depth":2,"path":"Python/OS.md","ref":"Python/OS.md","articles":[]},"dir":"ltr"},"config":{"plugins":["katex","copy-code-button","github","github-buttons","splitter","-sharing","back-to-top-button"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/LjunChen/Cook_Book_of_Data_Science"},"splitter":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"fontSettings":{"theme":"white","family":"msyh","size":2},"highlight":{},"back-to-top-button":{},"github-buttons":{"repo":"LjunChen/Cook_Book_of_Data_Science","types":["star","watch","fork"],"size":"small"},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true}},"theme":"default","author":"陈刘军","pdf":{"pageNumbers":true,"fontSize":14,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"数据科学实用手册","gitbook":"*"},"file":{"path":"Python/multiprocess.md","mtime":"2020-07-15T08:44:01.024Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-07-15T08:48:33.344Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

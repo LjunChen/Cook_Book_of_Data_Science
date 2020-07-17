@@ -28,9 +28,10 @@
     * [服务器配置](Linux/Initial_Configureation.md)
     * [权限管理](Linux/Authorization.md)
     * [文件操作](Linux/files.md)
-    * [定时任务](Linux/crontab.md)
+    * [维护](Linux/Skills.md)
 * 其他软件介绍
     * [Gitbook使用](Other/Gitbook.md)
     * [git使用](Other/git.md)
     * [Pandoc使用](Other/pandoc.md)
+* [Research](Research/research.md)
 

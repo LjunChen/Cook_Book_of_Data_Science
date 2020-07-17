@@ -45,7 +45,29 @@
 
 
 
+#### 自己电脑与服务器的文件互传
 
+```
+scp [参数] 原地址 目的地地址
+```
+
+如将本地桌上的一个文件传到服务器
+
+```
+scp C:/Users/chenl/Desktop/books.pdf sven@120.27.250.172:/home/sven
+```
+
+将本地桌上的一个文件传到本地
+
+```
+scp sven@120.27.250.172:/home/sven/books.pdf C:/Users/chenl/Desktop
+```
+
+如果是传文件夹则是
+
+```
+scp -r
+```
 
 
 

@@ -658,7 +658,49 @@
     
                                 <section class="normal markdown-section">
                                 
-                                
+                                <h2 id="&#x9012;&#x5F52;&#x4E0E;&#x52A8;&#x6001;&#x89C4;&#x5212;&#x7B97;&#x6CD5;">&#x9012;&#x5F52;&#x4E0E;&#x52A8;&#x6001;&#x89C4;&#x5212;&#x7B97;&#x6CD5;</h2>
+<h3 id="&#x9012;&#x5F52;&#x7B97;&#x6CD5;">&#x9012;&#x5F52;&#x7B97;&#x6CD5;</h3>
+<p>&#x9012;&#x5F52;&#x5E38;&#x4E0E;&#x5206;&#x6CBB;&#x601D;&#x60F3;&#xFF08;Divide and Conquer&#xFF09;&#x540C;&#x65F6;&#x4F7F;&#x7528;&#xFF0C;&#x4E00;&#x822C;&#x7684;&#x60F3;&#x6CD5;&#x90FD;&#x662F;&#x6211;&#x4EEC;&#x628A;&#x95EE;&#x9898;&#x5206;&#x6210;&#x5F88;&#x591A;&#x4E2A;&#x5C0F;&#x95EE;&#x9898;&#xFF0C;&#x7136;&#x540E;&#x5148;&#x5904;&#x7406;&#x8FD9;&#x4E9B;&#x5C0F;&#x95EE;&#x9898;&#xFF0C;&#x6700;&#x540E;&#x5C06;&#x8FD9;&#x4E9B;&#x95EE;&#x9898;&#x5408;&#x5E76;&#x3002;&#x9012;&#x5F52;&#x7B97;&#x6CD5;&#x7684;&#x4E00;&#x4E2A;&#x57FA;&#x672C;&#x7279;&#x5F81;&#x5C31;&#x662F;&#x5305;&#x542B;&#x5BF9;&#x81EA;&#x8EAB;&#x7684;&#x8C03;&#x7528;&#x3002;</p>
+<h4 id="&#x6C49;&#x8BFA;&#x5854;&#x95EE;&#x9898;">&#x6C49;&#x8BFA;&#x5854;&#x95EE;&#x9898;</h4>
+<p>&#x6C49;&#x8BFA;&#x5854;&#x95EE;&#x9898;&#x5E94;&#x8BE5;&#x7B97;&#x662F;&#x9012;&#x5F52;&#x7B97;&#x6CD5;&#x7684;&#x4E00;&#x4E2A;&#x6700;&#x7B80;&#x5355;&#x7684;&#x6848;&#x4F8B;&#x4E86;&#x3002;</p>
+<pre><code class="lang-python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">hannoi</span><span class="hljs-params">(n,from_tower,mid_tower,to_tower)</span>:</span>
+    <span class="hljs-keyword">if</span> n==<span class="hljs-number">1</span>:
+        print(<span class="hljs-string">&apos;Move {} to {}&apos;</span>.format(from_tower,to_tower))
+    <span class="hljs-keyword">else</span>:
+        hannoi(n<span class="hljs-number">-1</span>,from_tower,to_tower,mid_tower)
+        print(<span class="hljs-string">&apos;Move {} to {}&apos;</span>.format(from_tower,to_tower))
+        hannoi(n<span class="hljs-number">-1</span>,mid_tower,from_tower,to_tower)
+
+hannoi(<span class="hljs-number">3</span>,<span class="hljs-string">&apos;A&apos;</span>,<span class="hljs-string">&apos;B&apos;</span>,<span class="hljs-string">&apos;C&apos;</span>)
+</code></pre>
+<h4 id="&#x6392;&#x5E8F;&#x7B97;&#x6CD5;">&#x6392;&#x5E8F;&#x7B97;&#x6CD5;</h4>
+<p>&#x5FEB;&#x901F;&#x5FEB;&#x901F;&#x6216;&#x8005;&#x5F52;&#x5E76;&#x6392;&#x5E8F;&#x90FD;&#x662F;&#x9012;&#x5F52;&#x601D;&#x60F3;&#x7684;&#x8FD0;&#x7528;</p>
+<blockquote>
+<p>&#x9012;&#x5F52;&#x7B97;&#x6CD5;&#x662F;&#x4E00;&#x4E2A;&#x5F88;&#x597D;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x7136;&#x800C;&#x9012;&#x5F52;&#x7B97;&#x6CD5;&#x5728;&#x5F88;&#x591A;&#x60C5;&#x51B5;&#x4E0B;&#x7684;&#x8BA1;&#x7B97;&#x6548;&#x7387;&#x662F;&#x5F88;&#x4F4E;&#x7684;&#x3002;&#x4E3E;&#x4F8B;&#x6765;&#x8BF4;&#xFF0C;&#x6BD4;&#x5982;&#x7528;&#x9012;&#x5F52;&#x5B9E;&#x73B0;&#x6590;&#x6CE2;&#x90A3;&#x5951;&#x95EE;&#x9898;:</p>
+</blockquote>
+<pre><code class="lang-python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">fab</span><span class="hljs-params">(n)</span>:</span>
+    <span class="hljs-keyword">if</span> n==<span class="hljs-number">1</span> <span class="hljs-keyword">or</span> n==<span class="hljs-number">2</span>:
+        <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>
+    <span class="hljs-keyword">else</span>:
+        <span class="hljs-keyword">return</span> fab(n<span class="hljs-number">-1</span>)+fab(n<span class="hljs-number">-2</span>)
+</code></pre>
+<p>&#x7B80;&#x5355;&#x7684;&#x5206;&#x6790;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x53D1;&#x73B0;&#xFF0C;&#x8FD9;&#x4E2A;&#x7B97;&#x6CD5;&#x7684;&#x8BA1;&#x7B97;&#x590D;&#x6742;&#x5EA6;&#x662F; <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><msup><mn>2</mn><mi>n</mi></msup><mo>)</mo></mrow><annotation encoding="application/x-tex">O(2^n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord"><span class="mord mathrm">2</span><span class="msupsub"><span class="vlist"><span style="top:-0.363em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle uncramped mtight"><span class="mord mathit mtight">n</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span></span><span class="mclose">)</span></span></span></span>, &#x5176;&#x4E3B;&#x8981;&#x539F;&#x56E0;&#x5728;&#x4E8E;&#x505A;&#x4E86;&#x8FC7;&#x591A;&#x7684;&#x91CD;&#x590D;&#x8BA1;&#x7B97;&#xFF0C;&#x5F53;&#x7136;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x7A7A;&#x95F4;&#x6765;&#x6362;&#x65F6;&#x95F4;&#xFF0C;&#x4ECE;&#x800C;&#x964D;&#x4F4E;&#x7B97;&#x6CD5;&#x7684;&#x590D;&#x6742;&#x5EA6;&#x3002;</p>
+<pre><code class="lang-python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">fab</span><span class="hljs-params">(n,ser)</span>:</span>
+    <span class="hljs-keyword">if</span> n==<span class="hljs-number">1</span> <span class="hljs-keyword">or</span> n==<span class="hljs-number">2</span>:
+        <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>
+    <span class="hljs-keyword">elif</span> n&lt;=len(ser):
+        <span class="hljs-keyword">return</span> ser[n<span class="hljs-number">-1</span>]
+    <span class="hljs-keyword">else</span>:
+        f=fab(n<span class="hljs-number">-1</span>,ser)+fab(n<span class="hljs-number">-2</span>,ser)
+        ser.append(f)
+        <span class="hljs-keyword">return</span> f
+print(fab(<span class="hljs-number">10</span>,[<span class="hljs-number">1</span>,<span class="hljs-number">1</span>]))
+</code></pre>
+<p>&#x7528;list&#x5B9E;&#x73B0;&#x7684;&#x7565;&#x5FAE;&#x6709;&#x70B9;&#x602A;&#xFF0C;&#x6700;&#x597D;&#x8FD8;&#x662F;&#x7528;&#x6570;&#x7EC4;&#x6216;&#x8005;dict&#x3002;</p>
+<h2 id="&#x52A8;&#x6001;&#x89C4;&#x5212;&#x7B97;&#x6CD5;">&#x52A8;&#x6001;&#x89C4;&#x5212;&#x7B97;&#x6CD5;</h2>
+<p>&#x9488;&#x5BF9;&#x4E0A;&#x8FF0;&#x7684;&#x5F88;&#x591A;&#x95EE;&#x9898;&#xFF0C;&#x6211;&#x4EEC;&#x90FD;&#x662F;&#x5728;&#x7528;&#x9012;&#x5F52;&#x7B97;&#x6CD5;&#x89E3;&#x3002;&#x9012;&#x5F52;&#x7B97;&#x6CD5;&#x662F;&#x4E00;&#x79CD;&#x9006;&#x5411;&#x601D;&#x7EF4;&#xFF0C;&#x90A3;&#x4E48;&#x6211;&#x4EEC;&#x662F;&#x5426;&#x5B58;&#x5728;&#x4E00;&#x4E9B;&#x4F7F;&#x7528;&#x6B63;&#x5411;&#x601D;&#x7EF4;&#x7684;&#x6709;&#x6548;&#x7B97;&#x6CD5;&#x7684;&#xFF0C;&#x7B54;&#x6848;&#x662F;&#x6709;&#x7684;&#xFF0C;&#x8FD9;&#x5C31;&#x662F;&#x6211;&#x4EEC;&#x8981;&#x4ECB;&#x7ECD;&#x7684;&#x52A8;&#x6001;&#x89C4;&#x5212;&#x3002;</p>
+<p>&#x8FD9;&#x4E24;&#x79CD;&#x65B9;&#x6CD5;&#x5404;&#x6709;&#x4F18;&#x52A3;&#xFF0C;&#x6700;&#x5173;&#x952E;&#x7684;&#x662F;&#x770B;&#x95EE;&#x9898;&#x672C;&#x8EAB;&#x4EE5;&#x53CA;&#x770B;&#x601D;&#x7EF4;&#x7684;&#x4E60;&#x60EF;&#x3002;</p>
+
                                 
                                 </section>
                             
@@ -701,7 +743,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"递归算法","level":"1.3.3","depth":2,"next":{"title":"凸优化理论","level":"1.3.4","depth":2,"path":"DSA/ConvexOptimization.md","ref":"DSA/ConvexOptimization.md","articles":[]},"previous":{"title":"排序算法","level":"1.3.2","depth":2,"path":"DSA/sort.md","ref":"DSA/sort.md","articles":[]},"dir":"neutral"},"config":{"plugins":["katex","copy-code-button","github","github-buttons","splitter","-sharing","back-to-top-button"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/LjunChen/Cook_Book_of_Data_Science"},"splitter":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"fontSettings":{"theme":"white","family":"msyh","size":2},"highlight":{},"back-to-top-button":{},"github-buttons":{"repo":"LjunChen/Cook_Book_of_Data_Science","types":["star","watch","fork"],"size":"small"},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true}},"theme":"default","author":"陈刘军","pdf":{"pageNumbers":true,"fontSize":14,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"数据科学实用手册","gitbook":"*"},"file":{"path":"DSA/recursive.md","mtime":"2020-07-13T05:51:25.960Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-07-17T15:44:00.179Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"递归算法","level":"1.3.3","depth":2,"next":{"title":"凸优化理论","level":"1.3.4","depth":2,"path":"DSA/ConvexOptimization.md","ref":"DSA/ConvexOptimization.md","articles":[]},"previous":{"title":"排序算法","level":"1.3.2","depth":2,"path":"DSA/sort.md","ref":"DSA/sort.md","articles":[]},"dir":"ltr"},"config":{"plugins":["katex","copy-code-button","github","github-buttons","splitter","-sharing","back-to-top-button"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/LjunChen/Cook_Book_of_Data_Science"},"splitter":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"fontSettings":{"theme":"white","family":"msyh","size":2},"highlight":{},"back-to-top-button":{},"github-buttons":{"repo":"LjunChen/Cook_Book_of_Data_Science","types":["star","watch","fork"],"size":"small"},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true}},"theme":"default","author":"陈刘军","pdf":{"pageNumbers":true,"fontSize":14,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"数据科学实用手册","gitbook":"*"},"file":{"path":"DSA/recursive.md","mtime":"2020-07-20T16:10:09.092Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-07-20T16:26:29.318Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

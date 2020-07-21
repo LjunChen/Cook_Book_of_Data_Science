@@ -80,9 +80,49 @@ $$
 
 
 
+### ADMM 算法
+
+带约束的优化问题
+
+1)QP问题可以直接用拉格朗日法求解
+
+2）ADMM算法
+$$
+H_{opt}=\min \{ H(x,z)=h_1(x)+h_2(z): Ax+Bz=c\}
+$$
+
+
+这里我们假设: $$h_1$$和$$h_2$$ are proper closed and convex functions.
 
 
 
+> ADMM
+>
+> Initialization : $$x^0\in R^n, z^0 \in R^p, y^0\in R^m ,\rho>0$$
+>
+> General Step: for any $k=0,1,...$ excute the following:
+>
+> (a) $$x^{k+1}\in \arg\min_x \{ h_1(x)+\frac{\rho}{2} ||Ax+Bz^k-c+\frac{1}{\rho}y^k||^2\}$$
+>
+> (b)$$z^{k+1}\in \arg\min_z \{ h_2(z)+\frac{\rho}{2} ||Ax^{k+1}+Bz-c+\frac{1}{\rho}y^k||^2\}$$
+>
+> (c) $$y^{k+1}=y^k+\rho(Ax^{k+1}+Bz^{k+1}-c)$$
+
+
+
+
+
+> AD-LPMM
+>
+> Initialization: $$x^0\in R^n, z^0 \in R^p, y^0\in R^m ,\rho>0, \alpha \ge \rho \lambda_{max}(A^TA),\beta\ge \rho\lambda_{max}(B^TB)$$
+>
+> General Step: for any $k=0,1,...$ excute the following:
+>
+> (a) $$x^{k+1}=prox_{\frac{1}{\alpha}h_1} [x^k-\frac{\rho}{\alpha}A^T(Ax^k+Bz^k-c+\frac{1}{\rho}y^k)]$$
+>
+> (b) $$z^{k+1}=prox_{\frac{1}{\beta}h_2}[z^k-\frac{\rho}{\alpha}B^T(Ax^{k+1}+Bz^k-c+\frac{1}{\rho}y^k)]$$
+>
+> (c) $$y^{k+1}=y^k+\rho(Ax^{k+1}+Bz^{k+1}-c)$$
 
 
 

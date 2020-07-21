@@ -9,6 +9,7 @@
     * [发送邮件](Python/Email.md)
     * [面向对象编程](Python/OOP.md)
     * [爬虫](Python/spider.md)
+    * [Python优化模块](Python/Optimization.md)
 * [数据结构与算法](DSA/readme.md)
     * [数据结构](DSA/DataStructure.md)
     * [排序算法](DSA/sort.md)

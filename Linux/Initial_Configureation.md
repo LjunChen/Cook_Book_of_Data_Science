@@ -142,3 +142,40 @@ conda create --name sven-Linux python=3.6.2
 
   
 
+  #### pip 换源
+
+  ##### Linux
+
+  * `cd ~`
+
+  * `mkdir ~/.pip`
+
+  * `vim ~/.pip/pip.conf`
+
+  * 输入内容
+
+    ```
+    [global]
+    timeout = 6000
+    
+    index-url = https://mirrors.aliyun.com/pypi/simple/
+    
+    trusted-host = mirrors.aliyun.com
+```
+    
+##### Windows
+    
+  * 打开文件资源管理器(文件夹地址栏中)
+  
+  * 地址栏上面输入 %appdata% (具体是C:\Users\chenl\AppData\Roaming)
+  
+  * 在这里面新建一个文件夹 pip
+  
+  * 在pip文件夹里面新建一个文件叫做 pip.ini ,内容写如下和上面一样
+  
+  
+  
+
+  
+
+

@@ -33,30 +33,36 @@ $$
 \end{array}
 $$
 
-FWER(Familywise/Experimental Error Rate):
-<br>
--Probability of making at least one Type I error amongest m independent comparsions $Pr(V\ge 1)$.
-<br>
+FWER(Family wise/Experimental Error Rate):
+Probability of making at least one Type I error among  m independent comparisons $Pr(V\ge 1)$.
+
 Methods of Controlling FWER:
+
 1. Bonferroni Correction (overly conservative)
 2. Holm-Bonferroni method
 3. Many more examples: Sidak, Scheffe, Dunnet
 
-FWER is designed for a handful of multiple comparisons, but if we find ourseleves with hundreds of hypothesis tests, we need to control False Discovery Rate(FDR)
+FWER is designed for a handful of multiple comparisons, but if we find ourselves with hundreds of hypothesis tests, we need to control False Discovery Rate(FDR).
 
-FDR is defined as the proportion of rejected hypothesis that are erroneous: V/R 
+FDR is defined as the proportion of rejected hypothesis that are erroneous: $$V/R$$. 
 
 Benjamini-Hochberg Procedure:
-<br>
- $Q=V/(V+S)=V/R$
- <br>
- B-H focus on the expectation of $Q$
- 
- 1. order m unadjusted p-value generated from m hypothesis test
- 2. Let k be largest i for which 
- $$p_{(i)} \le \frac{i}{m} q^{*}$$ where $q^*$ can be set by users, 0.05/0.1/0.01.
+$$
+Q=V/(V+S)=V/R
+$$
+B-H focus on the expectation of $Q$
 
-3. Reject all $H_i$ for $ i \in (1,2,\dots,k)$
+ 1. order $$m$$ un-adjusted p-value generated from m hypothesis test
+
+ 2. Let k be largest i for which 
+ $$
+p_{(i)} \le \frac{i}{m} q^{*}
+ $$
+ 
+ 
+ 3. where $$q^*$$ can be set by users, 0.05/0.1/0.01.
+
+4. Reject all $H_i$ for $ i \in (1,2,\dots,k)$
 
 
 ```python
@@ -83,27 +89,10 @@ combo['rejected']=np.where(combo['p_value']<combo['adjusted_p'],1,0)
 ```
 
 
-```python
-combo
-```
 
 
 
 
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -222,17 +211,20 @@ combo
     </tr>
   </tbody>
 </table>
-</div>
-
 
 
 * BH is better than FWER
 * BH depends upon the independence
-* selection of q
+* selection of $$q$$
 
 Benjamini-Krieger-Yekuteli's Adaptive FDR control
-* estimate $k$ and then $\hat{m}_0=m-k$
-* $q^*$=$q^{'}m/\hat{m}_0$
+* estimate $$k$$ and then $$\hat{m}_0=m-k$$
+
+* $$
+  q^*=q^{'}m/\hat{m}_0
+  $$
+
+  
 
 Other methods: 
 * Storey's postive FDR(p-FDR)
@@ -246,7 +238,6 @@ Other methods:
 import numpy as np
 import pandas as pd
 from statsmodels.stats.multitest import multipletests
-multipletests?
 ```
 
 
@@ -264,21 +255,6 @@ combo
 
 
 
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -397,6 +373,6 @@ combo
     </tr>
   </tbody>
 </table>
-</div>
+
 
 

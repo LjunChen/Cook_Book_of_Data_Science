@@ -1,0 +1,869 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>多进程和多线程 · 数据科学实用手册</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="陈刘军">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-katex/katex.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="Exception.html" />
+    
+    
+    <link rel="prev" href="OS.html" />
+    
+
+    <style>
+    @media only screen and (max-width: 640px) {
+        .book-header .hidden-mobile {
+            display: none;
+        }
+    }
+    </style>
+    <script>
+        window["gitbook-plugin-github-buttons"] = {"repo":"LjunChen/Cook_Book_of_Data_Science","types":["star","watch","fork"],"size":"small"};
+    </script>
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                        <b>1.1.</b>
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="readme.html">
+            
+                <a href="readme.html">
+            
+                    
+                        <b>1.2.</b>
+                    
+                    Python基础
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="files.html">
+            
+                <a href="files.html">
+            
+                    
+                        <b>1.2.1.</b>
+                    
+                    文件读写
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="OS.html">
+            
+                <a href="OS.html">
+            
+                    
+                        <b>1.2.2.</b>
+                    
+                    OS模块
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.3" data-path="multiprocess.html">
+            
+                <a href="multiprocess.html">
+            
+                    
+                        <b>1.2.3.</b>
+                    
+                    多进程和多线程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="Exception.html">
+            
+                <a href="Exception.html">
+            
+                    
+                        <b>1.2.4.</b>
+                    
+                    异常处理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="Email.html">
+            
+                <a href="Email.html">
+            
+                    
+                        <b>1.2.5.</b>
+                    
+                    发送邮件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="OOP.html">
+            
+                <a href="OOP.html">
+            
+                    
+                        <b>1.2.6.</b>
+                    
+                    面向对象编程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="spider.html">
+            
+                <a href="spider.html">
+            
+                    
+                        <b>1.2.7.</b>
+                    
+                    爬虫
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="Optimization.html">
+            
+                <a href="Optimization.html">
+            
+                    
+                        <b>1.2.8.</b>
+                    
+                    Python优化模块
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../DSA/readme.html">
+            
+                <a href="../DSA/readme.html">
+            
+                    
+                        <b>1.3.</b>
+                    
+                    数据结构与算法
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../DSA/DataStructure.html">
+            
+                <a href="../DSA/DataStructure.html">
+            
+                    
+                        <b>1.3.1.</b>
+                    
+                    数据结构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../DSA/sort.html">
+            
+                <a href="../DSA/sort.html">
+            
+                    
+                        <b>1.3.2.</b>
+                    
+                    排序算法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../DSA/recursive.html">
+            
+                <a href="../DSA/recursive.html">
+            
+                    
+                        <b>1.3.3.</b>
+                    
+                    递归算法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../DSA/ConvexOptimization.html">
+            
+                <a href="../DSA/ConvexOptimization.html">
+            
+                    
+                        <b>1.3.4.</b>
+                    
+                    凸优化理论
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../DSA/Proximal_ADMM.html">
+            
+                <a href="../DSA/Proximal_ADMM.html">
+            
+                    
+                        <b>1.3.5.</b>
+                    
+                    Proximal Gradient  and ADMM
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../Statistical_Learning/Readme.html">
+            
+                <a href="../Statistical_Learning/Readme.html">
+            
+                    
+                        <b>2.1.</b>
+                    
+                    统计学习
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.1" data-path="../Statistical_Learning/Matrix.html">
+            
+                <a href="../Statistical_Learning/Matrix.html">
+            
+                    
+                        <b>2.1.1.</b>
+                    
+                    矩阵知识
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.2" data-path="../Statistical_Learning/Empirical_Likelihood.html">
+            
+                <a href="../Statistical_Learning/Empirical_Likelihood.html">
+            
+                    
+                        <b>2.1.2.</b>
+                    
+                    经验似然
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../DSA/readme.html">
+            
+                <a href="../DSA/readme.html">
+            
+                    
+                        <b>2.2.</b>
+                    
+                    数据库
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.2.1" data-path="../Database/MySQL.html">
+            
+                <a href="../Database/MySQL.html">
+            
+                    
+                        <b>2.2.1.</b>
+                    
+                    MySQL
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.2" data-path="../Database/Mongodb.html">
+            
+                <a href="../Database/Mongodb.html">
+            
+                    
+                        <b>2.2.2.</b>
+                    
+                    Mongodb
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" >
+            
+                <span>
+            
+                    
+                        <b>3.1.</b>
+                    
+                    Linux基础
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.1" data-path="../Linux/Initial_Configureation.html">
+            
+                <a href="../Linux/Initial_Configureation.html">
+            
+                    
+                        <b>3.1.1.</b>
+                    
+                    服务器配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.2" data-path="../Linux/Authorization.html">
+            
+                <a href="../Linux/Authorization.html">
+            
+                    
+                        <b>3.1.2.</b>
+                    
+                    权限管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.3" data-path="../Linux/files.html">
+            
+                <a href="../Linux/files.html">
+            
+                    
+                        <b>3.1.3.</b>
+                    
+                    文件操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4" data-path="../Linux/Skills.html">
+            
+                <a href="../Linux/Skills.html">
+            
+                    
+                        <b>3.1.4.</b>
+                    
+                    维护
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" >
+            
+                <span>
+            
+                    
+                        <b>3.2.</b>
+                    
+                    其他软件介绍
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.2.1" data-path="../Other/Gitbook.html">
+            
+                <a href="../Other/Gitbook.html">
+            
+                    
+                        <b>3.2.1.</b>
+                    
+                    Gitbook使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.2" data-path="../Other/git.html">
+            
+                <a href="../Other/git.html">
+            
+                    
+                        <b>3.2.2.</b>
+                    
+                    git使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.3" data-path="../Other/pandoc.html">
+            
+                <a href="../Other/pandoc.html">
+            
+                    
+                        <b>3.2.3.</b>
+                    
+                    Pandoc使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="../Research/research.html">
+            
+                <a href="../Research/research.html">
+            
+                    
+                        <b>3.3.</b>
+                    
+                    Research
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >多进程和多线程</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="python&#x591A;&#x8FDB;&#x7A0B;">Python&#x591A;&#x8FDB;&#x7A0B;</h1>
+<h4 id="python&#x5F00;&#x542F;&#x8FDB;&#x7A0B;&#x7684;&#x65B9;&#x6CD5;">Python&#x5F00;&#x542F;&#x8FDB;&#x7A0B;&#x7684;&#x65B9;&#x6CD5;</h4>
+<pre><code class="lang-python"><span class="hljs-keyword">import</span> time 
+<span class="hljs-keyword">from</span> multiprocessing <span class="hljs-keyword">import</span> Process
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">run</span><span class="hljs-params">(name)</span>:</span>
+    print(<span class="hljs-string">&apos;Process {} runing &apos;</span>.format(name))
+    time.sleep(<span class="hljs-number">3</span>)
+    print(<span class="hljs-string">&apos;Process {} running end &apos;</span>.format(name))
+
+
+<span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&apos;__main__&apos;</span>:
+    p1=Process(target=run,args=(<span class="hljs-string">&apos;A&apos;</span>,)) <span class="hljs-comment">#&#x5FC5;&#x987B;&#x52A0;,&#x53F7;</span>
+    p2=Process(target=run,args=(<span class="hljs-string">&apos;B&apos;</span>,))
+    p3=Process(target=run,args=(<span class="hljs-string">&apos;C&apos;</span>,))
+    p4=Process(target=run,args=(<span class="hljs-string">&apos;D&apos;</span>,))
+
+    <span class="hljs-keyword">for</span> p <span class="hljs-keyword">in</span> [p1,p2,p3,p4]:
+        p.start()
+    print(<span class="hljs-string">&apos;&#x4E3B;&#x7EBF;&#x7A0B;&apos;</span>)
+</code></pre>
+<p>&#x5927;&#x90E8;&#x5206;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x6211;&#x4EEC;&#x90FD;&#x60F3;&#x8BA9;&#x4E3B;&#x8FDB;&#x7A0B;&#x7B49;&#x5F85;&#x5B50;&#x8FDB;&#x7A0B;&#x7ED3;&#x675F;&#xFF0C;&#x8FD9;&#x5C31;&#x9700;&#x8981;&#x8FDB;&#x7A0B;&#x7684;<code>join</code>&#x65B9;&#x6CD5;&#xFF0C;<code>join</code>&#x65B9;&#x6CD5;&#x7B49;&#x5F85;&#x7684;&#x662F;&#x4E3B;&#x8FDB;&#x7A0B;&#xFF0C;&#x6240;&#x4EE5;&#x7B49;&#x5F85;&#x7684;&#x603B;&#x65F6;&#x95F4;&#x662F;&#x5B50;&#x8FDB;&#x7A0B;&#x4E2D;&#x8017;&#x65F6;&#x6700;&#x957F;&#x7684;&#x90A3;&#x4E2A;&#x3002;&#x5C06;&#x4EE5;&#x4E0A;&#x4EE3;&#x7801;&#x6539;&#x6210;&#x4E0B;&#x9762;&#x8FD9;&#x6837;&#x65E2;&#x53EF;&#x3002;</p>
+<pre><code class="lang-python"><span class="hljs-keyword">for</span> p <span class="hljs-keyword">in</span> [p1,p2,p3,p4]:
+    p.start()
+<span class="hljs-keyword">for</span> p <span class="hljs-keyword">in</span> [p1,p2,p3,p4]:
+    p.join()
+print(<span class="hljs-string">&apos;&#x4E3B;&#x7EBF;&#x7A0B;&apos;</span>)
+</code></pre>
+<p>&#x503C;&#x5F97;&#x6CE8;&#x610F;&#x7684;&#x662F;&#xFF0C;&#x4E24;&#x4E2A;<code>for</code>&#x5FAA;&#x73AF;&#x662F;&#x4E0D;&#x53EF;&#x5C11;&#x7684;&#xFF0C;&#x8981;&#x7B49;&#x6240;&#x6709;&#x7684;&#x8FDB;&#x7A0B;<code>start</code>&#x4E86;&#x4E4B;&#x540E;&#x624D;&#x5F00;&#x59CB;<code>join</code>&#xFF0C;&#x6240;&#x4EE5;&#x4E0D;&#x80FD;&#x662F; <code>p.start();p.join()</code>.</p>
+<h4 id="&#x8FDB;&#x7A0B;&#x6C60;">&#x8FDB;&#x7A0B;&#x6C60;</h4>
+<p>&#x5F53;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x64CD;&#x4F5C;&#x7684;&#x5BF9;&#x8C61;&#x4E0D;&#x591A;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x8FD8;&#x53EF;&#x4EE5;&#x7528;&#x4E0A;&#x9762;&#x7684;&#x65B9;&#x6CD5;&#x6765;&#x521B;&#x5EFA;&#x8FDB;&#x7A0B;&#xFF0C;&#x4F46;&#x662F;&#x5982;&#x679C;&#x6570;&#x76EE;&#x592A;&#x591A;&#xFF0C;&#x7528;&#x624B;&#x52A8;&#x7684;&#x65B9;&#x5F0F;&#x53BB;&#x521B;&#x5EFA;&#x8FDB;&#x7A0B;&#x592A;&#x8FC7;&#x7E41;&#x7410;&#xFF0C;&#x56E0;&#x6B64;&#x6211;&#x4EEC;&#x8003;&#x8651;&#x7528;&#x8FDB;&#x7A0B;&#x6C60;&#x7684;&#x65B9;&#x5F0F;&#x6765;&#x521B;&#x5EFA;&#x3002;&#x5176;&#x4E3B;&#x8981;&#x8BED;&#x6CD5;&#x5982;&#x4E0B;</p>
+<ul>
+<li><p><code>Pool.apply(func,args)</code></p>
+</li>
+<li><p><code>Pool.apply_async(func,args)</code></p>
+<p>&#x4E00;&#x4E2A;&#x5947;&#x602A;&#x7684;&#x70B9;&#x5728;&#x4E8E; <code>Pool.apply(func,args)</code>&#x5176;&#x5B9E;&#x662F;&#x4E0D;&#x80FD;&#x5E76;&#x884C;&#x8BA1;&#x7B97;&#x7684;&#xFF0C;&#x770B;&#x8FC7;&#x4E00;&#x4E9B;&#x6750;&#x6599;&#xFF0C;&#x6CA1;&#x770B;&#x7684;&#x5F88;&#x660E;&#x767D;&#x3002;&#x63A8;&#x8350;&#x4F7F;&#x7528;&#x7684;&#x662F; <code>Pool.apply_sync(func,args)</code>.</p>
+</li>
+</ul>
+<pre><code class="lang-python"><span class="hljs-keyword">import</span> time
+<span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np
+<span class="hljs-keyword">from</span> multiprocessing <span class="hljs-keyword">import</span> Pool
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">run</span><span class="hljs-params">(name)</span>:</span>
+    a=np.random.randint(<span class="hljs-number">0</span>,<span class="hljs-number">10</span>)
+    print(<span class="hljs-string">&apos;Process {} runing, this needs {} seconds &apos;</span>.format(name,a))
+    time.sleep(a)
+    print(<span class="hljs-string">&apos;Process {} running end, The return value is {}&apos;</span>.format(name,a))
+    <span class="hljs-keyword">return</span> (a)
+
+<span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&apos;__main__&apos;</span>:
+
+    p=Pool(<span class="hljs-number">4</span>)
+    res=[]
+    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(<span class="hljs-number">8</span>):
+        res_temp=p.apply_async(run,args=(i,))
+        res.append(res_temp)
+    p.close()
+    p.join()
+    print(<span class="hljs-string">&apos;&#x4E3B;&#x7EBF;&#x7A0B;&apos;</span>)
+       <span class="hljs-keyword">for</span> res_temp <span class="hljs-keyword">in</span> res:
+        print(res_temp.get())
+</code></pre>
+<h4 id="&#x8E29;&#x5751;">&#x8E29;&#x5751;</h4>
+<h5 id="&#x5751;&#x4E00;&#xFF1A;-&#x5173;&#x4E8E;-if-namemain-&#x7684;&#x5E94;&#x7528;">&#x5751;&#x4E00;&#xFF1A; &#x5173;&#x4E8E; <code>if name==&apos;__main__&apos;</code> &#x7684;&#x5E94;&#x7528;</h5>
+<p>&#x5728;&#x6211;&#x4EEC;&#x76EE;&#x524D;&#x770B;&#x5230;&#x7684;&#x6240;&#x6709;&#x7684;&#x4EE3;&#x7801;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x53D1;&#x73B0;&#xFF0C;&#x6240;&#x6709;&#x521B;&#x5EFA;&#x5B50;&#x8FDB;&#x7A0B;&#x7684;&#x8FC7;&#x7A0B;&#x90FD;&#x4F1A;&#x51FA;&#x73B0; <code>if name==&apos;__main__&apos;</code> &#x8FD9;&#x53E5;&#x3002;</p>
+<p>python&#x4E2D;&#x6587;&#x4EF6;&#x7684;&#x4F7F;&#x7528;&#x6709;&#x4E24;&#x79CD;&#x65B9;&#x6CD5;&#xFF1A;</p>
+<ul>
+<li>&#x4F5C;&#x4E3A;&#x7A0B;&#x5E8F;&#x88AB;&#x6267;&#x884C;</li>
+<li>&#x4F5C;&#x4E3A;&#x6A21;&#x5757;&#x88AB;&#x5176;&#x4ED6;&#x7A0B;&#x5E8F;&#x6240;&#x8C03;&#x7528;</li>
+</ul>
+<p>&#x800C; <code>if name==&apos;__main__&apos;</code> &#x7684;&#x4F5C;&#x7528;&#x5C31;&#x662F;&#x63A7;&#x5236;&#x7740;&#x4E24;&#x79CD;&#x4E0D;&#x540C;&#x7684;&#x65B9;&#x6CD5;&#x6267;&#x884C;&#x4EE3;&#x7801;&#x7684;&#x8FC7;&#x7A0B;&#x3002; &#x5728; <code>if name==&apos;__main__&apos;</code> &#x4E0B;&#x7684;&#x4EE3;&#x7801;&#x53EA;&#x6709;&#x5728;&#x4F5C;&#x4E3A;&#x7A0B;&#x5E8F;&#x88AB;&#x6267;&#x884C;&#x7684;&#x65F6;&#x5019;&#x624D;&#x4F1A;&#x6267;&#x884C;&#xFF0C;&#x800C;&#x88AB;&#x5176;&#x4ED6;&#x7A0B;&#x5E8F; import &#x7684;&#x65F6;&#x5019;&#x662F;&#x4E0D;&#x6267;&#x884C;&#x7684;&#x3002; </p>
+<p><strong>&#x4F46;&#x662F;&#x5728;&#x591A;&#x8FDB;&#x7A0B;&#x7684;&#x65F6;&#x5019;&#x8FD9;&#x4E2A;&#x5C31;&#x6210;&#x4E86;&#x5927;&#x5751;&#x4E86;&#x3002;</strong></p>
+<p>&#x56E0;&#x4E3A;python&#x5728;&#x521B;&#x5EFA;&#x5B50;&#x8FDB;&#x7A0B;&#x7684;&#x65F6;&#x5019;&#xFF0C; &#x8FDB;&#x7A0B;&#x4F1A;&#x9ED8;&#x8BA4;&#x5BFC;&#x5165;&#x76EE;&#x524D;&#x6B63;&#x5728;&#x8FD0;&#x884C;&#x7684;&#x6587;&#x4EF6;&#xFF08;&#x4E5F;&#x5C31;&#x662F;&#x5C06;&#x672C;&#x6587;&#x4EF6;&#x4ECE;&#x5934;&#x5230;&#x5C3E;&#x5F00;&#x59CB;&#x8FD0;&#x884C;&#xFF09;&#xFF0C;&#x4F46;&#x662F;&#x5982;&#x679C;&#x6211;&#x4EEC;&#x4E0D;&#x7528; <code>if name==&apos;__main__&apos;</code>&#x7684;&#x8BDD;&#xFF0C;&#x5B50;&#x8FDB;&#x7A0B;&#x4F1A;&#x8FD0;&#x884C;&#x5230;&#x521B;&#x5EFA;&#x5B50;&#x8FDB;&#x7A0B;&#x8FD9;&#x53E5;&#x4EE3;&#x7801;&#xFF08;&#x4E5F;&#x662F;&#x8FD9;&#x4E2A;&#x6587;&#x4EF6;&#x7684;&#x4E00;&#x90E8;&#x5206;&#xFF09;&#xFF0C;&#x8FD9;&#x5C31;&#x9677;&#x5165;&#x4E86;&#x4E00;&#x4E2A;&#x65E0;&#x9650;&#x7684;&#x5FAA;&#x73AF;&#xFF0C;&#x800C;&#x88AB;python&#x6240;&#x5236;&#x6B62;&#xFF0C;&#x6240;&#x4EE5;&#x4E00;&#x5B9A;&#x8981;&#x52A0; <code>if name==&apos;__main__&apos;</code>. </p>
+<p>&#x4F46;&#x662F;&#x95EE;&#x9898;&#x6765;&#x4E86;&#xFF0C;&#x90A3;&#x4E9B;&#x6210;&#x719F;&#x7684;module &#x5982; sklearn, &#x4ED6;&#x4EEC;&#x662F;&#x600E;&#x4E48;&#x5B9E;&#x73B0;&#x5728;&#x51FD;&#x6570;&#x4E2D;&#x8FDB;&#x884C;&#x591A;&#x8FDB;&#x7A0B;&#x7684;&#x5462;&#xFF1F;&#xFF1F;&#xFF1F;&#x7565;&#x5FAE;&#x67E5;&#x4E86;&#x4E00;&#x4E0B;&#xFF0C;sklearn &#x5E94;&#x7528;&#x7684;&#x4E3B;&#x8981;&#x662F; joblib&#x5E93;&#xFF0C;&#x90A3; joblib&#x5E93;&#x600E;&#x4E48;&#x5B9E;&#x73B0;&#x7684;&#x5462;&#xFF1F;&#xFF1F;&#xFF1F;&#x6682;&#x65F6;&#x6211;&#x4E5F;&#x4E0D;&#x77E5;&#x9053;....&#x5DE8;&#x5751;&#x554A;.....</p>
+<h2 id="python-&#x591A;&#x7EBF;&#x7A0B;">Python &#x591A;&#x7EBF;&#x7A0B;</h2>
+<p>&#x591A;&#x7EBF;&#x7A0B;&#x6700;&#x7B80;&#x5355;&#x7684;&#x65B9;&#x6CD5;&#x662F;&#x76F4;&#x63A5;</p>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> multiprocessing.dummpy <span class="hljs-keyword">import</span> Pool
+</code></pre>
+<p>&#x5176;&#x4ED6;&#x7528;&#x6CD5;&#x548C;&#x591A;&#x8FDB;&#x7A0B;&#x4E00;&#x81F4;&#x3002; &#x5F53;&#x7136;&#x591A;&#x7EBF;&#x7A0B;&#x8FD8;&#x53EF;&#x4EE5;&#x7528; threading &#x6A21;&#x5757;&#xFF0C;threading&#x6A21;&#x5757;&#x7684;&#x7528;&#x6CD5;&#x548C;&#x524D;&#x9762;&#x7684;Process&#x6BD4;&#x8F83;&#x63A5;&#x8FD1;&#x3002;&#x5927;&#x591A;&#x6570;&#x65F6;&#x5019;&#xFF0C;&#x5176;&#x5B9E;&#x8FDB;&#x7A0B;&#x6C60;/&#x7EBF;&#x7A0B;&#x6C60;&#x66F4;&#x52A0;&#x65B9;&#x4FBF;&#xFF0C; right? &#x8D77;&#x7801;&#x6211;&#x78B0;&#x5230;&#x7684;&#x4EFB;&#x52A1;&#x5927;&#x591A;&#x6570;&#x662F;&#x8FD9;&#x6837;&#x7684;&#x3002;</p>
+<p>&#x591A;&#x7EBF;&#x7A0B;&#x6709;&#x4E2A;&#x4E0D;&#x597D;&#x7684;&#x5730;&#x65B9;&#xFF0C;&#x5728;&#x4E8E;&#x591A;&#x7EBF;&#x7A0B;&#x5176;&#x5B9E;&#x662F;<code>&#x5E76;&#x53D1;</code>&#x800C;&#x4E0D;&#x662F;<code>&#x5E76;&#x884C;</code>&#xFF0C;&#x5173;&#x4E8E;&#x8FD9;&#x4E24;&#x4E2A;&#x6982;&#x5FF5;&#x7684;&#x533A;&#x522B;&#x53EF;&#x4EE5;&#x767E;&#x5EA6;&#x627E;&#x4E00;&#x4E0B;&#xFF0C;&#x591A;&#x7EBF;&#x7A0B;&#x5728;&#x5904;&#x7406;CPU&#x5BC6;&#x96C6;&#x578B;&#x7684;&#x4EFB;&#x52A1;&#x6548;&#x679C;&#x4E00;&#x822C;&#x822C;&#xFF0C;&#x53EA;&#x6709;&#x5728;&#x5904;&#x7406;I/O&#x5BC6;&#x96C6;&#x578B;&#x7684;&#x4EFB;&#x52A1;&#x624D;&#x80FD;&#x771F;&#x6B63;&#x8FBE;&#x5230;&#x591A;&#x7EBF;&#x7A0B;&#x7684;&#x6548;&#x679C;&#x3002;</p>
+<p>&#x4F46;&#x662F;&#x8FD9;&#x4E2A;&#x4E5F;&#x907F;&#x514D;&#x4E86;&#x4E4B;&#x524D;&#x591A;&#x8FDB;&#x7A0B;&#x7684;&#x90A3;&#x4E2A;&#x5927;&#x5751;&#x4E86;&#x3002;</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="OS.html" class="navigation navigation-prev " aria-label="Previous page: OS模块">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="Exception.html" class="navigation navigation-next " aria-label="Next page: 异常处理">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"多进程和多线程","level":"1.2.3","depth":2,"next":{"title":"异常处理","level":"1.2.4","depth":2,"path":"Python/Exception.md","ref":"Python/Exception.md","articles":[]},"previous":{"title":"OS模块","level":"1.2.2","depth":2,"path":"Python/OS.md","ref":"Python/OS.md","articles":[]},"dir":"ltr"},"config":{"plugins":["katex","copy-code-button","github","github-buttons","splitter","-sharing","back-to-top-button","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/LjunChen/Cook_Book_of_Data_Science"},"livereload":{},"splitter":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"fontSettings":{"theme":"white","family":"msyh","size":2},"highlight":{},"back-to-top-button":{},"github-buttons":{"repo":"LjunChen/Cook_Book_of_Data_Science","types":["star","watch","fork"],"size":"small"},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true}},"theme":"default","author":"陈刘军","pdf":{"pageNumbers":true,"fontSize":14,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"数据科学实用手册","gitbook":"*"},"file":{"path":"Python/multiprocess.md","mtime":"2020-07-15T08:44:01.024Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-07-22T16:01:36.177Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github-buttons/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

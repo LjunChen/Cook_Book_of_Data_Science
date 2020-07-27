@@ -87,4 +87,55 @@ if __name__ == '__main__':
 
 
 
-#### Scrapy的使用
+#### 案例2：
+
+空气质量数据 https://www.aqistudy.cn/historydata/
+
+这个网站是反爬虫的，对chrome的请求是直接拒绝的（哪怕是headless的chrome好像也是不行，不知道其他的浏览器可不可以，比如firefox，不过我没试过）。这里采用的是 `selenium+phantomjs`, 不过目前好像`selenium`慢慢不支持`phantomjs`了，如果不行的话，就不要装最新版本的`selenium'.
+
+以下脚本爬取上海，北京，武汉，长沙, 重庆 这5个城市的2020年1月的空气质量数据（注意不同的网址的区别，略微有点怪，值得注意）。
+
+```python
+from selenium import webdriver
+from bs4 import BeautifulSoup
+import urllib.request
+import pandas as pd
+
+def get_HTML(driver,url):
+    driver.get(url)
+    html = driver.page_source
+    text = BeautifulSoup(html, "html.parser")
+    return text
+
+def html_parser(city,text):
+    data = text.find_all('tr')
+    col=['日期','AQI','质量等级','PM2.5','PM10','SO2','CO','NO2','O3_8h']
+    df=pd.DataFrame(columns=col)
+    for tr in data:
+        ltd = tr.find_all('td')
+        values=[]
+        for td in ltd:
+            values.append(td.string)
+        if len(values)>0:
+            temp = pd.Series({col[i]: values[i] for i in range(len(col))})
+            df = df.append(temp, ignore_index=True)
+    df['city']=city
+    return df
+
+def main():
+    driver = webdriver.PhantomJS('D:\\Software\\phantomjs-2.1.1-windows\\bin\\phantomjs.exe')
+    city_list = ['上海', '北京', '武汉', '安庆', '长沙', '重庆']
+    df = pd.DataFrame()
+    for city in city_list:
+        url = 'https://www.aqistudy.cn/historydata/daydata.php?city=' + urllib.request.quote(city) + '&month=202001'
+        text=get_HTML(driver,url)
+        temp_df = html_parser(city,text)
+        df=pd.concat([df,temp_df])
+    return df
+
+if __name__ == '__main__':
+    df = main()
+    print(df.city.unique())
+    print(df.shape)
+```
+

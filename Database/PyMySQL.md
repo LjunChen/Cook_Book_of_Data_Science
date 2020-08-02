@@ -1,4 +1,8 @@
-连接数据库，直接sql语句
+## Python 与 MySQL的交互
+
+
+
+连接数据库，执行sql语句
 
 
 ```python
@@ -28,18 +32,12 @@ db.close()
 import pandas as pd
 import pymysql
 from sqlalchemy import create_engine
-engine = create_engine("mysql+pymysql://root:KAYLEE@localhost/sven?charset=utf8")
+engine = create_engine("mysql+pymysql://usrname:secret@ip/database_name?charset=utf8")
 data=pd.read_csv('**')
 data.to_sql(name = '**',con = engine,if_exists = 'replace',index = False,index_label = False)
 ```
 
-    C:\Users\Sven\Anaconda3\envs\study\lib\site-packages\pymysql\cursors.py:170: Warning: (3719, "'utf8' is currently an alias for the character set UTF8MB3, but will be an alias for UTF8MB4 in a future release. Please consider using UTF8MB4 in order to be unambiguous.")
-      result = self._query(query)
-    C:\Users\Sven\Anaconda3\envs\study\lib\site-packages\pymysql\cursors.py:170: Warning: (1366, "Incorrect string value: '\\xD6\\xD0\\xB9\\xFA\\xB1\\xEA...' for column 'VARIABLE_VALUE' at row 1")
-      result = self._query(query)
-    
-
-在Mysql下download数据
+将Mysql下download到本地
 
 
 ```python
@@ -55,10 +53,6 @@ dbconn=pymysql.connect(
  )
 sqlcmd='select * from secret'
 data=pd.read_sql(sqlcmd,dbconn)
-#data.to_csv('C:/Users/Sven/Desktop/secret.csv',index=False)
+data.to_csv('',index=False)
 ```
 
-
-```python
-
-```

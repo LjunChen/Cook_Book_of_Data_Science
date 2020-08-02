@@ -15,7 +15,7 @@
 * [数据结构与算法](DSA/readme.md)
     * [数据结构](DSA/DataStructure.md)
     * [排序算法](DSA/sort.md)
-    * [递归算法](DSA/recursive.md)
+    * [递归和动态规划算法](DSA/recursive.md)
     * [凸优化理论](DSA/ConvexOptimization.md)
     * [Proximal Gradient  and ADMM](DSA/Proximal_ADMM.md)
 
@@ -25,6 +25,7 @@
     * [经验似然](Statistical_Learning/Empirical_Likelihood.md)
 * [数据库](DSA/readme.md)
     * [MySQL](Database/MySQL.md)
+    * [PyMySQL: Python 与 MySQL的交互](Python/PyMySQL.md)
     * [Mongodb](Database/Mongodb.md)
 
 -----

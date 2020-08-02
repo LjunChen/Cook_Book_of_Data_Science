@@ -11,6 +11,7 @@
     * [正则表达式](Python/re.md)
     * [爬虫](Python/spider.md)
     * [Python优化模块](Python/Optimization.md)
+    * [rpy2模块:R与Python的结合](Python/rpy2.md)
 * [数据结构与算法](DSA/readme.md)
     * [数据结构](DSA/DataStructure.md)
     * [排序算法](DSA/sort.md)

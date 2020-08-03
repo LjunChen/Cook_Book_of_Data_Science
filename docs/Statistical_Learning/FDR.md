@@ -55,11 +55,11 @@ B-H focus on the expectation of $Q$
  1. order $$m$$ un-adjusted p-value generated from m hypothesis test
 
  2. Let k be largest i for which 
- $$
+$$
 p_{(i)} \le \frac{i}{m} q^{*}
- $$
- 
- 
+$$
+
+
  3. where $$q^*$$ can be set by users, 0.05/0.1/0.01.
 
 4. Reject all $H_i$ for $ i \in (1,2,\dots,k)$
@@ -92,125 +92,6 @@ combo['rejected']=np.where(combo['p_value']<combo['adjusted_p'],1,0)
 
 
 
-
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>i</th>
-      <th>p_value</th>
-      <th>adjusted_p</th>
-      <th>rejected</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>1</td>
-      <td>0.0001</td>
-      <td>0.003333</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>2</td>
-      <td>0.0004</td>
-      <td>0.006667</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>3</td>
-      <td>0.0019</td>
-      <td>0.010000</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>4</td>
-      <td>0.0095</td>
-      <td>0.013333</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>5</td>
-      <td>0.0201</td>
-      <td>0.016667</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>6</td>
-      <td>0.0278</td>
-      <td>0.020000</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>7</td>
-      <td>0.0298</td>
-      <td>0.023333</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>7</th>
-      <td>8</td>
-      <td>0.0344</td>
-      <td>0.026667</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>8</th>
-      <td>9</td>
-      <td>0.0459</td>
-      <td>0.030000</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>9</th>
-      <td>10</td>
-      <td>0.3240</td>
-      <td>0.033333</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>10</th>
-      <td>11</td>
-      <td>0.4262</td>
-      <td>0.036667</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>11</th>
-      <td>12</td>
-      <td>0.5719</td>
-      <td>0.040000</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>12</th>
-      <td>13</td>
-      <td>0.6528</td>
-      <td>0.043333</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>13</th>
-      <td>14</td>
-      <td>0.7590</td>
-      <td>0.046667</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>14</th>
-      <td>15</td>
-      <td>1.0000</td>
-      <td>0.050000</td>
-      <td>0</td>
-    </tr>
-  </tbody>
-</table>
 
 
 * BH is better than FWER

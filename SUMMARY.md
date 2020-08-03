@@ -22,6 +22,9 @@
 -----
 * [统计学习](Statistical_Learning/Readme.md)
     * [矩阵知识](Statistical_Learning/Matrix.md)
+    * [决策树](Statistical_Learning/Trees.md)
+    * [Bagging](Statistical_Learning/Bagging.md)
+    * [Boosting](Statistical_Learning/Boosting.md)
     * [经验似然](Statistical_Learning/Empirical_Likelihood.md)
 * [数据库](DSA/readme.md)
     * [MySQL](Database/MySQL.md)
@@ -38,5 +41,7 @@
     * [Gitbook使用](Other/Gitbook.md)
     * [git使用](Other/git.md)
     * [Pandoc使用](Other/pandoc.md)
+    * [Vim的使用](Other/Vim.md)
+    * [其他软见](Other/Other.md)
 * [Research](Research/research.md)
 

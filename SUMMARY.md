@@ -12,6 +12,7 @@
     * [爬虫](Python/spider.md)
     * [Python优化模块](Python/Optimization.md)
     * [rpy2模块:R与Python的结合](Python/rpy2.md)
+    * [Cython:将Python代码编译为C，加快代码的运行](Python/cython.md)
 * [数据结构与算法](DSA/readme.md)
     * [数据结构](DSA/DataStructure.md)
     * [排序算法](DSA/sort.md)
@@ -20,18 +21,21 @@
     * [Proximal Gradient  and ADMM](DSA/Proximal_ADMM.md)
 
 -----
-* [统计学习](Statistical_Learning/Readme.md)
+* [机器学习](Statistical_Learning/Readme.md)
     * [矩阵知识](Statistical_Learning/Matrix.md)
     * [决策树](Statistical_Learning/Trees.md)
     * [Bagging](Statistical_Learning/Bagging.md)
     * [Boosting](Statistical_Learning/Boosting.md)
     * [经验似然](Statistical_Learning/Empirical_Likelihood.md)
+* [机器学习实践](ML_Example/readme.md)
+    * [算法链和管道](ML_Example/Pipeline.md)
 * [数据库](DSA/readme.md)
     * [MySQL](Database/MySQL.md)
     * [PyMySQL: Python 与 MySQL的交互](Python/PyMySQL.md)
     * [Mongodb](Database/Mongodb.md)
 
 -----
+* [Research](Research/research.md)
 * Linux基础
     * [服务器配置](Linux/Initial_Configureation.md)
     * [权限管理](Linux/Authorization.md)
@@ -42,6 +46,7 @@
     * [git使用](Other/git.md)
     * [Pandoc使用](Other/pandoc.md)
     * [Vim的使用](Other/Vim.md)
-    * [其他软见](Other/Other.md)
-* [Research](Research/research.md)
+    * [其他软件](Other/Other.md)
+* 实用技巧
+    * [Python实现进度条](Tools/Progress_bar.md)
 

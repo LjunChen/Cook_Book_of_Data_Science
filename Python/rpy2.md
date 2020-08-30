@@ -119,5 +119,45 @@ print(x)
 
 
 
+### 在 jupyterlab 中使用 R和python
+
+在 `jupyterlab`中，我们可以使用magic命令来使用不同的kernel
+
+比如我们使用
+
+```R
+%%R
+x=c(1,2,3,4)
+```
+
+就指定了我们使用的是R的kernel，同理，我们可以使用
+
+```python
+%%python
+y=[1,2,3,4]
+```
+
+来指定使用python的kernel。当然实际上，我们可以使用的不仅仅是R/Python,还有其他的语言都可以。不过有时候，我们需要进行变量之间的共享或者说交互，这个时候需要用到 `rpy2`这个包。
+
+在使用之前我们需要用
+
+```python
+%load_ext rpy2.ipython
+```
+
+然后如果我们想要把R中的变量传到python中的话，使用
+
+```python
+%R -o x
+print(x)
+```
+
+如果我们想要将Python中的变量传给R使用的话，使用
+
+```R
+%%R -i y
+print(y)
+```
+
 
 

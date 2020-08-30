@@ -114,7 +114,7 @@ conda create --name sven-Linux python=3.6.2
   passwd()
   ```
 
-* 设置自己的登录密码，复制秘钥，秘钥开头是 sha
+* 设置自己的登录密码，复制秘钥，秘钥开头是 sha（好像也未必）
 
 * 修改配置文件
 
@@ -126,7 +126,7 @@ conda create --name sven-Linux python=3.6.2
 
   ```python
   
-  c.NotebookApp.ip='你的IP地址'              
+  c.NotebookApp.ip='0.0.0.0'              
   c.NotebookApp.password = u'sha:...'      # 刚才复制的那个密文，
   c.NotebookApp.open_browser = False         # 禁止自动打开浏览器
   c.NotebookApp.port =8888       

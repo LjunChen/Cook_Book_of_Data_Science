@@ -491,12 +491,27 @@
             
         </li>
     
-        <li class="chapter " data-level="2.1.5" data-path="../Statistical_Learning/Empirical_Likelihood.html">
+        <li class="chapter " data-level="2.1.5" data-path="../Statistical_Learning/SVM.html">
+            
+                <a href="../Statistical_Learning/SVM.html">
+            
+                    
+                        <b>2.1.5.</b>
+                    
+                    SVM
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.6" data-path="../Statistical_Learning/Empirical_Likelihood.html">
             
                 <a href="../Statistical_Learning/Empirical_Likelihood.html">
             
                     
-                        <b>2.1.5.</b>
+                        <b>2.1.6.</b>
                     
                     经验似然
             
@@ -570,7 +585,7 @@
                     
                         <b>2.3.1.</b>
                     
-                    MySQL
+                    SQL
             
                 </a>
             
@@ -578,27 +593,12 @@
             
         </li>
     
-        <li class="chapter " data-level="2.3.2" data-path="../Python/PyMySQL.html">
-            
-                <a href="../Python/PyMySQL.html">
-            
-                    
-                        <b>2.3.2.</b>
-                    
-                    PyMySQL: Python 与 MySQL的交互
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="2.3.3" data-path="../Database/Mongodb.html">
+        <li class="chapter " data-level="2.3.2" data-path="../Database/Mongodb.html">
             
                 <a href="../Database/Mongodb.html">
             
                     
-                        <b>2.3.3.</b>
+                        <b>2.3.2.</b>
                     
                     Mongodb
             
@@ -843,6 +843,66 @@
             
         </li>
     
+        <li class="chapter " data-level="3.4.2" data-path="../Tools/Pysnooper.html">
+            
+                <a href="../Tools/Pysnooper.html">
+            
+                    
+                        <b>3.4.2.</b>
+                    
+                    利用Pysnooper进行Debug
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.3" data-path="../Tools/R_console.html">
+            
+                <a href="../Tools/R_console.html">
+            
+                    
+                        <b>3.4.3.</b>
+                    
+                    R从console读取输入
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.4" data-path="../Tools/decorator.html">
+            
+                <a href="../Tools/decorator.html">
+            
+                    
+                        <b>3.4.4.</b>
+                    
+                    Python的装饰器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.5" data-path="../Tools/logging.html">
+            
+                <a href="../Tools/logging.html">
+            
+                    
+                        <b>3.4.5.</b>
+                    
+                    Python的日志模块
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -942,7 +1002,7 @@ sudo gdebi rstudio-server-1.3.959-amd64.deb
 passwd()
 </code></pre>
 </li>
-<li><p>&#x8BBE;&#x7F6E;&#x81EA;&#x5DF1;&#x7684;&#x767B;&#x5F55;&#x5BC6;&#x7801;&#xFF0C;&#x590D;&#x5236;&#x79D8;&#x94A5;&#xFF0C;&#x79D8;&#x94A5;&#x5F00;&#x5934;&#x662F; sha</p>
+<li><p>&#x8BBE;&#x7F6E;&#x81EA;&#x5DF1;&#x7684;&#x767B;&#x5F55;&#x5BC6;&#x7801;&#xFF0C;&#x590D;&#x5236;&#x79D8;&#x94A5;&#xFF0C;&#x79D8;&#x94A5;&#x5F00;&#x5934;&#x662F; sha&#xFF08;&#x597D;&#x50CF;&#x4E5F;&#x672A;&#x5FC5;&#xFF09;</p>
 </li>
 <li><p>&#x4FEE;&#x6539;&#x914D;&#x7F6E;&#x6587;&#x4EF6;</p>
 <pre><code class="lang-terminal">vim ~/.jupyter/jupyter_notebook_config.py
@@ -950,7 +1010,7 @@ passwd()
 </li>
 <li><p>&#x7136;&#x540E;&#x4FEE;&#x6539;&#x6216;&#x8005;&#x76F4;&#x63A5;&#x52A0;&#x5165;</p>
 <pre><code class="lang-python">
-c.NotebookApp.ip=<span class="hljs-string">&apos;&#x4F60;&#x7684;IP&#x5730;&#x5740;&apos;</span>              
+c.NotebookApp.ip=<span class="hljs-string">&apos;0.0.0.0&apos;</span>              
 c.NotebookApp.password = <span class="hljs-string">u&apos;sha:...&apos;</span>      <span class="hljs-comment"># &#x521A;&#x624D;&#x590D;&#x5236;&#x7684;&#x90A3;&#x4E2A;&#x5BC6;&#x6587;&#xFF0C;</span>
 c.NotebookApp.open_browser = <span class="hljs-keyword">False</span>         <span class="hljs-comment"># &#x7981;&#x6B62;&#x81EA;&#x52A8;&#x6253;&#x5F00;&#x6D4F;&#x89C8;&#x5668;</span>
 c.NotebookApp.port =<span class="hljs-number">8888</span>       
@@ -1031,7 +1091,7 @@ trusted-host = mirrors.aliyun.com
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"服务器配置","level":"3.2.1","depth":2,"next":{"title":"权限管理","level":"3.2.2","depth":2,"path":"Linux/Authorization.md","ref":"Linux/Authorization.md","articles":[]},"previous":{"title":"Linux基础","level":"3.2","depth":1,"ref":"","articles":[{"title":"服务器配置","level":"3.2.1","depth":2,"path":"Linux/Initial_Configureation.md","ref":"Linux/Initial_Configureation.md","articles":[]},{"title":"权限管理","level":"3.2.2","depth":2,"path":"Linux/Authorization.md","ref":"Linux/Authorization.md","articles":[]},{"title":"文件操作","level":"3.2.3","depth":2,"path":"Linux/files.md","ref":"Linux/files.md","articles":[]},{"title":"维护","level":"3.2.4","depth":2,"path":"Linux/Skills.md","ref":"Linux/Skills.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["katex","copy-code-button","github","github-buttons","splitter","-sharing","back-to-top-button"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/LjunChen/Cook_Book_of_Data_Science"},"splitter":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"fontSettings":{"theme":"white","family":"msyh","size":2},"highlight":{},"back-to-top-button":{},"github-buttons":{"repo":"LjunChen/Cook_Book_of_Data_Science","types":["star","watch","fork"],"size":"small"},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true}},"theme":"default","author":"陈刘军","pdf":{"pageNumbers":true,"fontSize":14,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"数据科学实用手册","gitbook":"*"},"file":{"path":"Linux/Initial_Configureation.md","mtime":"2020-08-05T11:41:07.461Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-08-05T15:36:56.261Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"服务器配置","level":"3.2.1","depth":2,"next":{"title":"权限管理","level":"3.2.2","depth":2,"path":"Linux/Authorization.md","ref":"Linux/Authorization.md","articles":[]},"previous":{"title":"Linux基础","level":"3.2","depth":1,"ref":"","articles":[{"title":"服务器配置","level":"3.2.1","depth":2,"path":"Linux/Initial_Configureation.md","ref":"Linux/Initial_Configureation.md","articles":[]},{"title":"权限管理","level":"3.2.2","depth":2,"path":"Linux/Authorization.md","ref":"Linux/Authorization.md","articles":[]},{"title":"文件操作","level":"3.2.3","depth":2,"path":"Linux/files.md","ref":"Linux/files.md","articles":[]},{"title":"维护","level":"3.2.4","depth":2,"path":"Linux/Skills.md","ref":"Linux/Skills.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["katex","copy-code-button","github","github-buttons","splitter","-sharing","back-to-top-button"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/LjunChen/Cook_Book_of_Data_Science"},"splitter":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"fontSettings":{"theme":"white","family":"msyh","size":2},"highlight":{},"back-to-top-button":{},"github-buttons":{"repo":"LjunChen/Cook_Book_of_Data_Science","types":["star","watch","fork"],"size":"small"},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true}},"theme":"default","author":"陈刘军","pdf":{"pageNumbers":true,"fontSize":14,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"数据科学实用手册","gitbook":"*"},"file":{"path":"Linux/Initial_Configureation.md","mtime":"2020-08-24T12:23:46.875Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-08-30T06:00:52.092Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

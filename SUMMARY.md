@@ -26,12 +26,12 @@
     * [决策树](Statistical_Learning/Trees.md)
     * [Bagging](Statistical_Learning/Bagging.md)
     * [Boosting](Statistical_Learning/Boosting.md)
+    * [SVM](Statistical_Learning/SVM.md)
     * [经验似然](Statistical_Learning/Empirical_Likelihood.md)
 * [机器学习实践](ML_Example/readme.md)
     * [算法链和管道](ML_Example/Pipeline.md)
 * [数据库](DSA/readme.md)
-    * [MySQL](Database/MySQL.md)
-    * [PyMySQL: Python 与 MySQL的交互](Python/PyMySQL.md)
+    * [SQL](Database/MySQL.md)
     * [Mongodb](Database/Mongodb.md)
 
 -----
@@ -49,4 +49,8 @@
     * [其他软件](Other/Other.md)
 * 实用技巧
     * [Python实现进度条](Tools/Progress_bar.md)
+    * [利用Pysnooper进行Debug](Tools/Pysnooper.md)
+    * [R从console读取输入](Tools/R_console.md)
+    * [Python的装饰器](Tools/decorator.md)
+    * [Python的日志模块](Tools/logging.md)
 

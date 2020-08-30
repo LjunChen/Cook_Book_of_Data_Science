@@ -493,12 +493,27 @@
             
         </li>
     
-        <li class="chapter " data-level="2.1.5" data-path="../Statistical_Learning/Empirical_Likelihood.html">
+        <li class="chapter " data-level="2.1.5" data-path="../Statistical_Learning/SVM.html">
+            
+                <a href="../Statistical_Learning/SVM.html">
+            
+                    
+                        <b>2.1.5.</b>
+                    
+                    SVM
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.6" data-path="../Statistical_Learning/Empirical_Likelihood.html">
             
                 <a href="../Statistical_Learning/Empirical_Likelihood.html">
             
                     
-                        <b>2.1.5.</b>
+                        <b>2.1.6.</b>
                     
                     经验似然
             
@@ -572,7 +587,7 @@
                     
                         <b>2.3.1.</b>
                     
-                    MySQL
+                    SQL
             
                 </a>
             
@@ -580,27 +595,12 @@
             
         </li>
     
-        <li class="chapter " data-level="2.3.2" data-path="PyMySQL.html">
-            
-                <a href="PyMySQL.html">
-            
-                    
-                        <b>2.3.2.</b>
-                    
-                    PyMySQL: Python 与 MySQL的交互
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="2.3.3" data-path="../Database/Mongodb.html">
+        <li class="chapter " data-level="2.3.2" data-path="../Database/Mongodb.html">
             
                 <a href="../Database/Mongodb.html">
             
                     
-                        <b>2.3.3.</b>
+                        <b>2.3.2.</b>
                     
                     Mongodb
             
@@ -845,6 +845,66 @@
             
         </li>
     
+        <li class="chapter " data-level="3.4.2" data-path="../Tools/Pysnooper.html">
+            
+                <a href="../Tools/Pysnooper.html">
+            
+                    
+                        <b>3.4.2.</b>
+                    
+                    利用Pysnooper进行Debug
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.3" data-path="../Tools/R_console.html">
+            
+                <a href="../Tools/R_console.html">
+            
+                    
+                        <b>3.4.3.</b>
+                    
+                    R从console读取输入
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.4" data-path="../Tools/decorator.html">
+            
+                <a href="../Tools/decorator.html">
+            
+                    
+                        <b>3.4.4.</b>
+                    
+                    Python的装饰器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.5" data-path="../Tools/logging.html">
+            
+                <a href="../Tools/logging.html">
+            
+                    
+                        <b>3.4.5.</b>
+                    
+                    Python的日志模块
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -971,6 +1031,28 @@ x=r[<span class="hljs-string">&apos;data.frame&apos;</span>](x,y)
 x.columns=[<span class="hljs-string">&apos;x&apos;</span>,<span class="hljs-string">&apos;y&apos;</span>]
 print(x)
 </code></pre>
+<h3 id="&#x5728;-jupyterlab-&#x4E2D;&#x4F7F;&#x7528;-r&#x548C;python">&#x5728; jupyterlab &#x4E2D;&#x4F7F;&#x7528; R&#x548C;python</h3>
+<p>&#x5728; <code>jupyterlab</code>&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;magic&#x547D;&#x4EE4;&#x6765;&#x4F7F;&#x7528;&#x4E0D;&#x540C;&#x7684;kernel</p>
+<p>&#x6BD4;&#x5982;&#x6211;&#x4EEC;&#x4F7F;&#x7528;</p>
+<pre><code class="lang-R">%%R
+x=c(<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>)
+</code></pre>
+<p>&#x5C31;&#x6307;&#x5B9A;&#x4E86;&#x6211;&#x4EEC;&#x4F7F;&#x7528;&#x7684;&#x662F;R&#x7684;kernel&#xFF0C;&#x540C;&#x7406;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;</p>
+<pre><code class="lang-python">%%python
+y=[<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>]
+</code></pre>
+<p>&#x6765;&#x6307;&#x5B9A;&#x4F7F;&#x7528;python&#x7684;kernel&#x3002;&#x5F53;&#x7136;&#x5B9E;&#x9645;&#x4E0A;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x7684;&#x4E0D;&#x4EC5;&#x4EC5;&#x662F;R/Python,&#x8FD8;&#x6709;&#x5176;&#x4ED6;&#x7684;&#x8BED;&#x8A00;&#x90FD;&#x53EF;&#x4EE5;&#x3002;&#x4E0D;&#x8FC7;&#x6709;&#x65F6;&#x5019;&#xFF0C;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x8FDB;&#x884C;&#x53D8;&#x91CF;&#x4E4B;&#x95F4;&#x7684;&#x5171;&#x4EAB;&#x6216;&#x8005;&#x8BF4;&#x4EA4;&#x4E92;&#xFF0C;&#x8FD9;&#x4E2A;&#x65F6;&#x5019;&#x9700;&#x8981;&#x7528;&#x5230; <code>rpy2</code>&#x8FD9;&#x4E2A;&#x5305;&#x3002;</p>
+<p>&#x5728;&#x4F7F;&#x7528;&#x4E4B;&#x524D;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x7528;</p>
+<pre><code class="lang-python">%load_ext rpy2.ipython
+</code></pre>
+<p>&#x7136;&#x540E;&#x5982;&#x679C;&#x6211;&#x4EEC;&#x60F3;&#x8981;&#x628A;R&#x4E2D;&#x7684;&#x53D8;&#x91CF;&#x4F20;&#x5230;python&#x4E2D;&#x7684;&#x8BDD;&#xFF0C;&#x4F7F;&#x7528;</p>
+<pre><code class="lang-python">%R -o x
+print(x)
+</code></pre>
+<p>&#x5982;&#x679C;&#x6211;&#x4EEC;&#x60F3;&#x8981;&#x5C06;Python&#x4E2D;&#x7684;&#x53D8;&#x91CF;&#x4F20;&#x7ED9;R&#x4F7F;&#x7528;&#x7684;&#x8BDD;&#xFF0C;&#x4F7F;&#x7528;</p>
+<pre><code class="lang-R">%%R -i y
+print(y)
+</code></pre>
 
                                 
                                 </section>
@@ -1014,7 +1096,7 @@ print(x)
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"rpy2模块:R与Python的结合","level":"1.2.10","depth":2,"next":{"title":"Cython:将Python代码编译为C，加快代码的运行","level":"1.2.11","depth":2,"path":"Python/cython.md","ref":"Python/cython.md","articles":[]},"previous":{"title":"Python优化模块","level":"1.2.9","depth":2,"path":"Python/Optimization.md","ref":"Python/Optimization.md","articles":[]},"dir":"ltr"},"config":{"plugins":["katex","copy-code-button","github","github-buttons","splitter","-sharing","back-to-top-button"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/LjunChen/Cook_Book_of_Data_Science"},"splitter":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"fontSettings":{"theme":"white","family":"msyh","size":2},"highlight":{},"back-to-top-button":{},"github-buttons":{"repo":"LjunChen/Cook_Book_of_Data_Science","types":["star","watch","fork"],"size":"small"},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true}},"theme":"default","author":"陈刘军","pdf":{"pageNumbers":true,"fontSize":14,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"数据科学实用手册","gitbook":"*"},"file":{"path":"Python/rpy2.md","mtime":"2020-08-02T13:33:05.319Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-08-05T15:36:56.261Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"rpy2模块:R与Python的结合","level":"1.2.10","depth":2,"next":{"title":"Cython:将Python代码编译为C，加快代码的运行","level":"1.2.11","depth":2,"path":"Python/cython.md","ref":"Python/cython.md","articles":[]},"previous":{"title":"Python优化模块","level":"1.2.9","depth":2,"path":"Python/Optimization.md","ref":"Python/Optimization.md","articles":[]},"dir":"ltr"},"config":{"plugins":["katex","copy-code-button","github","github-buttons","splitter","-sharing","back-to-top-button"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/LjunChen/Cook_Book_of_Data_Science"},"splitter":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"fontSettings":{"theme":"white","family":"msyh","size":2},"highlight":{},"back-to-top-button":{},"github-buttons":{"repo":"LjunChen/Cook_Book_of_Data_Science","types":["star","watch","fork"],"size":"small"},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true}},"theme":"default","author":"陈刘军","pdf":{"pageNumbers":true,"fontSize":14,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"数据科学实用手册","gitbook":"*"},"file":{"path":"Python/rpy2.md","mtime":"2020-08-25T07:19:28.919Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-08-30T06:00:52.092Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

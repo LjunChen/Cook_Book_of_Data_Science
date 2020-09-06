@@ -46,6 +46,7 @@
     * [git使用](Other/git.md)
     * [Pandoc使用](Other/pandoc.md)
     * [Vim的使用](Other/Vim.md)
+    * [VScode配置](Other/VSCode.md)
     * [其他软件](Other/Other.md)
 * 实用技巧
     * [Python实现进度条](Tools/Progress_bar.md)

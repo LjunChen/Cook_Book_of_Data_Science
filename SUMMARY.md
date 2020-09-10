@@ -27,7 +27,6 @@
     * [Bagging](Statistical_Learning/Bagging.md)
     * [Boosting](Statistical_Learning/Boosting.md)
     * [SVM](Statistical_Learning/SVM.md)
-    * [经验似然](Statistical_Learning/Empirical_Likelihood.md)
 * [机器学习实践](ML_Example/readme.md)
     * [算法链和管道](ML_Example/Pipeline.md)
 * [数据库](DSA/readme.md)

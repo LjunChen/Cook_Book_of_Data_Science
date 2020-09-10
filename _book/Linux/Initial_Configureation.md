@@ -78,7 +78,7 @@ vim ~/.bashrc
 在最后加上
 
 ```
-export PATH="/root/anaconda3/bin:$PATH"
+export PATH="/home/sven/anaconda3/bin:$PATH"
 ```
 
 然后
@@ -114,7 +114,7 @@ conda create --name sven-Linux python=3.6.2
   passwd()
   ```
 
-* 设置自己的登录密码，复制秘钥，秘钥开头是 sha
+* 设置自己的登录密码，复制秘钥，秘钥开头是 sha（好像也未必）
 
 * 修改配置文件
 
@@ -126,7 +126,7 @@ conda create --name sven-Linux python=3.6.2
 
   ```python
   
-  c.NotebookApp.ip='你的IP地址'              
+  c.NotebookApp.ip='0.0.0.0'              
   c.NotebookApp.password = u'sha:...'      # 刚才复制的那个密文，
   c.NotebookApp.open_browser = False         # 禁止自动打开浏览器
   c.NotebookApp.port =8888       
@@ -161,10 +161,9 @@ conda create --name sven-Linux python=3.6.2
     index-url = https://mirrors.aliyun.com/pypi/simple/
     
     trusted-host = mirrors.aliyun.com
-```
-    
+    ```
 ##### Windows
-    
+
   * 打开文件资源管理器(文件夹地址栏中)
   
   * 地址栏上面输入 %appdata% (具体是C:\Users\chenl\AppData\Roaming)
@@ -172,10 +171,3 @@ conda create --name sven-Linux python=3.6.2
   * 在这里面新建一个文件夹 pip
   
   * 在pip文件夹里面新建一个文件叫做 pip.ini ,内容写如下和上面一样
-  
-  
-  
-
-  
-
-

@@ -1,0 +1,1104 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Bagging · 数据科学实用手册</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="陈刘军">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-katex/katex.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="Boosting.html" />
+    
+    
+    <link rel="prev" href="Trees.html" />
+    
+
+    <style>
+    @media only screen and (max-width: 640px) {
+        .book-header .hidden-mobile {
+            display: none;
+        }
+    }
+    </style>
+    <script>
+        window["gitbook-plugin-github-buttons"] = {"repo":"LjunChen/Cook_Book_of_Data_Science","types":["star","watch","fork"],"size":"small"};
+    </script>
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                        <b>1.1.</b>
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../Python/readme.html">
+            
+                <a href="../Python/readme.html">
+            
+                    
+                        <b>1.2.</b>
+                    
+                    Python基础
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../Python/files.html">
+            
+                <a href="../Python/files.html">
+            
+                    
+                        <b>1.2.1.</b>
+                    
+                    文件读写
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../Python/OS.html">
+            
+                <a href="../Python/OS.html">
+            
+                    
+                        <b>1.2.2.</b>
+                    
+                    OS模块
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../Python/multiprocess.html">
+            
+                <a href="../Python/multiprocess.html">
+            
+                    
+                        <b>1.2.3.</b>
+                    
+                    多进程和多线程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../Python/Exception.html">
+            
+                <a href="../Python/Exception.html">
+            
+                    
+                        <b>1.2.4.</b>
+                    
+                    异常处理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../Python/Email.html">
+            
+                <a href="../Python/Email.html">
+            
+                    
+                        <b>1.2.5.</b>
+                    
+                    发送邮件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="../Python/OOP.html">
+            
+                <a href="../Python/OOP.html">
+            
+                    
+                        <b>1.2.6.</b>
+                    
+                    面向对象编程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="../Python/re.html">
+            
+                <a href="../Python/re.html">
+            
+                    
+                        <b>1.2.7.</b>
+                    
+                    正则表达式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="../Python/spider.html">
+            
+                <a href="../Python/spider.html">
+            
+                    
+                        <b>1.2.8.</b>
+                    
+                    爬虫
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9" data-path="../Python/Optimization.html">
+            
+                <a href="../Python/Optimization.html">
+            
+                    
+                        <b>1.2.9.</b>
+                    
+                    Python优化模块
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.10" data-path="../Python/rpy2.html">
+            
+                <a href="../Python/rpy2.html">
+            
+                    
+                        <b>1.2.10.</b>
+                    
+                    rpy2模块:R与Python的结合
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.11" data-path="../Python/cython.html">
+            
+                <a href="../Python/cython.html">
+            
+                    
+                        <b>1.2.11.</b>
+                    
+                    Cython:将Python代码编译为C，加快代码的运行
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../DSA/readme.html">
+            
+                <a href="../DSA/readme.html">
+            
+                    
+                        <b>1.3.</b>
+                    
+                    数据结构与算法
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../DSA/DataStructure.html">
+            
+                <a href="../DSA/DataStructure.html">
+            
+                    
+                        <b>1.3.1.</b>
+                    
+                    数据结构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../DSA/sort.html">
+            
+                <a href="../DSA/sort.html">
+            
+                    
+                        <b>1.3.2.</b>
+                    
+                    排序算法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../DSA/recursive.html">
+            
+                <a href="../DSA/recursive.html">
+            
+                    
+                        <b>1.3.3.</b>
+                    
+                    递归和动态规划算法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../DSA/ConvexOptimization.html">
+            
+                <a href="../DSA/ConvexOptimization.html">
+            
+                    
+                        <b>1.3.4.</b>
+                    
+                    凸优化理论
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../DSA/Proximal_ADMM.html">
+            
+                <a href="../DSA/Proximal_ADMM.html">
+            
+                    
+                        <b>1.3.5.</b>
+                    
+                    Proximal Gradient  and ADMM
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="Readme.html">
+            
+                <a href="Readme.html">
+            
+                    
+                        <b>2.1.</b>
+                    
+                    机器学习
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.1" data-path="Matrix.html">
+            
+                <a href="Matrix.html">
+            
+                    
+                        <b>2.1.1.</b>
+                    
+                    矩阵知识
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.2" data-path="Trees.html">
+            
+                <a href="Trees.html">
+            
+                    
+                        <b>2.1.2.</b>
+                    
+                    决策树
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="2.1.3" data-path="Bagging.html">
+            
+                <a href="Bagging.html">
+            
+                    
+                        <b>2.1.3.</b>
+                    
+                    Bagging
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.4" data-path="Boosting.html">
+            
+                <a href="Boosting.html">
+            
+                    
+                        <b>2.1.4.</b>
+                    
+                    Boosting
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.5" data-path="SVM.html">
+            
+                <a href="SVM.html">
+            
+                    
+                        <b>2.1.5.</b>
+                    
+                    SVM
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.6" data-path="Empirical_Likelihood.html">
+            
+                <a href="Empirical_Likelihood.html">
+            
+                    
+                        <b>2.1.6.</b>
+                    
+                    经验似然
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../ML_Example/readme.html">
+            
+                <a href="../ML_Example/readme.html">
+            
+                    
+                        <b>2.2.</b>
+                    
+                    机器学习实践
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.2.1" data-path="../ML_Example/Pipeline.html">
+            
+                <a href="../ML_Example/Pipeline.html">
+            
+                    
+                        <b>2.2.1.</b>
+                    
+                    算法链和管道
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="../DSA/readme.html">
+            
+                <a href="../DSA/readme.html">
+            
+                    
+                        <b>2.3.</b>
+                    
+                    数据库
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.3.1" data-path="../Database/MySQL.html">
+            
+                <a href="../Database/MySQL.html">
+            
+                    
+                        <b>2.3.1.</b>
+                    
+                    SQL
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.2" data-path="../Database/Mongodb.html">
+            
+                <a href="../Database/Mongodb.html">
+            
+                    
+                        <b>2.3.2.</b>
+                    
+                    Mongodb
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="../Research/research.html">
+            
+                <a href="../Research/research.html">
+            
+                    
+                        <b>3.1.</b>
+                    
+                    Research
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" >
+            
+                <span>
+            
+                    
+                        <b>3.2.</b>
+                    
+                    Linux基础
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.2.1" data-path="../Linux/Initial_Configureation.html">
+            
+                <a href="../Linux/Initial_Configureation.html">
+            
+                    
+                        <b>3.2.1.</b>
+                    
+                    服务器配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.2" data-path="../Linux/Authorization.html">
+            
+                <a href="../Linux/Authorization.html">
+            
+                    
+                        <b>3.2.2.</b>
+                    
+                    权限管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.3" data-path="../Linux/files.html">
+            
+                <a href="../Linux/files.html">
+            
+                    
+                        <b>3.2.3.</b>
+                    
+                    文件操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.4" data-path="../Linux/Skills.html">
+            
+                <a href="../Linux/Skills.html">
+            
+                    
+                        <b>3.2.4.</b>
+                    
+                    维护
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" >
+            
+                <span>
+            
+                    
+                        <b>3.3.</b>
+                    
+                    其他软件介绍
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.3.1" data-path="../Other/Gitbook.html">
+            
+                <a href="../Other/Gitbook.html">
+            
+                    
+                        <b>3.3.1.</b>
+                    
+                    Gitbook使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.2" data-path="../Other/git.html">
+            
+                <a href="../Other/git.html">
+            
+                    
+                        <b>3.3.2.</b>
+                    
+                    git使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3" data-path="../Other/pandoc.html">
+            
+                <a href="../Other/pandoc.html">
+            
+                    
+                        <b>3.3.3.</b>
+                    
+                    Pandoc使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.4" data-path="../Other/Vim.html">
+            
+                <a href="../Other/Vim.html">
+            
+                    
+                        <b>3.3.4.</b>
+                    
+                    Vim的使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.5" data-path="../Other/VSCode.html">
+            
+                <a href="../Other/VSCode.html">
+            
+                    
+                        <b>3.3.5.</b>
+                    
+                    VScode配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.6" data-path="../Other/Other.html">
+            
+                <a href="../Other/Other.html">
+            
+                    
+                        <b>3.3.6.</b>
+                    
+                    其他软件
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" >
+            
+                <span>
+            
+                    
+                        <b>3.4.</b>
+                    
+                    实用技巧
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.4.1" data-path="../Tools/Progress_bar.html">
+            
+                <a href="../Tools/Progress_bar.html">
+            
+                    
+                        <b>3.4.1.</b>
+                    
+                    Python实现进度条
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.2" data-path="../Tools/Pysnooper.html">
+            
+                <a href="../Tools/Pysnooper.html">
+            
+                    
+                        <b>3.4.2.</b>
+                    
+                    利用Pysnooper进行Debug
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.3" data-path="../Tools/R_console.html">
+            
+                <a href="../Tools/R_console.html">
+            
+                    
+                        <b>3.4.3.</b>
+                    
+                    R从console读取输入
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.4" data-path="../Tools/decorator.html">
+            
+                <a href="../Tools/decorator.html">
+            
+                    
+                        <b>3.4.4.</b>
+                    
+                    Python的装饰器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.5" data-path="../Tools/logging.html">
+            
+                <a href="../Tools/logging.html">
+            
+                    
+                        <b>3.4.5.</b>
+                    
+                    Python的日志模块
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Bagging</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="bagging-&#x4E0E;-&#x968F;&#x673A;&#x68EE;&#x6797;">Bagging &#x4E0E; &#x968F;&#x673A;&#x68EE;&#x6797;</h1>
+<p>Bagging &#x662F;&#x4E00;&#x79CD;&#x96C6;&#x6210;&#x5B66;&#x4E60;&#x7684;&#x4EE3;&#x8868;&#x65B9;&#x6CD5;&#x3002;</p>
+<p>&#x5BF9;&#x4E8E;&#x96C6;&#x6210;&#x5B66;&#x4E60;&#x6765;&#x8BF4;&#xFF0C;&#x6211;&#x4EEC;&#x5E0C;&#x671B;&#x6BCF;&#x4E2A;&#x57FA;&#x5B66;&#x4E60;&#x5668;&#x662F;&#x5C3D;&#x53EF;&#x80FD;&#x72EC;&#x7ACB;&#x7684;&#xFF0C;&#x867D;&#x7136;&#x5728;&#x73B0;&#x5B9E;&#x4E2D;&#x6211;&#x4EEC;&#x6CA1;&#x529E;&#x6CD5;&#x5B9E;&#x73B0;&#x72EC;&#x7ACB;&#xFF0C;&#x4F46;&#x662F;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x4F7F;&#x5F97;&#x5B66;&#x4E60;&#x5668;&#x4E4B;&#x95F4;&#x5C3D;&#x53EF;&#x80FD;&#x6709;&#x5DEE;&#x8DDD;&#xFF08;&#x800C;&#x4E0D;&#x662F;&#x5B8C;&#x5168;&#x4E00;&#x6837;&#xFF0C;&#x4E0D;&#x7136;&#x5C31;&#x5931;&#x53BB;&#x4E86;&#x96C6;&#x6210;&#x5B66;&#x4E60;&#x7684;&#x6548;&#x679C;&#x4E86;&#xFF09;&#x3002;</p>
+<p>&#x4E00;&#x4E2A;&#x53EF;&#x80FD;&#x7684;&#x505A;&#x6CD5;&#x662F;&#x5BF9;&#x6837;&#x672C;&#x8FDB;&#x884C;&#x91C7;&#x6837;&#xFF0C;&#x4EA7;&#x751F;&#x82E5;&#x5E72;&#x4E2A;&#x4E0D;&#x540C;&#x7684;&#x5B50;&#x96C6;&#xFF0C;&#x7531;&#x4E8E;&#x6BCF;&#x4E2A;&#x5B50;&#x96C6;&#x5305;&#x542B;&#x7684;&#x89C2;&#x6D4B;&#x662F;&#x4E0D;&#x4E00;&#x6837;&#x7684;&#xFF0C;&#x8BAD;&#x7EC3;&#x51FA;&#x6765;&#x7684;&#x57FA;&#x5B66;&#x4E60;&#x5668;&#x662F;&#x53EF;&#x671B;&#x5177;&#x6709;&#x8F83;&#x5927;&#x7684;&#x5DEE;&#x5F02;&#x7684;&#x3002;</p>
+<p>Bagging &#x65B9;&#x6CD5;&#x901A;&#x8FC7;Bootstrap &#x65B9;&#x6CD5;&#x8FDB;&#x884C;&#x91CD;&#x91C7;&#x6837;&#x3002;&#x5047;&#x8BBE;&#x6837;&#x672C;&#x6709; n &#x4E2A;&#x89C2;&#x6D4B;&#xFF0C;&#x6211;&#x4EEC;&#x6BCF;&#x6B21;&#x901A;&#x8FC7;&#x6709;&#x653E;&#x56DE;&#x7684;&#x91C7;&#x6837;&#x62BD;&#x53D6; n &#x4E2A;&#x6837;&#x672C;&#x6765;&#x8FDB;&#x884C;&#x8BAD;&#x7EC3;&#xFF0C;&#x5C31;&#x5F97;&#x5230;&#x4E86;&#x4E00;&#x4E2A;&#x57FA;&#x5B66;&#x4E60;&#x5668;&#x3002;&#x603B;&#x5171;&#x62BD;&#x53D6; T&#x6B21;&#xFF0C;&#x6211;&#x4EEC;&#x5C31;&#x5F97;&#x5230;&#x4E86; T &#x4E2A;&#x57FA;&#x5B66;&#x4E60;&#x5668;&#xFF0C;&#x7ED3;&#x5408;&#x8FD9; T &#x4E2A;&#x57FA;&#x5B66;&#x4E60;&#x5668;&#x7684;&#x7ED3;&#x679C;&#xFF0C;&#x5C31;&#x5F97;&#x5230;&#x6700;&#x7EC8;&#x7684;&#x5B66;&#x4E60;&#x7ED3;&#x679C;&#x3002;&#x5BF9;&#x4E8E;&#x5206;&#x7C7B;&#x95EE;&#x9898;&#xFF0C;Bagging &#x4F7F;&#x7528;&#x7B80;&#x5355;&#x6295;&#x7968;&#x6CD5;&#xFF0C;&#x5BF9;&#x4E8E;&#x56DE;&#x5F52;&#x95EE;&#x9898;&#xFF0C;Bagging &#x4F7F;&#x7528; T&#x4E2A;&#x57FA;&#x5B66;&#x4E60;&#x5668;&#x7684;&#x7B80;&#x5355;&#x5E73;&#x5747;&#x3002;</p>
+<p>Bagging &#x7684;&#x91CD;&#x70B9;&#x5728;&#x4E8E;&#x83B7;&#x5F97;&#x4E00;&#x4E2A;&#x65B9;&#x5DEE;&#x6BD4;&#x8F83;&#x5C0F;&#x7684;&#x96C6;&#x6210;&#x6A21;&#x578B;&#x3002;Bagging&#x7684;&#x601D;&#x60F3;&#x5176;&#x5B9E;&#x5BF9;&#x4E8E;&#x4EFB;&#x4F55;&#x7684;&#x57FA;&#x5B66;&#x4E60;&#x5668;&#x90FD;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#xFF0C;&#x4F46;&#x662F;&#x4F7F;&#x7528;&#x66F4;&#x591A;&#x7684;&#x8FD8;&#x662F;&#x5BF9;&#x4E8E;&#x51B3;&#x7B56;&#x6811;&#x3002;Bagging &#x65B9;&#x6CD5;&#x7684;&#x4E00;&#x4E2A;&#x597D;&#x5904;&#x662F;&#x5728;&#x4E8E;&#x5176;&#x5F88;&#x5BB9;&#x6613;&#x5229;&#x7528;&#x5E76;&#x884C;&#x8BA1;&#x7B97;&#xFF08;&#x6BCF;&#x4E2A;&#x57FA;&#x5B66;&#x4E60;&#x5668;&#x7684;&#x8BAD;&#x7EC3;&#x662F;&#x72EC;&#x7ACB;&#x7684;&#xFF09;&#xFF0C;&#x56E0;&#x6B64;&#x53EF;&#x4EE5;&#x5F88;&#x597D;&#x7684;&#x5229;&#x7528;&#x591A;&#x6838;&#x8BA1;&#x7B97;&#x7684;&#x4F18;&#x52BF;&#x3002;</p>
+<blockquote>
+<p>&#x5728;&#x6211;&#x770B;&#x6765;&#xFF0C;&#x6811;&#x6A21;&#x578B;&#x662F;&#x4E00;&#x79CD;&#x975E;&#x5E38;&#x975E;&#x5E38;&#x597D;&#x7684;&#x673A;&#x5668;&#x5B66;&#x4E60;&#x65B9;&#x6CD5;&#x3002;&#x5355;&#x72EC;&#x7684;&#x51B3;&#x7B56;&#x6811;&#x7684;&#x6548;&#x679C;&#x4E00;&#x822C;&#x5F88;&#x5DEE;&#xFF08;&#x5F88;&#x5BB9;&#x6613;&#x8FC7;&#x62DF;&#x5408;&#xFF09;&#xFF0C;&#x4F46;&#x662F;&#x4E00;&#x65E6;&#x8FD0;&#x7528;&#x4E0A; Bagging &#x6216;&#x8005; Boosting &#x7684;&#x96C6;&#x6210;&#x624B;&#x6BB5;&#x4E4B;&#x540E;&#xFF0C;&#x6811;&#x6A21;&#x578B;&#x5C31;&#x5F97;&#x5230;&#x4E86;&#x7FFB;&#x5929;&#x8986;&#x5730;&#x7684;&#x53D8;&#x5316;&#x3002;&#x5728;&#x5F88;&#x591A;&#x7684;&#x4EFB;&#x52A1;&#x4E0A;&#x8868;&#x73B0;&#x51FA;&#x4E86;&#x975E;&#x5E38;&#x597D;&#x7684;&#x6027;&#x80FD;&#x3002;</p>
+</blockquote>
+<p>&#x968F;&#x673A;&#x68EE;&#x6797;&#x662F; Bagging &#x7684;&#x4E00;&#x4E2A;&#x53D8;&#x4F53;&#x3002;&#x968F;&#x673A;&#x68EE;&#x6797;&#x5728; Bagging &#x7684;&#x57FA;&#x7840;&#x4E0A;&#xFF0C;&#x5728;&#x51B3;&#x7B56;&#x6811;&#x7684;&#x8BAD;&#x7EC3;&#x8FC7;&#x7A0B;&#x4E2D;&#x5F15;&#x5165;&#x4E86;&#x968F;&#x673A;&#x7684;&#x7279;&#x5F81;&#x9009;&#x62E9;&#x3002;&#x5047;&#x8BBE;&#x603B;&#x5171;&#x6709; p &#x4E2A;&#x7279;&#x5F81;&#xFF0C;&#x5728;&#x51B3;&#x7B56;&#x6811;&#x7684;&#x6BCF;&#x6B21;&#x8282;&#x70B9;&#x5212;&#x5206;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x4F20;&#x7EDF;&#x7684;&#x51B3;&#x7B56;&#x6811;&#x6A21;&#x578B;&#x662F;&#x5728;&#x8FD9; p &#x4E2A;&#x7279;&#x5F81;&#x4E2D;&#x9009;&#x62E9;&#x4E00;&#x4E2A;&#x6700;&#x4F18;&#x7279;&#x5F81;&#x6765;&#x8FDB;&#x884C;&#x5206;&#x652F;&#xFF0C;&#x800C;&#x968F;&#x673A;&#x68EE;&#x6797;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x5148;&#x968F;&#x673A;&#x62BD;&#x53D6; m &#x4E2A;&#x7279;&#x5F81;&#xFF0C; &#x7136;&#x540E;&#x5728;&#x8FD9; m &#x4E2A;&#x7279;&#x5F81;&#x4E2D;&#x9009;&#x62E9;&#x4E00;&#x4E2A;&#x6700;&#x4F18;&#x7684;&#x7279;&#x5F81;&#x6765;&#x8FDB;&#x884C;&#x5206;&#x652F;&#x3002;</p>
+<p>&#x7279;&#x5F81;&#x91CD;&#x8981;&#x6027;:</p>
+<p>&#x968F;&#x673A;&#x68EE;&#x6797;&#x7684;&#x7279;&#x5F81;&#x91CD;&#x8981;&#x6027;&#x4E00;&#x822C;&#x6709;&#x4E24;&#x79CD;&#x65B9;&#x6CD5;:</p>
+<ul>
+<li>&#x6BCF;&#x4E2A;&#x7279;&#x5F81;&#x5728;&#x5212;&#x5206;&#x8FC7;&#x7A0B;&#x4E2D;&#xFF0C;&#x4F1A;&#x7ED9;Gini&#x7CFB;&#x6570;&#xFF08;&#x6216;&#x8005;&#x4FE1;&#x606F;&#x589E;&#x76CA;&#xFF09;&#x5E26;&#x6765;&#x6539;&#x53D8;&#xFF0C;&#x7D2F;&#x79EF;&#x6240;&#x6709;&#x6811;&#x7684;&#x6240;&#x6709;&#x7684;&#x7279;&#x5F81;&#x7684;&#x5212;&#x5206;&#x4F5C;&#x4E3A;&#x8BE5;&#x7279;&#x5F81;&#x7684;&#x91CD;&#x8981;&#x6027;&#xFF08;&#x7136;&#x540E;&#x8FDB;&#x884C;&#x4E00;&#x4E0B;&#x6807;&#x51C6;&#x5316;&#xFF0C;&#x4FDD;&#x8BC1;&#x6240;&#x6709;&#x7279;&#x5F81;&#x91CD;&#x8981;&#x6027;&#x7684;&#x6C42;&#x548C;&#x662F;1.&#xFF09;&#xFF0C;&#x8FD9;&#x4E5F;&#x662F;&#x4E00;&#x822C;&#x7684;Boosting &#x7684;&#x6811;&#x6A21;&#x578B;&#x7684;&#x53D8;&#x91CF;&#x91CD;&#x8981;&#x6027;&#x7684;&#x8BA1;&#x7B97;&#x65B9;&#x5F0F;&#x3002;</li>
+<li>&#x5BF9;&#x4E8E;&#x968F;&#x673A;&#x68EE;&#x6797;&#x6A21;&#x578B;&#xFF0C;&#x8FD8;&#x6709;&#x4E00;&#x79CD;&#x72EC;&#x7279;&#x7684;&#x7528;&#x4E8E;&#x8861;&#x91CF;&#x7279;&#x5F81;&#x91CD;&#x8981;&#x6027;&#x7684;&#x65B9;&#x6CD5;&#x3002;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x888B;&#x5916;&#x6837;&#x672C;&#xFF08;out of bag sample) &#x6765;&#x5BF9;&#x7279;&#x5F81;&#x91CD;&#x8981;&#x6027;&#x8FDB;&#x884C;&#x8BC4;&#x7EA7;&#x3002;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x5229;&#x7528;&#x888B;&#x5916;&#x6837;&#x672C;&#x6765;&#x8BA1;&#x7B97;&#x888B;&#x5916;&#x7684;&#x51C6;&#x786E;&#x6027;&#xFF08;&#x4E5F;&#x53EB;&#x505A;&#x888B;&#x5916;&#x5F97;&#x5206;&#xFF09;&#x3002;&#x7136;&#x540E;&#x6211;&#x4EEC;&#x968F;&#x673A;&#x7F6E;&#x6362;&#x888B;&#x5916;&#x6837;&#x672C;&#x4E2D;&#x7B2C; j &#x4E2A;&#x7279;&#x5F81;&#x7684;&#x503C;&#xFF0C;&#x518D;&#x6B21;&#x8BA1;&#x7B97;&#x888B;&#x5916;&#x5F97;&#x5206;&#xFF0C;&#x888B;&#x5916;&#x5F97;&#x5206;&#x7684;&#x53D8;&#x5316;&#x503C;&#x4F5C;&#x4E3A;&#x7B2C; j &#x4E2A;&#x7279;&#x5F81;&#x7684;&#x91CD;&#x8981;&#x6027;&#xFF08;&#x5355;&#x9897;&#x6811;&#xFF09;&#xFF0C;&#x7136;&#x540E;&#x5BF9;&#x6240;&#x6709;&#x6811;&#x53D6;&#x5E73;&#x5747;&#xFF0C;&#x5F97;&#x5230;&#x6574;&#x4E2A;&#x968F;&#x673A;&#x68EE;&#x6797;&#x6A21;&#x578B;&#x7684;&#x7B2C; j &#x4E2A;&#x7279;&#x5F81;&#x7684;&#x91CD;&#x8981;&#x6027;&#x3002;</li>
+</ul>
+<p>&#x968F;&#x673A;&#x68EE;&#x6797;&#x7684;&#x8C03;&#x53C2;</p>
+<blockquote>
+<p>P.S. &#x968F;&#x673A;&#x68EE;&#x6797;&#x7684;&#x8C03;&#x53C2;&#x7684;&#x5173;&#x952E;&#x5728;&#x4E8E;&#x5BF9;&#x4E8E;&#x51B3;&#x7B56;&#x6811;&#x7684;&#x53C2;&#x6570;&#x7684;&#x9009;&#x62E9;&#xFF0C;&#x68EE;&#x6797;&#x7684;&#x53C2;&#x6570;&#x4E0D;&#x662F;&#x5F88;&#x654F;&#x611F;&#x3002;&#x5BF9;&#x51B3;&#x7B56;&#x6811;&#x7684;&#x8C03;&#x53C2;&#xFF0C;&#x6211;&#x4EEC;&#x4E5F;&#x53EF;&#x4EE5;&#x53D1;&#x73B0;&#xFF0C;&#x5F88;&#x591A;&#x65F6;&#x5019;&#x5728;&#x9ED8;&#x8BA4;&#x7684;&#x53C2;&#x6570;&#x4E0B;&#x5C31;&#x80FD;&#x53D6;&#x5F97;&#x4E0D;&#x9519;&#x7684;&#x6548;&#x679C;&#xFF0C;&#x968F;&#x673A;&#x68EE;&#x6797;&#x5BF9;&#x53C2;&#x6570;&#x7684;&#x654F;&#x611F;&#x5EA6;&#x76F8;&#x5BF9;&#x6CA1;&#x6709;&#x5176;&#x4ED6;&#x7684;&#x6A21;&#x578B;&#x9AD8;&#xFF08;&#x5982;NN&#xFF09;&#x3002;</p>
+</blockquote>
+<ul>
+<li><p>&#x51B3;&#x7B56;&#x6811;&#x7684;&#x53C2;&#x6570;</p>
+</li>
+<li><p>&#x968F;&#x673A;&#x68EE;&#x6797;&#x7684;&#x53C2;&#x6570;&#xFF1A;</p>
+<ul>
+<li><p>&#x6811;&#x7684;&#x4E2A;&#x6570;&#xFF1A;&#x539F;&#x5219;&#x4E0A;&#x6765;&#x8BF4;&#xFF0C;&#x8D8A;&#x591A;&#x8D8A;&#x597D;&#xFF0C;&#x4F46;&#x662F;&#x5F97;&#x8003;&#x8651;&#x8BA1;&#x7B97;&#xFF0C;&#x4E00;&#x822C;&#x9009;&#x4E2A;moderate&#x7684;&#x503C;&#x5C31;&#x53EF;&#x4EE5;&#x4E86;</p>
+</li>
+<li><p>&#x6BCF;&#x6B21;&#x968F;&#x673A;&#x9009;&#x62E9;&#x7684;&#x7279;&#x5F81;&#x5B50;&#x96C6;&#x7684;&#x6570;&#x76EE;&#xFF0C;&#x9ED8;&#x8BA4;&#x9009;&#x62E9;&#x5728;&#x5206;&#x7C7B;&#x95EE;&#x9898;&#x4E2D; <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>m</mi><mo>=</mo><msqrt><mrow><mi>p</mi></mrow></msqrt></mrow><annotation encoding="application/x-tex">m=\sqrt{p}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.70306em;"></span><span class="strut bottom" style="height:1.04em;vertical-align:-0.3369400000000001em;"></span><span class="base textstyle uncramped"><span class="mord mathit">m</span><span class="mrel">=</span><span class="mord sqrt"><span class="sqrt-sign" style="top:0.13694000000000006em;"><span class="style-wrap reset-textstyle textstyle uncramped">&#x221A;</span></span><span class="vlist"><span style="top:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:1em;">&#x200B;</span></span><span class="mord textstyle cramped"><span class="mord mathit">p</span></span></span><span style="top:-0.62306em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:1em;">&#x200B;</span></span><span class="reset-textstyle textstyle uncramped sqrt-line"></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:1em;">&#x200B;</span></span>&#x200B;</span></span></span></span></span></span>&#xFF0C;&#x5728;&#x56DE;&#x5F52;&#x95EE;&#x9898;&#x4E2D; <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>m</mi><mo>=</mo><msup><mi>p</mi><mrow><mn>1</mn><mi mathvariant="normal">/</mi><mn>3</mn></mrow></msup></mrow><annotation encoding="application/x-tex">m=p^{1/3}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.8879999999999999em;"></span><span class="strut bottom" style="height:1.0824399999999998em;vertical-align:-0.19444em;"></span><span class="base textstyle uncramped"><span class="mord mathit">m</span><span class="mrel">=</span><span class="mord"><span class="mord mathit">p</span><span class="msupsub"><span class="vlist"><span style="top:-0.363em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle uncramped mtight"><span class="mord scriptstyle uncramped mtight"><span class="mord mathrm mtight">1</span><span class="mord mathrm mtight">/</span><span class="mord mathrm mtight">3</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span></span></span></span></span>, </p>
+<blockquote>
+<p>&#x5982;&#x679C;&#x7279;&#x5F81;&#x6570;&#x76EE;&#x5F88;&#x5C11;&#xFF0C;&#x53EF;&#x4EE5;&#x589E;&#x5927;&#x5B50;&#x96C6;&#x7684;&#x6BD4;&#x4F8B;&#xFF0C;&#x5982;&#x679C;&#x7279;&#x5F81;&#x6570;&#x76EE;&#x592A;&#x591A;&#xFF0C;&#x53EF;&#x4EE5;&#x51CF;&#x5C11;&#x3002;&#x5728;&#x5927;&#x90E8;&#x5206;&#x7684;&#x95EE;&#x9898;&#x4E2D;&#xFF0C;&#x9ED8;&#x8BA4;&#x7684;&#x8BBE;&#x7F6E;&#x5C31;&#x8868;&#x73B0;&#x7684;&#x4E0D;&#x9519;</p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+<p>&#x200B;    </p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="Trees.html" class="navigation navigation-prev " aria-label="Previous page: 决策树">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="Boosting.html" class="navigation navigation-next " aria-label="Next page: Boosting">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Bagging","level":"2.1.3","depth":2,"next":{"title":"Boosting","level":"2.1.4","depth":2,"path":"Statistical_Learning/Boosting.md","ref":"Statistical_Learning/Boosting.md","articles":[]},"previous":{"title":"决策树","level":"2.1.2","depth":2,"path":"Statistical_Learning/Trees.md","ref":"Statistical_Learning/Trees.md","articles":[]},"dir":"ltr"},"config":{"plugins":["katex","copy-code-button","github","github-buttons","splitter","-sharing","back-to-top-button"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/LjunChen/Cook_Book_of_Data_Science"},"splitter":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"fontSettings":{"theme":"white","family":"msyh","size":2},"highlight":{},"back-to-top-button":{},"github-buttons":{"repo":"LjunChen/Cook_Book_of_Data_Science","types":["star","watch","fork"],"size":"small"},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true}},"theme":"default","author":"陈刘军","pdf":{"pageNumbers":true,"fontSize":14,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"数据科学实用手册","gitbook":"*"},"file":{"path":"Statistical_Learning/Bagging.md","mtime":"2020-08-04T14:50:50.487Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-09-10T05:58:53.494Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github-buttons/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

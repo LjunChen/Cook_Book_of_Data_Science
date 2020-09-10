@@ -1,0 +1,1166 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>rpy2模块:R与Python的结合 · 数据科学实用手册</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="陈刘军">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-katex/katex.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="cython.html" />
+    
+    
+    <link rel="prev" href="Optimization.html" />
+    
+
+    <style>
+    @media only screen and (max-width: 640px) {
+        .book-header .hidden-mobile {
+            display: none;
+        }
+    }
+    </style>
+    <script>
+        window["gitbook-plugin-github-buttons"] = {"repo":"LjunChen/Cook_Book_of_Data_Science","types":["star","watch","fork"],"size":"small"};
+    </script>
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                        <b>1.1.</b>
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="readme.html">
+            
+                <a href="readme.html">
+            
+                    
+                        <b>1.2.</b>
+                    
+                    Python基础
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="files.html">
+            
+                <a href="files.html">
+            
+                    
+                        <b>1.2.1.</b>
+                    
+                    文件读写
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="OS.html">
+            
+                <a href="OS.html">
+            
+                    
+                        <b>1.2.2.</b>
+                    
+                    OS模块
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="multiprocess.html">
+            
+                <a href="multiprocess.html">
+            
+                    
+                        <b>1.2.3.</b>
+                    
+                    多进程和多线程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="Exception.html">
+            
+                <a href="Exception.html">
+            
+                    
+                        <b>1.2.4.</b>
+                    
+                    异常处理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="Email.html">
+            
+                <a href="Email.html">
+            
+                    
+                        <b>1.2.5.</b>
+                    
+                    发送邮件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="OOP.html">
+            
+                <a href="OOP.html">
+            
+                    
+                        <b>1.2.6.</b>
+                    
+                    面向对象编程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="re.html">
+            
+                <a href="re.html">
+            
+                    
+                        <b>1.2.7.</b>
+                    
+                    正则表达式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="spider.html">
+            
+                <a href="spider.html">
+            
+                    
+                        <b>1.2.8.</b>
+                    
+                    爬虫
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9" data-path="Optimization.html">
+            
+                <a href="Optimization.html">
+            
+                    
+                        <b>1.2.9.</b>
+                    
+                    Python优化模块
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.10" data-path="rpy2.html">
+            
+                <a href="rpy2.html">
+            
+                    
+                        <b>1.2.10.</b>
+                    
+                    rpy2模块:R与Python的结合
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.11" data-path="cython.html">
+            
+                <a href="cython.html">
+            
+                    
+                        <b>1.2.11.</b>
+                    
+                    Cython:将Python代码编译为C，加快代码的运行
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../DSA/readme.html">
+            
+                <a href="../DSA/readme.html">
+            
+                    
+                        <b>1.3.</b>
+                    
+                    数据结构与算法
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../DSA/DataStructure.html">
+            
+                <a href="../DSA/DataStructure.html">
+            
+                    
+                        <b>1.3.1.</b>
+                    
+                    数据结构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../DSA/sort.html">
+            
+                <a href="../DSA/sort.html">
+            
+                    
+                        <b>1.3.2.</b>
+                    
+                    排序算法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../DSA/recursive.html">
+            
+                <a href="../DSA/recursive.html">
+            
+                    
+                        <b>1.3.3.</b>
+                    
+                    递归和动态规划算法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../DSA/ConvexOptimization.html">
+            
+                <a href="../DSA/ConvexOptimization.html">
+            
+                    
+                        <b>1.3.4.</b>
+                    
+                    凸优化理论
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../DSA/Proximal_ADMM.html">
+            
+                <a href="../DSA/Proximal_ADMM.html">
+            
+                    
+                        <b>1.3.5.</b>
+                    
+                    Proximal Gradient  and ADMM
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../Statistical_Learning/Readme.html">
+            
+                <a href="../Statistical_Learning/Readme.html">
+            
+                    
+                        <b>2.1.</b>
+                    
+                    机器学习
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.1" data-path="../Statistical_Learning/Matrix.html">
+            
+                <a href="../Statistical_Learning/Matrix.html">
+            
+                    
+                        <b>2.1.1.</b>
+                    
+                    矩阵知识
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.2" data-path="../Statistical_Learning/Trees.html">
+            
+                <a href="../Statistical_Learning/Trees.html">
+            
+                    
+                        <b>2.1.2.</b>
+                    
+                    决策树
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.3" data-path="../Statistical_Learning/Bagging.html">
+            
+                <a href="../Statistical_Learning/Bagging.html">
+            
+                    
+                        <b>2.1.3.</b>
+                    
+                    Bagging
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.4" data-path="../Statistical_Learning/Boosting.html">
+            
+                <a href="../Statistical_Learning/Boosting.html">
+            
+                    
+                        <b>2.1.4.</b>
+                    
+                    Boosting
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.5" data-path="../Statistical_Learning/SVM.html">
+            
+                <a href="../Statistical_Learning/SVM.html">
+            
+                    
+                        <b>2.1.5.</b>
+                    
+                    SVM
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.6" data-path="../Statistical_Learning/Empirical_Likelihood.html">
+            
+                <a href="../Statistical_Learning/Empirical_Likelihood.html">
+            
+                    
+                        <b>2.1.6.</b>
+                    
+                    经验似然
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../ML_Example/readme.html">
+            
+                <a href="../ML_Example/readme.html">
+            
+                    
+                        <b>2.2.</b>
+                    
+                    机器学习实践
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.2.1" data-path="../ML_Example/Pipeline.html">
+            
+                <a href="../ML_Example/Pipeline.html">
+            
+                    
+                        <b>2.2.1.</b>
+                    
+                    算法链和管道
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="../DSA/readme.html">
+            
+                <a href="../DSA/readme.html">
+            
+                    
+                        <b>2.3.</b>
+                    
+                    数据库
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.3.1" data-path="../Database/MySQL.html">
+            
+                <a href="../Database/MySQL.html">
+            
+                    
+                        <b>2.3.1.</b>
+                    
+                    SQL
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.2" data-path="../Database/Mongodb.html">
+            
+                <a href="../Database/Mongodb.html">
+            
+                    
+                        <b>2.3.2.</b>
+                    
+                    Mongodb
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="../Research/research.html">
+            
+                <a href="../Research/research.html">
+            
+                    
+                        <b>3.1.</b>
+                    
+                    Research
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" >
+            
+                <span>
+            
+                    
+                        <b>3.2.</b>
+                    
+                    Linux基础
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.2.1" data-path="../Linux/Initial_Configureation.html">
+            
+                <a href="../Linux/Initial_Configureation.html">
+            
+                    
+                        <b>3.2.1.</b>
+                    
+                    服务器配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.2" data-path="../Linux/Authorization.html">
+            
+                <a href="../Linux/Authorization.html">
+            
+                    
+                        <b>3.2.2.</b>
+                    
+                    权限管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.3" data-path="../Linux/files.html">
+            
+                <a href="../Linux/files.html">
+            
+                    
+                        <b>3.2.3.</b>
+                    
+                    文件操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.4" data-path="../Linux/Skills.html">
+            
+                <a href="../Linux/Skills.html">
+            
+                    
+                        <b>3.2.4.</b>
+                    
+                    维护
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" >
+            
+                <span>
+            
+                    
+                        <b>3.3.</b>
+                    
+                    其他软件介绍
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.3.1" data-path="../Other/Gitbook.html">
+            
+                <a href="../Other/Gitbook.html">
+            
+                    
+                        <b>3.3.1.</b>
+                    
+                    Gitbook使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.2" data-path="../Other/git.html">
+            
+                <a href="../Other/git.html">
+            
+                    
+                        <b>3.3.2.</b>
+                    
+                    git使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3" data-path="../Other/pandoc.html">
+            
+                <a href="../Other/pandoc.html">
+            
+                    
+                        <b>3.3.3.</b>
+                    
+                    Pandoc使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.4" data-path="../Other/Vim.html">
+            
+                <a href="../Other/Vim.html">
+            
+                    
+                        <b>3.3.4.</b>
+                    
+                    Vim的使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.5" data-path="../Other/VSCode.html">
+            
+                <a href="../Other/VSCode.html">
+            
+                    
+                        <b>3.3.5.</b>
+                    
+                    VScode配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.6" data-path="../Other/Other.html">
+            
+                <a href="../Other/Other.html">
+            
+                    
+                        <b>3.3.6.</b>
+                    
+                    其他软件
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" >
+            
+                <span>
+            
+                    
+                        <b>3.4.</b>
+                    
+                    实用技巧
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.4.1" data-path="../Tools/Progress_bar.html">
+            
+                <a href="../Tools/Progress_bar.html">
+            
+                    
+                        <b>3.4.1.</b>
+                    
+                    Python实现进度条
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.2" data-path="../Tools/Pysnooper.html">
+            
+                <a href="../Tools/Pysnooper.html">
+            
+                    
+                        <b>3.4.2.</b>
+                    
+                    利用Pysnooper进行Debug
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.3" data-path="../Tools/R_console.html">
+            
+                <a href="../Tools/R_console.html">
+            
+                    
+                        <b>3.4.3.</b>
+                    
+                    R从console读取输入
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.4" data-path="../Tools/decorator.html">
+            
+                <a href="../Tools/decorator.html">
+            
+                    
+                        <b>3.4.4.</b>
+                    
+                    Python的装饰器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.5" data-path="../Tools/logging.html">
+            
+                <a href="../Tools/logging.html">
+            
+                    
+                        <b>3.4.5.</b>
+                    
+                    Python的日志模块
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >rpy2模块:R与Python的结合</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h2 id="python&#x4E0E;r&#x7684;&#x4EA4;&#x4E92;-rpy2&#x6A21;&#x5757;">Python&#x4E0E;R&#x7684;&#x4EA4;&#x4E92;: rpy2&#x6A21;&#x5757;</h2>
+<h4 id="&#x5B89;&#x88C5;">&#x5B89;&#x88C5;</h4>
+<p>&#x6211;&#x4EEC;&#x77E5;&#x9053;&#xFF0C;R&#x91CC;&#x9762;&#x6709;&#x5927;&#x91CF;&#x7684;&#x7EDF;&#x8BA1;&#x5B66;&#x5BB6;&#x5199;&#x7684;&#x5305;&#xFF08;&#x7279;&#x522B;&#x662F;&#x9488;&#x5BF9;&#x5F88;&#x591A;&#x7279;&#x5B9A;&#x7684;&#x95EE;&#x9898;&#xFF09;&#xFF0C;&#x8FD9;&#x4E9B;&#x65F6;&#x5019;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x80FD;&#x5F88;&#x60F3;&#x4F7F;&#x7528;R&#x8BED;&#x8A00;&#x6765;&#x5E2E;&#x52A9;&#x6211;&#x4EEC;&#x5B8C;&#x6210;&#x4E00;&#x4E9B;&#x7279;&#x5B9A;&#x7684;&#x529F;&#x80FD;&#x3002;&#x8FD9;&#x4E2A;&#x65F6;&#x5019;&#x6211;&#x4EEC;&#x5C31;&#x9700;&#x8981;&#x4F7F;&#x7528;&#x5230;Python&#x548C;R&#x7684;&#x4EA4;&#x4E92;&#x4E86;&#xFF08;&#x524D;&#x63D0;&#x8981;&#x5728;&#x7535;&#x8111;&#x91CC;&#x88C5;&#x597D;R&#xFF0C;&#x5E76;&#x4E14;&#x5199;&#x8FDB;&#x4E86;&#x73AF;&#x5883;&#x53D8;&#x91CF;&#xFF09;&#x3002;</p>
+<p>rpy2 &#x6A21;&#x5757;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x7528;<code>pip</code>&#x5B89;&#x88C5;&#xFF0C;&#x4F46;&#x662F;&#x4F7F;&#x7528;&#x7684;&#x65F6;&#x5019;&#x53EF;&#x80FD;&#x4F1A;&#x51FA;&#x4E00;&#x4E9B;&#x95EE;&#x9898;.</p>
+<p>windows&#x4E0B; &#x8981;&#x5C06;R&#x5199;&#x8FDB;&#x73AF;&#x5883;&#x53D8;&#x91CF;</p>
+<pre><code>C:\Software\R\R-4.0.1\bin\x64\R.dll
+C:\Software\R\R-4.0.1\bin\x64
+</code></pre><p>&#x8981;&#x5C06;&#x8FD9;&#x4E24;&#x4E2A;&#x90FD;&#x5199;&#x8FDB;&#x73AF;&#x5883;&#x624D;&#x53EF;&#x4EE5;&#xFF08;&#x7565;&#x5FAE;&#x6709;&#x70B9;&#x5947;&#x602A;&#xFF09;&#xFF0C;&#x6211;&#x5728;windows&#x4E0B;&#x78B0;&#x5230;&#x8FC7;&#x7684;&#x9519;&#x8BEF;&#x5C31;&#x662F;&#x627E;&#x4E0D;&#x5230;&#x8FD9;&#x4E2A;<code>R.dll</code>&#xFF0C;&#x8FD9;&#x4E2A;&#x5199;&#x8FDB;&#x73AF;&#x5883;&#x4E4B;&#x540E;&#x624D;&#x53EF;&#x4EE5;&#x3002;</p>
+<p>Linux &#x4E0B;&#x51FA;&#x73B0;&#x4E86;&#x4E00;&#x4E2A;&#x9519;&#x8BEF; <code>Import Error: .../libreadline.so: undifined Symbol:PC</code>, &#x4E0D;&#x592A;&#x61C2;&#x662F;&#x4EC0;&#x4E48;&#x610F;&#x601D;&#xFF0C;&#x767E;&#x5EA6;&#x4E86;&#x4E00;&#x4E0B;&#x7684;&#x89E3;&#x91CA;&#x662F;<code>conda &#x5185;&#x7F6E;readline&#x5305;&#x6CA1;&#x6709;&#x94FE;&#x63A5;&#x5230;ncurses&#x5E93;</code>&#xFF0C; &#x89E3;&#x51B3;&#x529E;&#x6CD5;&#x662F;&#x5C06; Linux&#x7684; <code>libreadline.so</code>&#x590D;&#x5236;&#x5230;Anaconda&#x91CC;&#x9762; (&#x540E;&#x9762;&#x90A3;&#x90E8;&#x5206;&#x6362;&#x6210;&#x81EA;&#x5DF1;&#x7684;anaconda&#x7684;&#x5B89;&#x88C5;&#x5730;&#x5740;).</p>
+<pre><code>cp -p /lib/x86_64-linux-gnu/libreadline.so.6 ~/anaconda/lib/libreadline.so.6
+</code></pre><h4 id="&#x57FA;&#x7840;&#x4ECB;&#x7ECD;">&#x57FA;&#x7840;&#x4ECB;&#x7ECD;</h4>
+<p>&#x6A21;&#x5757;rpy2.robjects &#x662F;rpy2&#x5BF9;R&#x7684;&#x4E00;&#x4E2A;&#x9AD8;&#x7EA7;&#x5C01;&#x88C5;&#xFF0C;&#x4F7F;&#x7528;rpy2&#x7684;&#x5927;&#x591A;&#x6570;&#x60C5;&#x51B5;&#xFF0C;&#x90FD;&#x53EA;&#x9700;&#x8981;&#x548C;&#x8FD9;&#x4E2A;&#x6A21;&#x5757;&#x6253;&#x4EA4;&#x9053;&#x3002;</p>
+<p>R&#x5B9E;&#x4F8B;&#x662F;&#x6307;rpy2.robjects.r, &#x5B83;&#x662F;Python&#x4E2D;&#x7684;&#x5D4C;&#x5165;&#x5F0F;R&#x8FDB;&#x7A0B;&#xFF0C;&#x628A;r&#x5F53;&#x4F5C;&#x4ECE;python&#x8D70;&#x5411;R&#x7684;&#x901A;&#x9053;&#x6765;&#x770B;&#x5C31;&#x53EF;&#x4EE5;&#x4E86;&#x3002;&#x901A;&#x8FC7;R&#x5B9E;&#x4F8B;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x8BFB;&#x53D6;R&#x7684;&#x5185;&#x7F6E;&#x53D8;&#x91CF;&#xFF0C;&#x8C03;&#x7528;R&#x7684;&#x51FD;&#x6570;&#xFF0C;&#x751A;&#x81F3;&#x76F4;&#x63A5;&#x5F53;&#x505A;R&#x7684;&#x89E3;&#x6790;&#x5668;&#x6765;&#x7528;&#x3002;</p>
+<p>rpy2&#x6700;&#x8FD1;&#x4E24;&#x5E74;&#x7684;&#x66F4;&#x65B0;&#x597D;&#x50CF;&#x6BD4;&#x8F83;&#x5927;&#xFF0C;&#x5982;&#x679C;&#x6709;&#x4E9B;&#x65B9;&#x6CD5;&#x7528;&#x4E0D;&#x4E86;&#xFF0C;&#x53EF;&#x4EE5;&#x53C2;&#x89C1; <a href="https://rpy2.github.io/index_doc.html" target="_blank">https://rpy2.github.io/index_doc.html</a>  </p>
+<p>&#x8FD9;&#x662F;rpy2&#x7684;&#x5B98;&#x65B9;&#x6587;&#x6863;&#xFF0C;&#x53EF;&#x4EE5;&#x5728;&#x4E0A;&#x9762;&#x67E5;&#x770B;&#x4E00;&#x4E9B;&#x4ED4;&#x7EC6;&#x7684;&#x8BF4;&#x660E;&#xFF0C;&#x8FD8;&#x6709;&#x5F88;&#x591A;&#x8FD9;&#x91CC;&#x6CA1;&#x6709;&#x63D0;&#x5230;&#x7684;&#x529F;&#x80FD;&#x3002;</p>
+<p>&#x9996;&#x5148;&#x770B;&#x4E00;&#x4E9B;&#x793A;&#x4F8B;&#x3002;</p>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> rpy2 <span class="hljs-keyword">import</span> robjects
+r=robjects.r
+
+print(r.pi)
+print(r[<span class="hljs-string">&apos;pi&apos;</span>])
+</code></pre>
+<p>&#x5229;&#x7528;R&#x4E2D;&#x7684;&#x51FD;&#x6570;</p>
+<pre><code class="lang-python"><span class="hljs-comment">#create a function#</span>
+r(
+    <span class="hljs-string">&apos;&apos;&apos;
+    f &lt;- function(r){pi*r}
+    &apos;&apos;&apos;</span>
+)
+r[<span class="hljs-string">&apos;f&apos;</span>](<span class="hljs-number">3</span>)
+</code></pre>
+<p>&#x8F7D;&#x5165;&#x548C;&#x4F7F;&#x7528;R&#x5305;&#xFF0C;&#x4F7F;&#x7528;rpy2.robjects.packages.importr&#x5BF9;&#x8C61;&#xFF0C;&#x8C03;&#x7528;&#x65B9;&#x6CD5;&#x662F;</p>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> rpy2.robjects.packages <span class="hljs-keyword">import</span> importr
+stats = importr(<span class="hljs-string">&apos;stats&apos;</span>)
+stats.rnorm(<span class="hljs-number">10</span>)
+</code></pre>
+<p>&#x52A0;&#x8F7D;&#x811A;&#x672C;&#xFF0C;r.source(&apos;script_path&apos;)&#x5373;&#x53EF;&#x5C06;&#x81EA;&#x5B9A;&#x4E49;&#x51FD;&#x6570;&#x52A0;&#x8F7D;&#x5230;&#x5168;&#x5C40;&#x73AF;&#x5883;&#x4E2D;&#xFF0C;&#x518D;&#x4F7F;&#x7528;r.&#x81EA;&#x5B9A;&#x4E49;&#x65B9;&#x6CD5;&#x540D;&#x5C31;&#x53EF;&#x4EE5;&#x5B9E;&#x73B0;&#x8C03;&#x7528;&#x3002;</p>
+<p>&#x63A5;&#x4E0B;&#x6765;&#x6211;&#x4EEC;&#x4E3B;&#x8981;&#x5173;&#x6CE8;&#x7684;&#x662F;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x4E4B;&#x95F4;&#x7684;&#x8F6C;&#x6362;&#xFF0C;&#x8FD9;&#x4E2A;&#x4E5F;&#x662F;&#x6700;&#x5173;&#x952E;&#x7684;&#x3002;</p>
+<p>&#x6570;&#x7EC4;&#xFF08;&#x5305;&#x62EC;list&#xFF09;&#x4E4B;&#x95F4;&#x7684;&#x8F6C;&#x5316;</p>
+<pre><code class="lang-python"><span class="hljs-comment">#python&#x7684;&#x5217;&#x8868; vs R&#x7684;vector/&#x6570;&#x7EC4;</span>
+x=[<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>]
+x=robjects.IntVector(x)
+x=[<span class="hljs-string">&apos;a&apos;</span>,<span class="hljs-string">&apos;b&apos;</span>,<span class="hljs-string">&apos;c&apos;</span>]
+x=robjects.StrVector(x)
+
+x=r.c(<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>)
+x=list(x3)
+
+<span class="hljs-comment">#&#x5C06;numpy&#x6570;&#x7EC4;&#x8F6C;&#x5316;&#x4E3A;R&#x7684;&#x6570;&#x7EC4;</span>
+<span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np
+x=np.array([<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>])
+x=robjects.IntVector(x)
+<span class="hljs-comment">#&#x5C06;R&#x7684;&#x6570;&#x7EC4;&#x8F6C;&#x5316;&#x4E3A;numpy&#x6570;&#x7EC4;</span>
+x=r.c(<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>)
+print(np.array(x))
+</code></pre>
+<p>dataframe&#x4E4B;&#x95F4;&#x7684;&#x8F6C;&#x5316;</p>
+<pre><code class="lang-python"><span class="hljs-comment">##pandas to R</span>
+<span class="hljs-keyword">import</span> pandas <span class="hljs-keyword">as</span> pd
+x = pd.DataFrame({<span class="hljs-string">&apos;x&apos;</span>:[<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>],<span class="hljs-string">&apos;y&apos;</span>:[<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>]})
+<span class="hljs-keyword">from</span> rpy2.robjects <span class="hljs-keyword">import</span> conversion
+<span class="hljs-keyword">from</span> rpy2.robjects <span class="hljs-keyword">import</span> pandas2ri
+<span class="hljs-keyword">from</span> rpy2.robjects <span class="hljs-keyword">import</span> default_converter
+<span class="hljs-keyword">with</span> conversion.localconverter(default_converter+pandas2ri.converter):
+    r_dataframe=conversion.py2rpy(x)
+r.print(r_dataframe)
+
+<span class="hljs-comment">#R to pandas</span>
+x=r.c(<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>)
+y=r.c(<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>)
+x=r[<span class="hljs-string">&apos;data.frame&apos;</span>](x,y)
+<span class="hljs-keyword">with</span> conversion.localconverter(default_converter+pandas2ri.converter):
+    x=conversion.rpy2py(x)
+x.columns=[<span class="hljs-string">&apos;x&apos;</span>,<span class="hljs-string">&apos;y&apos;</span>]
+print(x)
+</code></pre>
+<h3 id="&#x5728;-jupyterlab-&#x4E2D;&#x4F7F;&#x7528;-r&#x548C;python">&#x5728; jupyterlab &#x4E2D;&#x4F7F;&#x7528; R&#x548C;python</h3>
+<p>&#x5728; <code>jupyterlab</code>&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;magic&#x547D;&#x4EE4;&#x6765;&#x4F7F;&#x7528;&#x4E0D;&#x540C;&#x7684;kernel</p>
+<p>&#x6BD4;&#x5982;&#x6211;&#x4EEC;&#x4F7F;&#x7528;</p>
+<pre><code class="lang-R">%%R
+x=c(<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>)
+</code></pre>
+<p>&#x5C31;&#x6307;&#x5B9A;&#x4E86;&#x6211;&#x4EEC;&#x4F7F;&#x7528;&#x7684;&#x662F;R&#x7684;kernel&#xFF0C;&#x540C;&#x7406;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;</p>
+<pre><code class="lang-python">%%python
+y=[<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>]
+</code></pre>
+<p>&#x6765;&#x6307;&#x5B9A;&#x4F7F;&#x7528;python&#x7684;kernel&#x3002;&#x5F53;&#x7136;&#x5B9E;&#x9645;&#x4E0A;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x7684;&#x4E0D;&#x4EC5;&#x4EC5;&#x662F;R/Python,&#x8FD8;&#x6709;&#x5176;&#x4ED6;&#x7684;&#x8BED;&#x8A00;&#x90FD;&#x53EF;&#x4EE5;&#x3002;&#x4E0D;&#x8FC7;&#x6709;&#x65F6;&#x5019;&#xFF0C;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x8FDB;&#x884C;&#x53D8;&#x91CF;&#x4E4B;&#x95F4;&#x7684;&#x5171;&#x4EAB;&#x6216;&#x8005;&#x8BF4;&#x4EA4;&#x4E92;&#xFF0C;&#x8FD9;&#x4E2A;&#x65F6;&#x5019;&#x9700;&#x8981;&#x7528;&#x5230; <code>rpy2</code>&#x8FD9;&#x4E2A;&#x5305;&#x3002;</p>
+<p>&#x5728;&#x4F7F;&#x7528;&#x4E4B;&#x524D;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x7528;</p>
+<pre><code class="lang-python">%load_ext rpy2.ipython
+</code></pre>
+<p>&#x7136;&#x540E;&#x5982;&#x679C;&#x6211;&#x4EEC;&#x60F3;&#x8981;&#x628A;R&#x4E2D;&#x7684;&#x53D8;&#x91CF;&#x4F20;&#x5230;python&#x4E2D;&#x7684;&#x8BDD;&#xFF0C;&#x4F7F;&#x7528;</p>
+<pre><code class="lang-python">%R -o x
+print(x)
+</code></pre>
+<p>&#x5982;&#x679C;&#x6211;&#x4EEC;&#x60F3;&#x8981;&#x5C06;Python&#x4E2D;&#x7684;&#x53D8;&#x91CF;&#x4F20;&#x7ED9;R&#x4F7F;&#x7528;&#x7684;&#x8BDD;&#xFF0C;&#x4F7F;&#x7528;</p>
+<pre><code class="lang-R">%%R -i y
+print(y)
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="Optimization.html" class="navigation navigation-prev " aria-label="Previous page: Python优化模块">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="cython.html" class="navigation navigation-next " aria-label="Next page: Cython:将Python代码编译为C，加快代码的运行">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"rpy2模块:R与Python的结合","level":"1.2.10","depth":2,"next":{"title":"Cython:将Python代码编译为C，加快代码的运行","level":"1.2.11","depth":2,"path":"Python/cython.md","ref":"Python/cython.md","articles":[]},"previous":{"title":"Python优化模块","level":"1.2.9","depth":2,"path":"Python/Optimization.md","ref":"Python/Optimization.md","articles":[]},"dir":"ltr"},"config":{"plugins":["katex","copy-code-button","github","github-buttons","splitter","-sharing","back-to-top-button"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/LjunChen/Cook_Book_of_Data_Science"},"splitter":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"fontSettings":{"theme":"white","family":"msyh","size":2},"highlight":{},"back-to-top-button":{},"github-buttons":{"repo":"LjunChen/Cook_Book_of_Data_Science","types":["star","watch","fork"],"size":"small"},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true}},"theme":"default","author":"陈刘军","pdf":{"pageNumbers":true,"fontSize":14,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"数据科学实用手册","gitbook":"*"},"file":{"path":"Python/rpy2.md","mtime":"2020-08-25T07:19:28.919Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-09-10T05:56:40.673Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github-buttons/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

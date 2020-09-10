@@ -20,6 +20,15 @@ VScode 的一个好处是相对来说比较小，因此启动等方面比较快�
 
 命令窗口输入`color theme`选择喜欢的主题既可，浅色和深色的主题都有。
 
+#### 配置
+Vscode的配置有两种，一种是通过json文件来配置，这种更灵活，但是很多的属性我们并不清楚，多靠百度。
+另外一种可以手动配置。我们可以直接在命令窗口搜索，然后配置，或者直接右键插件，会出来配置选项。
+
+
+#### Run Code
+这是一个非常好的插件，可以很方便的执行很多常见语言的代码。
+我将快捷键设置为`F5`.
+但是这个插件有个问题，在于Python的版本，他选择的是默认的，而我在开发的时候大多选择的是Anaconda的虚拟环境。一个选择是在设置里面，将`Run-In-Terminal`选上。
 ## Python 开发配置
 Python开发的第一个插件是`Python`插件, VScode安装插件的方法是输入`Crlt+Shift+X`调出插件目录，然后搜索插件名，进行安装。Python开发的第二个插件是 `Python for VSCode`。
 
@@ -29,9 +38,10 @@ Python开发的第一个插件是`Python`插件, VScode安装插件的方法是�
 然后打开`settings.json`（打开命令面板后输入）, 在里面加上
 ```
 "macros": {   
-"pythonExecSelectionAndCursorDown": [
+            "pythonExecSelectionAndCursorDown": [
             "python.execSelectionInTerminal", 
             "cursorDown" ]
+          }
 ```
 然后我们给这个绑定快捷键, 打开`keybindings.json`，输入
 ```
@@ -48,11 +58,163 @@ Python开发的第一个插件是`Python`插件, VScode安装插件的方法是�
 
 
 ## R语言配置
+一般认为R语言最好的IDE是Rstudio,但是我个人不是特别喜欢Rstudio, 因为Rstudio无法定制我的界面，以及Rstudio无法远程开发。（其实就是不喜欢。）
+
+不过 Rstudio Server倒是可以很不错的东西。
+
+首先，我们安装`R`插件（R language Support). 但是仅仅这一个插件是不太够的，因为其本身的代码补全不是特别靠谱。我们还需要一个`R LSP Clinet`来帮助我们进行代码补全。但是仅仅安装这个插件是不行的，我们还需要在R端安装一个package.
+```R
+install.packages{"languageserver"}
+```
+另外`R`插件里面打开Session Watcher功能，非常好用，我们可以就可以在侧边栏预览`data.frame`以及一些画图的结果，而不会弹窗出来了，不过这个功能目前还在试验阶段，可能会有些bug.
+R里面单行运行的快捷键默认就是`Crlt+Enter`，就不用修改了。
+
+现在就可以愉快的在VScode里面使用R语言了。
+不过貌似VScode不支持Rmarkdown, 这是目前的一个缺陷，不知道以后会不会改变。
 
 ## C语言配置
+我的`gcc`解释器是用`cygwin`安装的。
+直接使用`Run Code`就可以了。
+
 
 ## Latex配置
+首先需要安装插件`Latex Workshop`. 当然texlive, SumatraPDF的安装是基础.
+
+Latex的配置直接在setting区加上以下代码(记得软件的地址要改.)
+```
+  "latex-workshop.latex.recipes": [
+    {
+    "name": "pdflatex",
+    "tools": [
+          "pdflatex"
+        ]
+    },
+    {
+    "name": "xelatex",
+    "tools": [
+        "xelatex"
+        ]
+    },
+    {
+    "name": "lualatex",
+    "tools": [
+        "lualatex"
+        ]
+    },
+    {
+    "name": "bibTeX",
+    "tools": [
+        "bibtex"
+        ]
+    },
+    {
+    "name": "xelatex -> bibtex -> xelatex*2",
+    "tools": [
+          "xelatex",
+          "bibtex",
+          "xelatex",
+          "xelatex"
+        ]
+    },
+    {
+    "name": "pdflatex -> bibtex -> pdflatex*2",
+    "tools": [
+        "pdflatex",
+        "bibtex",
+        "pdflatex",
+        "pdflatex"
+        ]
+    }
+    ],
+    "latex-workshop.latex.tools": [
+    {
+    "name": "xelatex",
+    "command": "xelatex",
+    "args": [
+        "-synctex=1",
+        "-interaction=nonstopmode",
+        "-file-line-error",
+        "%DOC%"
+        ]
+    },
+    {
+    "name": "pdflatex",
+    "command": "pdflatex",
+    "args": [
+        "-synctex=1",
+        "-interaction=nonstopmode",
+        "-file-line-error",
+        "%DOC%"
+        ]
+    },
+    {
+    "name": "lualatex",
+    "command": "lualatex",
+    "args": [
+        "-synctex=1",
+        "-interaction=nonstopmode",
+        "-file-line-error",
+        "%DOC%"
+        ]
+    },
+    {
+    "name": "bibtex",
+    "command": "bibtex",
+    "args": [
+        "%DOCFILE%"
+        ]
+    }],
+    "latex-workshop.view.pdf.viewer": "external",
+    "latex-workshop.view.pdf.external.viewer.command": "C:/Software/sumutrapdf/SumatraPDF/SumatraPDF.exe",
+    "latex-workshop.view.pdf.external.viewer.args": [
+        "-forward-search",
+        "%TEX%",
+        "%LINE%",
+        "-reuse-instance",
+        "-inverse-search",
+        "\"D:/Software/VScode/Microsoft VS Code/Code.exe\" \"D:/Software/VScode/Microsoft VS Code/resources/app/out/cli.js\" -gr \"%f\":\"%l\"",
+        "%PDF%"
+    ],
+
+    "latex-workshop.view.pdf.external.synctex.command": "C:/Software/sumutrapdf/SumatraPDF/SumatraPDF.exe",
+    "latex-workshop.view.pdf.external.synctex.args": [
+        "-forward-search",
+        "%TEX%",
+        "%LINE%",
+        "-reuse-instance",
+        "-inverse-search",
+        "code \"D:/Software/VScode/Microsoft VS Code/resources/app/out/cli.js\" -gr \"%f\":\"%l\"",
+        "%PDF%",
+    ],
+    "latex-workshop.latex.clean.fileTypes": [
+    "*.aux",
+    "*.bbl",
+    "*.blg",
+    "*.idx",
+    "*.ind",
+    "*.lof",
+    "*.lot",
+    "*.out",
+    "*.toc",
+    "*.acn",
+    "*.acr",
+    "*.alg",
+    "*.glg",
+    "*.glo",
+    "*.gls",
+    "*.ist",
+    "*.fls",
+    "*.log",
+    "*.nav",
+    "*.snm",
+    "*.vrb",
+    "*.fdb_latexmk"
+    ],
+    "latex-workshop.message.warning.show": false,
+```
+
 
 ## Markdown配置
 我们可以使用文件右上角的按钮或者快捷键`Crlt+K V`来预览markdown文件，效果很好。
+如果想要更好的预览效果，可以使用`Markdown Preview Enhanced`插件。
 但是其原生不支持公式的预览，因此，我们可以需要安装`markdown math`插件。PS 我觉得VScode写markdown使用起来比Typora还要舒服，Typora很多时候总是有点卡。而且相比于Typora的展现形式，我还是更加喜欢source和预览是分开的这种，流畅度会好很多。

@@ -1,12 +1,56 @@
 # 数据结构
 
-> Python有个模块叫做Pythonds, 实现了常见的数据结构。其实很多时候我们需要根据自己的需要自己定义一些数据结构。
+> Python有个模块叫做Pythonds, 实现了常见的数据结构。
 
 
 
 #### 栈
-
+栈(Stack)是一种后进先出（LIFO）的数据结构，
+具体代码为
+```python
+class Stack:
+    def __init__(self,a=None):
+        self.items=a
+    def isEmpty(self):
+        return len(self.items)==0
+    def push(self,item):
+        self.items.append(item)
+    def pop(self):
+        return self.items.pop()
+    def peek(self):
+        return self.items[len(self.items)-1] 
+    def size(self):
+        return len(self.items)
+```
 #### 队列
+队列(Queue)刚好是和栈是相反的,是一种先进先出(FIFO)的数据结构，队列的一个最简单的例子就是排队（可以就这么来理解队列). 我们还是用列表来实现队列
+```python
+class Queue:
+    def __init__(self):
+        self.items=[]
+    def isEmpty(self):
+        return self.items==[]
+    def enqueue(self,item):
+        self.items.append(item)
+    def dequeue(self):
+        return self.items.pop(0)
+    def size(self):
+        return len(self.items)
+```
+在这种实现中，入队的复杂度是`O(1)`,而出队的复杂度是`O(n)`.当然，我们可以采用另一种实现来使得入队的复杂度是`O(n)`而出队的复杂度是`O(1)`. 这和栈的实现是不一样的, 在之前的栈的实现中，入栈和出栈的复杂度都是`O(1)`, 这主要是由于Python的list的操作的复杂度来决定的.
+
+#### 双端队列
+双端队列有两端，数据项可以从首位两端入队，也可以从首位两端出队.
+对双端队列，我们需要定义以下操作:
+* `addFront(item)` 将`item`加入队首
+* `addRear(item)` 将 `item`加入队尾
+* `removeFront()` 从队首移除数据项
+* `removeRear()` 从队尾移除数据项
+双端队列的实现代码就不在这里赘述了.
+
+### 链表
+
+
 
 #### 散列表
 

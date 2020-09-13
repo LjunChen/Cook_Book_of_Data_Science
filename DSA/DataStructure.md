@@ -152,3 +152,56 @@ def inorder(tree):
         print(tree.getRoot())
         postorder(tree.getRight())
 ```
+
+
+#### 优先队列和二叉堆
+前面, 我们提到了一种FIFO的数据结构队列。
+队列有一种变形称为优先队列。
+二叉堆能够将优先队列的入队和出队的复杂度都保持在`O(log n)`.
+
+> 完全二叉树: 叶节点最多只出现在最底层和次底层，而且最底层的叶节点都集中出现在最左边，每个内部节点都有2个子节点，最多有1个节点例外.
+
+
+> 堆次序: 任何一个节点x,其父节点p中的key均小于x中的key
+
+```python
+class BinHeap:
+    def __init__(self):
+        self.heapList=[0]
+        self.currentSize=0
+    def insert(self,k):
+        self.heapList.append(k)
+        self.currentSize += 1
+        self.percUp(self.currentSize)
+    def percUp(self,i):
+        while i//2 >0:
+            if self.heapList[i]<self.
+                self.heapList[i],self
+            i = i//2
+    def delMin(self):
+        ##将最后的叶子节点放到根节点
+        retval = self.heapList[1]
+        self.heapList[1]=self.heapLis
+        self.currentSize -= 1
+        self.heapList.pop()
+        self.percDown(1)
+        return retval
+    def percDown:
+        while (i*2) <= self.currentSi
+            mc =self.minChild(i)
+            if self.heapList[i]>=self
+                self.heapList[i],self
+            i = mc
+    def minChild(self,i):
+        if i*2+1 > self.currentSize:
+            return i*2
+        else:
+            if self.heapList[i*2]<sel
+                return i*2
+            else:
+                return i*2+1
+```
+
+
+#### 二叉查找树
+比父节点小的key都出现在左子树，比父节点大的key都出现在右子树.

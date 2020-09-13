@@ -17,10 +17,6 @@
     
             
                 
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-katex/katex.min.css">
-                
-            
-                
                 <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
                 
             
@@ -1100,6 +1096,52 @@
         print(tree.getRoot())
         postorder(tree.getRight())
 </code></pre>
+<h4 id="&#x4F18;&#x5148;&#x961F;&#x5217;&#x548C;&#x4E8C;&#x53C9;&#x5806;">&#x4F18;&#x5148;&#x961F;&#x5217;&#x548C;&#x4E8C;&#x53C9;&#x5806;</h4>
+<p>&#x524D;&#x9762;, &#x6211;&#x4EEC;&#x63D0;&#x5230;&#x4E86;&#x4E00;&#x79CD;FIFO&#x7684;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x961F;&#x5217;&#x3002;
+&#x961F;&#x5217;&#x6709;&#x4E00;&#x79CD;&#x53D8;&#x5F62;&#x79F0;&#x4E3A;&#x4F18;&#x5148;&#x961F;&#x5217;&#x3002;
+&#x4E8C;&#x53C9;&#x5806;&#x80FD;&#x591F;&#x5C06;&#x4F18;&#x5148;&#x961F;&#x5217;&#x7684;&#x5165;&#x961F;&#x548C;&#x51FA;&#x961F;&#x7684;&#x590D;&#x6742;&#x5EA6;&#x90FD;&#x4FDD;&#x6301;&#x5728;<code>O(log n)</code>.</p>
+<blockquote>
+<p>&#x5B8C;&#x5168;&#x4E8C;&#x53C9;&#x6811;: &#x53F6;&#x8282;&#x70B9;&#x6700;&#x591A;&#x53EA;&#x51FA;&#x73B0;&#x5728;&#x6700;&#x5E95;&#x5C42;&#x548C;&#x6B21;&#x5E95;&#x5C42;&#xFF0C;&#x800C;&#x4E14;&#x6700;&#x5E95;&#x5C42;&#x7684;&#x53F6;&#x8282;&#x70B9;&#x90FD;&#x96C6;&#x4E2D;&#x51FA;&#x73B0;&#x5728;&#x6700;&#x5DE6;&#x8FB9;&#xFF0C;&#x6BCF;&#x4E2A;&#x5185;&#x90E8;&#x8282;&#x70B9;&#x90FD;&#x6709;2&#x4E2A;&#x5B50;&#x8282;&#x70B9;&#xFF0C;&#x6700;&#x591A;&#x6709;1&#x4E2A;&#x8282;&#x70B9;&#x4F8B;&#x5916;.</p>
+<p>&#x5806;&#x6B21;&#x5E8F;: &#x4EFB;&#x4F55;&#x4E00;&#x4E2A;&#x8282;&#x70B9;x,&#x5176;&#x7236;&#x8282;&#x70B9;p&#x4E2D;&#x7684;key&#x5747;&#x5C0F;&#x4E8E;x&#x4E2D;&#x7684;key</p>
+</blockquote>
+<pre><code class="lang-python"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">BinHeap</span>:</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self)</span>:</span>
+        self.heapList=[<span class="hljs-number">0</span>]
+        self.currentSize=<span class="hljs-number">0</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">insert</span><span class="hljs-params">(self,k)</span>:</span>
+        self.heapList.append(k)
+        self.currentSize += <span class="hljs-number">1</span>
+        self.percUp(self.currentSize)
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">percUp</span><span class="hljs-params">(self,i)</span>:</span>
+        <span class="hljs-keyword">while</span> i//<span class="hljs-number">2</span> &gt;<span class="hljs-number">0</span>:
+            <span class="hljs-keyword">if</span> self.heapList[i]&lt;self.
+                self.heapList[i],self
+            i = i//<span class="hljs-number">2</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">delMin</span><span class="hljs-params">(self)</span>:</span>
+        <span class="hljs-comment">##&#x5C06;&#x6700;&#x540E;&#x7684;&#x53F6;&#x5B50;&#x8282;&#x70B9;&#x653E;&#x5230;&#x6839;&#x8282;&#x70B9;</span>
+        retval = self.heapList[<span class="hljs-number">1</span>]
+        self.heapList[<span class="hljs-number">1</span>]=self.heapLis
+        self.currentSize -= <span class="hljs-number">1</span>
+        self.heapList.pop()
+        self.percDown(<span class="hljs-number">1</span>)
+        <span class="hljs-keyword">return</span> retval
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">percDown</span>:</span>
+        <span class="hljs-keyword">while</span> (i*<span class="hljs-number">2</span>) &lt;= self.currentSi
+            mc =self.minChild(i)
+            <span class="hljs-keyword">if</span> self.heapList[i]&gt;=self
+                self.heapList[i],self
+            i = mc
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">minChild</span><span class="hljs-params">(self,i)</span>:</span>
+        <span class="hljs-keyword">if</span> i*<span class="hljs-number">2</span>+<span class="hljs-number">1</span> &gt; self.currentSize:
+            <span class="hljs-keyword">return</span> i*<span class="hljs-number">2</span>
+        <span class="hljs-keyword">else</span>:
+            <span class="hljs-keyword">if</span> self.heapList[i*<span class="hljs-number">2</span>]&lt;sel
+                <span class="hljs-keyword">return</span> i*<span class="hljs-number">2</span>
+            <span class="hljs-keyword">else</span>:
+                <span class="hljs-keyword">return</span> i*<span class="hljs-number">2</span>+<span class="hljs-number">1</span>
+</code></pre>
+<h4 id="&#x4E8C;&#x53C9;&#x67E5;&#x627E;&#x6811;">&#x4E8C;&#x53C9;&#x67E5;&#x627E;&#x6811;</h4>
+<p>&#x6BD4;&#x7236;&#x8282;&#x70B9;&#x5C0F;&#x7684;key&#x90FD;&#x51FA;&#x73B0;&#x5728;&#x5DE6;&#x5B50;&#x6811;&#xFF0C;&#x6BD4;&#x7236;&#x8282;&#x70B9;&#x5927;&#x7684;key&#x90FD;&#x51FA;&#x73B0;&#x5728;&#x53F3;&#x5B50;&#x6811;.</p>
 
                                 
                                 </section>
@@ -1143,7 +1185,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"数据结构","level":"1.3.1","depth":2,"next":{"title":"排序算法","level":"1.3.2","depth":2,"path":"DSA/sort.md","ref":"DSA/sort.md","articles":[]},"previous":{"title":"数据结构与算法","level":"1.3","depth":1,"path":"DSA/readme.md","ref":"DSA/readme.md","articles":[{"title":"数据结构","level":"1.3.1","depth":2,"path":"DSA/DataStructure.md","ref":"DSA/DataStructure.md","articles":[]},{"title":"排序算法","level":"1.3.2","depth":2,"path":"DSA/sort.md","ref":"DSA/sort.md","articles":[]},{"title":"递归和动态规划算法","level":"1.3.3","depth":2,"path":"DSA/recursive.md","ref":"DSA/recursive.md","articles":[]},{"title":"凸优化理论","level":"1.3.4","depth":2,"path":"DSA/ConvexOptimization.md","ref":"DSA/ConvexOptimization.md","articles":[]},{"title":"Proximal Gradient  and ADMM","level":"1.3.5","depth":2,"path":"DSA/Proximal_ADMM.md","ref":"DSA/Proximal_ADMM.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["katex","copy-code-button","github","github-buttons","splitter","-sharing","back-to-top-button"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/LjunChen/Cook_Book_of_Data_Science"},"splitter":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"fontSettings":{"theme":"white","family":"msyh","size":2},"highlight":{},"back-to-top-button":{},"github-buttons":{"repo":"LjunChen/Cook_Book_of_Data_Science","types":["star","watch","fork"],"size":"small"},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true}},"theme":"default","author":"陈刘军","pdf":{"pageNumbers":true,"fontSize":14,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"数据科学实用手册","gitbook":"*"},"file":{"path":"DSA/DataStructure.md","mtime":"2020-09-12T14:56:16.664Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-09-12T14:57:28.891Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"数据结构","level":"1.3.1","depth":2,"next":{"title":"排序算法","level":"1.3.2","depth":2,"path":"DSA/sort.md","ref":"DSA/sort.md","articles":[]},"previous":{"title":"数据结构与算法","level":"1.3","depth":1,"path":"DSA/readme.md","ref":"DSA/readme.md","articles":[{"title":"数据结构","level":"1.3.1","depth":2,"path":"DSA/DataStructure.md","ref":"DSA/DataStructure.md","articles":[]},{"title":"排序算法","level":"1.3.2","depth":2,"path":"DSA/sort.md","ref":"DSA/sort.md","articles":[]},{"title":"递归和动态规划算法","level":"1.3.3","depth":2,"path":"DSA/recursive.md","ref":"DSA/recursive.md","articles":[]},{"title":"凸优化理论","level":"1.3.4","depth":2,"path":"DSA/ConvexOptimization.md","ref":"DSA/ConvexOptimization.md","articles":[]},{"title":"Proximal Gradient  and ADMM","level":"1.3.5","depth":2,"path":"DSA/Proximal_ADMM.md","ref":"DSA/Proximal_ADMM.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["mathjax","copy-code-button","github","github-buttons","splitter","-sharing","back-to-top-button"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/LjunChen/Cook_Book_of_Data_Science"},"splitter":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"fontSettings":{"theme":"white","family":"msyh","size":2},"highlight":{},"back-to-top-button":{},"github-buttons":{"repo":"LjunChen/Cook_Book_of_Data_Science","types":["star","watch","fork"],"size":"small"},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true}},"theme":"default","author":"陈刘军","pdf":{"pageNumbers":true,"fontSize":14,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"数据科学实用手册","gitbook":"*"},"file":{"path":"DSA/DataStructure.md","mtime":"2020-09-13T13:18:41.532Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-09-13T14:25:35.375Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
@@ -1151,6 +1193,14 @@
         
     <script src="../gitbook/gitbook.js"></script>
     <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="https://cdn.mathjax.org/mathjax/2.6-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-mathjax/plugin.js"></script>
+        
     
         
         <script src="../gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>

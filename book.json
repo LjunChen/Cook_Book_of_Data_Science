@@ -5,7 +5,7 @@
         "summary": "SUMMARY.md"
     },
 	"plugins": [
-        "mathjax",
+        "katex",
 		"copy-code-button",
 		"github",
 		"github-buttons",

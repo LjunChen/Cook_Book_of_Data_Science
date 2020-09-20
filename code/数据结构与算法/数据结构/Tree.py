@@ -62,3 +62,6 @@ class BinHeap:
                 return i*2
             else:
                 return i*2+1
+
+    
+    

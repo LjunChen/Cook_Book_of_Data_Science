@@ -126,7 +126,7 @@ def main():
     print('结果为{}'.format(result))
     print('时间为{}'.format(end-start))
 
-    from fib import c_fin
+    from fib import c_fib
     start=time.time()
     result=c_fib(n)
     end=time.time()

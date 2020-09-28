@@ -72,6 +72,7 @@ def nb_sqrt(a):
 ## 利用 C/Cython
 我们可以考虑用C和Python的混合编程来实现加速的目的，主要结构用Python来写，而核心计算使用C语言来实现. 不过相对而言C的入门门槛比较高，直接写C语言比较难.
 
+### Cython
 Cython可以将我们写的Python代码直接转化为C语言的代码，而后调用C语言的编译器来编译C代码. 因此想要使用Cython的话，需要有C的编译器. win10里面需要安装Visual Studio. 但是有些时候还是有些莫名其妙的bug. 最好的还是在Linux环境里面使用.
 
 原生的Python代码可以通过Cython进行加速，但是效果不是特别明显。这里值得注意的是Python的数据类型都是动态的，因此解释器要花很大的时间来推断这个数据类型。而C的数据类型是静态的，所以很快，我们在Cython中，可以用一些关键字来明确变量的数据类型，这样使用Cython的效果才是最好的.
@@ -136,9 +137,52 @@ main()
 ```
 第二种方法比第一种方法快5倍左右，当然这些都比原生的python快很多.
 
-> 这里`from fib import fib` 调用的是` fib.cp37-win_amd64.so`，这里以fib开头的还有`fib.pyx`，然后python的 import 只会导入`.py`/`.pyc`/`.pyo`/`.pyd`/`.so`文件中的内容，不会进`.pyx`文件中进行寻找。
+> 这里`from fib import fib` 调用的是`fib.cp37-win_amd64.so`，这里以fib开头的还有`fib.pyx`，然后python的 import 只会导入`.py`/`.pyc`/`.pyo`/`.pyd`/`.so`文件中的内容，不会进`.pyx`文件中进行寻找。
 
 
-
-
-
+### 直接编译C的代码
+我们可以写一段C语言的代码，保存为`clib.c`用来计算斐波那契数列
+```c
+#include "stdio.h"
+int fib(int n){
+    int a=0;
+    int b=1;
+    int i;
+    int tmp;
+    for(i=0;i<n;i++){
+        tmp = a;
+        a = a + b;
+        b = tmp;
+    }
+    return a;
+}
+```
+然后命令行`gcc -shared -fPIC clib.c -o clib.so`来编译形成`clib.so`文件. 现在我们就可以在python中调用这个数学函数了
+```python
+import time
+import ctypes
+def main():
+    start=time.time()
+    clib = ctypes.cdll.Loadlibrary("clib.so")
+    result = clib.fib(30)
+    end=time.time()
+    print('结果为{}'.format(result))
+    print('时间为{}'.format(end-start))
+main()
+```
+但是这样的调用有时候是有问题的，在传入的参数是整数的时候，一般还好，其他类型的数字就不行了，记住C是静态类型，不会像Python那那样去识别数据类型，因此最好的调用是
+```python
+import time
+import ctypes
+def main():
+    start=time.time()
+    clib = ctypes.cdll.Loadlibrary("clib.so")
+    clib.fib.argtypes=[ctypes.c_int]
+    clib.fib.restype=ctypes.c_int 
+    result = clib.fib(ctypes.c_int(30))
+    end=time.time()
+    print('结果为{}'.format(result))
+    print('时间为{}'.format(end-start))
+main()
+```
+其他参数的传入同理.

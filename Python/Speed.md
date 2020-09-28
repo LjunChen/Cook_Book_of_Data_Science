@@ -137,7 +137,7 @@ main()
 ```
 第二种方法比第一种方法快5倍左右，当然这些都比原生的python快很多.
 
-> 这里`from fib import fib` 调用的是` fib.cp37-win_amd64.so`，这里以fib开头的还有`fib.pyx`，然后python的 import 只会导入`.py`/`.pyc`/`.pyo`/`.pyd`/`.so`文件中的内容，不会进`.pyx`文件中进行寻找。
+> 这里`from fib import fib` 调用的是`fib.cp37-win_amd64.so`，这里以fib开头的还有`fib.pyx`，然后python的 import 只会导入`.py`/`.pyc`/`.pyo`/`.pyd`/`.so`文件中的内容，不会进`.pyx`文件中进行寻找。
 
 
 ### 直接编译C的代码
@@ -170,9 +170,19 @@ def main():
     print('时间为{}'.format(end-start))
 main()
 ```
-但是这样的调用有时候是有问题的，在传入的参数是整数的时候，一般还好，其他类型的数字就不行了，记住C是静态类型，不会像Python那那样
-去识别数据类型，因此最好的调用是
+但是这样的调用有时候是有问题的，在传入的参数是整数的时候，一般还好，其他类型的数字就不行了，记住C是静态类型，不会像Python那那样去识别数据类型，因此最好的调用是
 ```python
-result = clib.fib(ctypes.c_int(30))
+import time
+import ctypes
+def main():
+    start=time.time()
+    clib = ctypes.cdll.Loadlibrary("clib.so")
+    clib.fib.argtypes=[ctypes.c_int]
+    clib.fib.restype=ctypes.c_int 
+    result = clib.fib(ctypes.c_int(30))
+    end=time.time()
+    print('结果为{}'.format(result))
+    print('时间为{}'.format(end-start))
+main()
 ```
 其他参数的传入同理.

@@ -58,3 +58,27 @@
 * 中间要求输入密码，可以不输入
 * /c/Users/Sven/下有.ssh目录
 * 在github的setting的ssh key中加入id_rsa.pub的内容
+
+
+## ssh无密码登陆
+在本地机器输入如下命令
+```
+ssh-keygen -t rsa
+```
+然后一直回车，将会生成秘钥文件`id_rsa,id_rsa.pub`, 生成的位置在`/home/sven/.ssh`下(win10在C:/Users/chenl/.ssh下).
+
+> 也只用将id_ras.pub中的内容复制到github中自己的账户里面，我们才可以和github进行同步.
+
+如果本地机器是linux服务器，则使用
+```
+ssh-copy-id user@ip
+```
+这里的user,ip指的是远程服务器的user和ip. 如果本地是win10机器的话，则没办法使用`ssh-copy-id`, 我们首先将`id_rsa.pub`文件复制到远程服务器下
+```
+scp id_rsa.pub user@ip:/home/sven/
+```
+然后将`id_rsa.pub`中的内容追加到`.ssh`下的authorized_keys文件
+```
+cat id_rsa.pub >> /home/sven/.ssh/authorized_keys
+```
+

@@ -43,7 +43,7 @@
     * [维护](Linux/Skills.md)
 * 其他软件介绍
     * [Gitbook使用](Other/Gitbook.md)
-    * [git使用](Other/git.md)
+    * [git & ssh](Other/git.md)
     * [Pandoc使用](Other/pandoc.md)
     * [Vim的使用](Other/Vim.md)
     * [VScode配置](Other/VSCode.md)

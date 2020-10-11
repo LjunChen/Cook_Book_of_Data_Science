@@ -126,7 +126,33 @@ def quick_sort(arr):
                 l_array.append(item)
     return quick_sort(l_array)+[mid]+quick_sort(u_array)
 ```
+上面实现的快速排序很pythonic,但是会占用额外的内存空间，下面的这种快速排序的实现不会占用额外的内存空间，但是代码更加复杂
+```python
+def quick_sort_type2(arr):
+    quick_sort_helper(arr,0,len(arr)-1)
 
+def quick_sort_helper(arr,first,last):
+    if first<last:
+        splitpoint = partition(arr,first,last)
+        quick_sort_helper(arr,first,splitpoint-1)
+        quick_sort_helper(arr,splitpoint+1,last)
+def partition(arr,first,last):
+    pivot = arr[first]
+    left = first + 1
+    right = last 
+    done = False
+    while not done:
+        while left <= right and arr[left]<=pivot:
+            left = left +1
+        while left <= right and arr[right]>=pivot:
+            right = right -1
+        if right < left:
+            done = True
+        else:
+            arr[left],arr[right] = arr[right],arr[left]
+    arr[first], arr[right] = arr[right],arr[first]
+    return right
+```
 
 
 

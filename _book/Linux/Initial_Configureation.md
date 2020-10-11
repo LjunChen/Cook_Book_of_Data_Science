@@ -171,3 +171,11 @@ conda create --name sven-Linux python=3.6.2
   * 在这里面新建一个文件夹 pip
   
   * 在pip文件夹里面新建一个文件叫做 pip.ini ,内容写如下和上面一样
+
+  #### Conda换源
+  ```
+  conda config --add channels https://mirrors.ustc.edu.cn/anaconda/pkgs/main/
+conda config --add channels https://mirrors.ustc.edu.cn/anaconda/pkgs/free/
+conda config --add channels https://mirrors.ustc.edu.cn/anaconda/cloud/conda-forge/
+conda config --set show_channel_urls: yes
+```

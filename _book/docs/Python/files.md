@@ -8,7 +8,7 @@ Python open() 方法用于打开一个文件，并返回文件对象，在对文
 
 **注意：**使用 open() 方法一定要保证关闭文件对象，即调用 close() 方法。
 
-open() 函数常用形式是接收两个参数：file, mode, encoding。
+open() 函数的常用参数是：file, mode, encoding。
 
 ```python
 open(file, mode='r',encoding=None)

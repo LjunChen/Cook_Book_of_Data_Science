@@ -17,7 +17,7 @@
   ```python
   os.path.dirname(os.path.abspath('hello.py'))
   ```
-
+* 一个特别常见的用法就是`os.path.abspath(__file__)`返回当前文件的绝对路径.
 * os.path.isfile(path) 是文件则返回True,和os.path.isdir(path)相对应
 
 *  os.path.join(path,name)  #连接目录与文件名或目录 结果为path/name 

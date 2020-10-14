@@ -432,7 +432,7 @@ Latex的配置直接在setting区加上以下代码(记得软件的地址要改.
 
 #### Python.json
 
-
+```json
 {
 	// Place your snippets for python here. Each snippet is defined under a snippet name and has a prefix, body and 
 	// description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
@@ -455,3 +455,4 @@ Latex的配置直接在setting区加上以下代码(记得软件的地址要改.
 		]
 	}
 }
+```

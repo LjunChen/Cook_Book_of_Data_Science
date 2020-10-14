@@ -58,6 +58,12 @@
 * 中间要求输入密码，可以不输入
 * /c/Users/Sven/下有.ssh目录
 * 在github的setting的ssh key中加入id_rsa.pub的内容
+* 有时候git无法连接到github, 可以尝试`ping github.com`, 如果ping不通的话，可能得去修改hosts文件, linux的hosts文件的位置在`/etc/hosts`, windows可以百度. 在hosts文件里面加上
+```
+192.30.255.112  github.com git 
+185.31.16.184 github.global.ssl.fastly.net
+```
+然后应该就可以了.
 
 
 ## ssh无密码登陆

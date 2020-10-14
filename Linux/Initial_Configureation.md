@@ -29,14 +29,22 @@ userdel -r sven
 用 vim 打开/etc/apt/sources.list, 加入
 
 ```
-deb https://cloud.r-project.org/bin/linux/ubuntu xenial-cran35/
+deb http://mirrors.aliyun.com/CRAN/bin/linux/ubuntu/ focal-cran40/
 ```
 
 然后
 
 ```
 apt-get update
-apt-get install r-base-core
+```
+如果出现未签名错误，The following signatures couldn't be verified because the public key is not acailable:NO_PUBKEY xxxxxxxxxx, 则
+```
+ sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys  xxxxxxxxxx
+```
+然后
+```
+sudo apt-get update
+sudo apt-get install r-base-core
 ```
 
 #### 安装Rstudio Server
@@ -171,3 +179,102 @@ conda create --name sven-Linux python=3.6.2
   * 在这里面新建一个文件夹 pip
   
   * 在pip文件夹里面新建一个文件叫做 pip.ini ,内容写如下和上面一样
+
+  #### Conda换源
+  ```
+  conda config --add channels https://mirrors.ustc.edu.cn/anaconda/pkgs/main/
+conda config --add channels https://mirrors.ustc.edu.cn/anaconda/pkgs/free/
+conda config --add channels https://mirrors.ustc.edu.cn/anaconda/cloud/conda-forge/
+conda config --set show_channel_urls: yes
+```
+
+## Ubuntu桌面配置
+首先调节显示大小，不然要瞎了。
+### 换源
+换源是第一步，这个在之前已经有过介绍了，不过在桌面端可以直接使用software manager来换源.
+
+### 安装tweak
+```
+sudo add-apt-repository universe
+sudo apt install gnome-tweak-tool
+```
+安装tweak.
+
+### 输入法配置
+win10还有微软拼音比较好用，而在ubuntu里面只有去装搜狗了. 首先，我们在ubuntu的语言设置里面添加中文.
+搜狗输入法是基于fcitx的，因此，我们安装fcitx框架. 
+```
+sudo apt install fcitx
+```
+安装好之后，把键盘输入法系统改为fcitx. 然后我们直接去搜狗的官网下载搜狗的安装包，然后直接使用dpkg安装就好了.
+
+### 主题配置
+```
+sudo apt install gnome-shell-extensions
+```
+然后需要重启，之后在优化里面找到扩展（不执行上述步骤时扩展里面时空的，shell无法使用扩展），打开User theme. 到此,预备工作完成了.
+
+下面打开[https://www.opendesktop.org/browse/cat/135/order/latest/](https://www.opendesktop.org/browse/cat/135/order/latest/), 选择一款自己喜欢的主题。
+
+[McHigh Sierra](https://www.opendesktop.org/p/1013714/)是一款比较不错的主题.
+
+下载，解压， 然后把目录复制到`/usr/share/themes`.
+
+然后打开优化，我倾向于不改变shell,将应用程序改成`McHigh Sierra`.
+
+
+### Gnome 扩展设置
+直接打开 [https://extensions.gnome.org/](https://extensions.gnome.org/)选择自己想要的扩展.
+
+推荐扩展
+* Dash to Dock
+* Vitals
+
+### 终端扩展
+安装terminator
+```
+sudo apt install terminator
+```
+这个需要改一下颜色等配置，太丑了.
+
+### 目录更换
+```bash
+export LANG=en_US
+xdg-user-dirs-gtk-update
+```
+
+### 常用软件安装
+#### deb 安装
+* chrome
+* vscode
+* 百度网盘
+#### gitbook
+* nodejs
+* npm
+* sudo npm install gitbook-cli -g
+
+#### texlive
+* 下载最新的texlive的ISO文件
+* 安装组件 `sudo apt install perl-tk`
+* 加载镜像 `sudo mount -o loop texlive.iso /mnt`
+* `cd /mnt`
+* `sudo ./install-tl -gui`
+
+安装完成之后，卸载镜像文件
+* `cd /`
+* `sudo umount /mnt`
+
+然后运行终端看有没有tex命令，如果没有的话,打开`~/.bashrc`加入以下语句
+```
+export MANPATH=${MANPATH}:/usr/local/texlive/2020/texmf-dist/doc/man
+export INFOPATH=${INFOPATH}:/usr/local/texlive/2020/texmf-dist/doc/info
+export PATH=${PATH}:/usr/local/texlive/2020/bin/x86_64-linux
+
+```
+然后`source ~/.bashrc`
+
+
+
+
+
+

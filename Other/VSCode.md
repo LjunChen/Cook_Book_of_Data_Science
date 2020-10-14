@@ -218,3 +218,240 @@ Latex的配置直接在setting区加上以下代码(记得软件的地址要改.
 我们可以使用文件右上角的按钮或者快捷键`Crlt+K V`来预览markdown文件，效果很好。
 如果想要更好的预览效果，可以使用`Markdown Preview Enhanced`插件。
 但是其原生不支持公式的预览，因此，我们可以需要安装`markdown math`插件。PS 我觉得VScode写markdown使用起来比Typora还要舒服，Typora很多时候总是有点卡。而且相比于Typora的展现形式，我还是更加喜欢source和预览是分开的这种，流畅度会好很多。
+
+
+## 用户片段
+#### latex.json: 定义了beamer,ctexbeamer和paper的常用命令
+```json
+{
+	"beamer":{
+		"prefix":"beamer",
+		"body":[
+			"%!TEX program =pdflatex",
+			"\\documentclass{beamer}",
+			"\\usetheme{CambridgeUS}",
+			"%%define new comand",
+			"\\def\\argmin{\\mathop{\\rm arg~min}\\limits}", 
+			"\\def\\argmin{\\mathop{\\rm arg~min}\\limits}", 
+			"\newcommand{\bbeta}{\boldsymbol{\beta}}", 
+			"\\newcommand{\\bdelta}{\\boldsymbol{\\delta}}", 
+			"\\newcommand{\\bSigma}{\\boldsymbol{\\Sigma}}",
+			"\\newcommand{\\brho}{\\displaystyle{\\large{\\boldsymbol{\\rho}}}}", 
+			"\\newcommand{\\bgamma}{\\boldsymbol{\\gamma}}", 
+			"\\newcommand{\\bfeta}{\\boldsymbol{\\eta}}", 
+			"\\newcommand{\\bPsi}{\\boldsymbol{\\Psi}}", 
+			"\\newcommand{\\bmu}{\\boldsymbol{\\mu}}", 
+			"\\newcommand{\\bvartheta}{\\boldsymbol{\\vartheta}}",
+			"\\newcommand{\\bzero}{\\mathbf{0}}",
+			"\\newcommand{\\bone}{\\mathbf{1}}", 
+			"\\newcommand{\\bA}{\\mathbf{A}}", 
+			"\\newcommand{\\ba}{\\mathbf{a}}", 
+			"\\newcommand{\\bB}{\\mathbf{B}}", 
+			"\\newcommand{\\bb}{\\mathbf{b}}", 
+			"\\newcommand{\\bD}{\\mathbf{D}}", 
+			"\\newcommand{\\bU}{\\mathbf{U}}", 
+			"\\newcommand{\\bu}{\\mathbf{u}}",
+			"\\newcommand{\\bV}{\\mathbf{V}}", 
+			"\\newcommand{\\bW}{\\mathbf{W}}", 
+			"\\newcommand{\\bw}{\\mathbf{w}}", 
+			"\\newcommand{\\bX}{\\mathbf{X}}", 
+			"\\newcommand{\\bx}{\\mathbf{x}}", 
+			"\\newcommand{\\bY}{\\mathbf{Y}}", 
+			"\\newcommand{\\by}{\\mathbf{y}}", 
+			"\\newcommand{\\bZ}{\\mathbf{Z}}", 
+			"\\newcommand{\\bz}{\\mathbf{z}}",
+			"\\newcommand{\\suit}[1]{\\left(#1\\right)}",
+			"\\newcommand{\\abs}[1]{\\left\\vert#1\\right\\vert}",
+			"\\newcommand{\\set}[1]{\\left\\{#1\\right\\}}",
+			"\\newcommand{\\msuit}[1]{\\left[ #1 \\right]}",
+			"\\author{Liujun Chen}",
+			"\\title{}",
+			"\\begin{document}",
+			"\\begin{frame}",
+				"\\titlepage",
+			"\\end{frame}",
+			"\\end{document}"
+	],
+	"description": "beamer header"
+	},
+	"ctexbeamer":{
+		"prefix":"ctexbeamer",
+		"body":[
+			"%!TEX program =xelatex",
+			"\\documentclass{ctexbeamer}",
+			"\\usetheme{CambridgeUS}",
+			"%%define new comand",
+			"\\def\\argmin{\\mathop{\\rm arg~min}\\limits}", 
+			"\\def\\argmin{\\mathop{\\rm arg~min}\\limits}", 
+			"\newcommand{\bbeta}{\boldsymbol{\beta}}", 
+			"\\newcommand{\\bdelta}{\\boldsymbol{\\delta}}", 
+			"\\newcommand{\\bSigma}{\\boldsymbol{\\Sigma}}",
+			"\\newcommand{\\brho}{\\displaystyle{\\large{\\boldsymbol{\\rho}}}}", 
+			"\\newcommand{\\bgamma}{\\boldsymbol{\\gamma}}", 
+			"\\newcommand{\\bfeta}{\\boldsymbol{\\eta}}", 
+			"\\newcommand{\\bPsi}{\\boldsymbol{\\Psi}}", 
+			"\\newcommand{\\bmu}{\\boldsymbol{\\mu}}", 
+			"\\newcommand{\\bvartheta}{\\boldsymbol{\\vartheta}}",
+			"\\newcommand{\\bzero}{\\mathbf{0}}",
+			"\\newcommand{\\bone}{\\mathbf{1}}", 
+			"\\newcommand{\\bA}{\\mathbf{A}}", 
+			"\\newcommand{\\ba}{\\mathbf{a}}", 
+			"\\newcommand{\\bB}{\\mathbf{B}}", 
+			"\\newcommand{\\bb}{\\mathbf{b}}", 
+			"\\newcommand{\\bD}{\\mathbf{D}}", 
+			"\\newcommand{\\bU}{\\mathbf{U}}", 
+			"\\newcommand{\\bu}{\\mathbf{u}}",
+			"\\newcommand{\\bV}{\\mathbf{V}}", 
+			"\\newcommand{\\bW}{\\mathbf{W}}", 
+			"\\newcommand{\\bw}{\\mathbf{w}}", 
+			"\\newcommand{\\bX}{\\mathbf{X}}", 
+			"\\newcommand{\\bx}{\\mathbf{x}}", 
+			"\\newcommand{\\bY}{\\mathbf{Y}}", 
+			"\\newcommand{\\by}{\\mathbf{y}}", 
+			"\\newcommand{\\bZ}{\\mathbf{Z}}", 
+			"\\newcommand{\\bz}{\\mathbf{z}}",
+			"\\newcommand{\\suit}[1]{\\left(#1\\right)}",
+			"\\newcommand{\\abs}[1]{\\left\\vert#1\\right\\vert}",
+			"\\newcommand{\\set}[1]{\\left\\{#1\\right\\}}",
+			"\\newcommand{\\msuit}[1]{\\left[ #1 \\right]}",
+			"\\author{Liujun Chen}",
+			"\\title{}",
+			"\\begin{document}",
+			"\\begin{frame}",
+				"\\titlepage",
+			"\\end{frame}",
+			"\\end{document}"
+	],
+	"description": "beamer header"
+	},
+	"paper":{
+		"prefix": "paper",
+		"body": [
+			"%!TEX program = pdflatex",
+			"%!BIB program = bibtex",
+			"\\documentclass[12pt]{article}",
+
+			"%%Package",
+			"\\usepackage{amsmath,amsthm,amssymb}",
+			"\\usepackage{color}",
+			"\\usepackage{graphicx,subfigure,float}",
+			"\\usepackage[round]{natbib}",
+
+			"%%theorem style",
+			"\\theoremstyle{remark}",
+			"\\newtheorem{theorem}{{\\sc Theorem}}",
+			"\\newtheorem{prop}{Proposition}[section]",
+			"\\newtheorem{corollary}{{\\sc Corollary}}",
+			"\\newtheorem{lemma}{{\\sc Lemma}}",
+			"\\newtheorem{remark}{{\\sc Remark}}",
+			"\\newtheorem{exam}{{\\sc Example}}",
+
+			"\numberwithin{equation}{section}",
+			"\numberwithin{theorem}{section}",
+			"\numberwithin{lemma}{section}",
+			"\numberwithin{corollary}{section}",
+			"\numberwithin{remark}{section}",
+			"\numberwithin{exam}{section}",
+
+			"%% define of comment",
+			"\\def\\boxit#1{\\vbox{\\hrule\\hbox{\\vrule\\kern6pt\\vbox{\\kern6pt#1\\kern6pt}\\kern6pt\\vrule}\\hrule}}",
+			"\\def\\chencomment#1{\\vskip 2mm\\boxit{\\vskip 2mm{\\color{blue}\\bf#1} {\\color{red}\\bf -- Liujun\\vskip 2mm}}\\vskip 2mm}",
+
+
+			"%%define new comand",
+			"\\def\\argmin{\\mathop{\\rm arg~min}\\limits}", 
+			"\\def\\argmin{\\mathop{\\rm arg~min}\\limits}", 
+			"\newcommand{\bbeta}{\boldsymbol{\beta}}", 
+			"\\newcommand{\\bdelta}{\\boldsymbol{\\delta}}", 
+			"\\newcommand{\\bSigma}{\\boldsymbol{\\Sigma}}",
+			"\\newcommand{\\brho}{\\displaystyle{\\large{\\boldsymbol{\\rho}}}}", 
+			"\\newcommand{\\bgamma}{\\boldsymbol{\\gamma}}", 
+			"\\newcommand{\\bfeta}{\\boldsymbol{\\eta}}", 
+			"\\newcommand{\\bPsi}{\\boldsymbol{\\Psi}}", 
+			"\\newcommand{\\bmu}{\\boldsymbol{\\mu}}", 
+			"\\newcommand{\\bvartheta}{\\boldsymbol{\\vartheta}}",
+			"\\newcommand{\\bzero}{\\mathbf{0}}",
+			"\\newcommand{\\bone}{\\mathbf{1}}", 
+			"\\newcommand{\\bA}{\\mathbf{A}}", 
+			"\\newcommand{\\ba}{\\mathbf{a}}", 
+			"\\newcommand{\\bB}{\\mathbf{B}}", 
+			"\\newcommand{\\bb}{\\mathbf{b}}", 
+			"\\newcommand{\\bD}{\\mathbf{D}}", 
+			"\\newcommand{\\bU}{\\mathbf{U}}", 
+			"\\newcommand{\\bu}{\\mathbf{u}}",
+			"\\newcommand{\\bV}{\\mathbf{V}}", 
+			"\\newcommand{\\bW}{\\mathbf{W}}", 
+			"\\newcommand{\\bw}{\\mathbf{w}}", 
+			"\\newcommand{\\bX}{\\mathbf{X}}", 
+			"\\newcommand{\\bx}{\\mathbf{x}}", 
+			"\\newcommand{\\bY}{\\mathbf{Y}}", 
+			"\\newcommand{\\by}{\\mathbf{y}}", 
+			"\\newcommand{\\bZ}{\\mathbf{Z}}", 
+			"\\newcommand{\\bz}{\\mathbf{z}}",
+			"\\newcommand{\\suit}[1]{\\left(#1\\right)}",
+			"\\newcommand{\\abs}[1]{\\left\\vert#1\\right\\vert}",
+			"\\newcommand{\\set}[1]{\\left\\{#1\\right\\}}",
+			"\\newcommand{\\msuit}[1]{\\left[ #1 \\right]}",
+			"\\begin{document}", 
+
+
+			" %% Title information",
+			"\\begin{center}",
+
+				"{\\LARGE ****}", 
+				"\\bigskip\\ \\\\ \\",
+				"Liujun Chen",
+				
+			"version: *****",
+			"\\end{center}", 
+
+
+			"%% Abstract information and keywords", 
+			"\\begin{abstract}", 
+			"********",
+			"\\end{abstract}", 
+			"\\noindent {\\it Keywords: ***, ***, *** }",
+			"$1", 
+			"\\end{document}",
+		],
+	"description": "paper header"
+	},
+	"frame":{
+		"prefix":"frame",
+		"body": [
+			"\\begin{frame}",
+			"$1",
+			"\\end{frame}"
+		]
+	}
+}
+
+
+```
+
+
+#### Python.json
+
+
+{
+	// Place your snippets for python here. Each snippet is defined under a snippet name and has a prefix, body and 
+	// description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the 
+	// same ids are connected.
+	// Example:
+	// "Print to console": {
+	// 	"prefix": "log",
+	// 	"body": [
+	// 		"console.log('$1');",
+	// 		"$2"
+	// 	],
+	// 	"description": "Log output to console"
+	// }
+	"header":{
+		"prefix": "header",
+		"body": [
+			"#author=Liujun Chen",
+			"#create time $CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE $CURRENT_HOUR:$CURRENT_MINUTE:$CURRENT_SECOND",
+		]
+	}
+}

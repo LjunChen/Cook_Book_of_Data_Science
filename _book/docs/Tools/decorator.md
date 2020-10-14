@@ -65,7 +65,24 @@ result = myfunc(4)
 print(result)
 ```
 
+另外，对于递归算法，有个很特殊的装饰器，`functions.lru_cache`他可以缓存一些中间结果，从而使得类似我们前面那种递归求斐波那契数列等问题变得更有效率。
+```python
+import functions
+@functions.lru_cache()
+def fib(n):
+    if n<=2:
+        return n
+    else:
+        return fib(n-1)+fib(n-2)
+```
+加了这么一句之后，这就是一个高效的算法了，我们可以使用之前的计算时间的装饰器来计算这个函数执行的时间
+```python
+@functime
+def fib3(n):
+    return fib(n)
 
+print(fib(20))
+```
 
 
 

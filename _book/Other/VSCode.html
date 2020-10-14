@@ -279,14 +279,14 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.10" data-path="../Python/rpy2.html">
+        <li class="chapter " data-level="1.2.10" data-path="../Python/Speed.html">
             
-                <a href="../Python/rpy2.html">
+                <a href="../Python/Speed.html">
             
                     
                         <b>1.2.10.</b>
                     
-                    rpy2模块:R与Python的结合
+                    Python运行加速技巧
             
                 </a>
             
@@ -294,14 +294,29 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.11" data-path="../Python/cython.html">
+        <li class="chapter " data-level="1.2.11" data-path="../Python/Other.html">
             
-                <a href="../Python/cython.html">
+                <a href="../Python/Other.html">
             
                     
                         <b>1.2.11.</b>
                     
-                    Cython:将Python代码编译为C，加快代码的运行
+                    其他注意事项
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.12" data-path="../Python/rpy2.html">
+            
+                <a href="../Python/rpy2.html">
+            
+                    
+                        <b>1.2.12.</b>
+                    
+                    rpy2模块:R与Python的结合
             
                 </a>
             
@@ -501,21 +516,6 @@
                         <b>2.1.5.</b>
                     
                     SVM
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="2.1.6" data-path="../Statistical_Learning/Empirical_Likelihood.html">
-            
-                <a href="../Statistical_Learning/Empirical_Likelihood.html">
-            
-                    
-                        <b>2.1.6.</b>
-                    
-                    经验似然
             
                 </a>
             
@@ -756,7 +756,7 @@
                     
                         <b>3.3.2.</b>
                     
-                    git使用
+                    git & ssh
             
                 </a>
             
@@ -1156,6 +1156,234 @@ R&#x91CC;&#x9762;&#x5355;&#x884C;&#x8FD0;&#x884C;&#x7684;&#x5FEB;&#x6377;&#x952E
 <p>&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x6587;&#x4EF6;&#x53F3;&#x4E0A;&#x89D2;&#x7684;&#x6309;&#x94AE;&#x6216;&#x8005;&#x5FEB;&#x6377;&#x952E;<code>Crlt+K V</code>&#x6765;&#x9884;&#x89C8;markdown&#x6587;&#x4EF6;&#xFF0C;&#x6548;&#x679C;&#x5F88;&#x597D;&#x3002;
 &#x5982;&#x679C;&#x60F3;&#x8981;&#x66F4;&#x597D;&#x7684;&#x9884;&#x89C8;&#x6548;&#x679C;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;<code>Markdown Preview Enhanced</code>&#x63D2;&#x4EF6;&#x3002;
 &#x4F46;&#x662F;&#x5176;&#x539F;&#x751F;&#x4E0D;&#x652F;&#x6301;&#x516C;&#x5F0F;&#x7684;&#x9884;&#x89C8;&#xFF0C;&#x56E0;&#x6B64;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x9700;&#x8981;&#x5B89;&#x88C5;<code>markdown math</code>&#x63D2;&#x4EF6;&#x3002;PS &#x6211;&#x89C9;&#x5F97;VScode&#x5199;markdown&#x4F7F;&#x7528;&#x8D77;&#x6765;&#x6BD4;Typora&#x8FD8;&#x8981;&#x8212;&#x670D;&#xFF0C;Typora&#x5F88;&#x591A;&#x65F6;&#x5019;&#x603B;&#x662F;&#x6709;&#x70B9;&#x5361;&#x3002;&#x800C;&#x4E14;&#x76F8;&#x6BD4;&#x4E8E;Typora&#x7684;&#x5C55;&#x73B0;&#x5F62;&#x5F0F;&#xFF0C;&#x6211;&#x8FD8;&#x662F;&#x66F4;&#x52A0;&#x559C;&#x6B22;source&#x548C;&#x9884;&#x89C8;&#x662F;&#x5206;&#x5F00;&#x7684;&#x8FD9;&#x79CD;&#xFF0C;&#x6D41;&#x7545;&#x5EA6;&#x4F1A;&#x597D;&#x5F88;&#x591A;&#x3002;</p>
+<h2 id="&#x7528;&#x6237;&#x7247;&#x6BB5;">&#x7528;&#x6237;&#x7247;&#x6BB5;</h2>
+<h4 id="latexjson-&#x5B9A;&#x4E49;&#x4E86;beamerctexbeamer&#x548C;paper&#x7684;&#x5E38;&#x7528;&#x547D;&#x4EE4;">latex.json: &#x5B9A;&#x4E49;&#x4E86;beamer,ctexbeamer&#x548C;paper&#x7684;&#x5E38;&#x7528;&#x547D;&#x4EE4;</h4>
+<pre><code class="lang-json">{
+    <span class="hljs-string">&quot;beamer&quot;</span>:{
+        <span class="hljs-string">&quot;prefix&quot;</span>:<span class="hljs-string">&quot;beamer&quot;</span>,
+        <span class="hljs-string">&quot;body&quot;</span>:[
+            <span class="hljs-string">&quot;%!TEX program =pdflatex&quot;</span>,
+            <span class="hljs-string">&quot;\\documentclass{beamer}&quot;</span>,
+            <span class="hljs-string">&quot;\\usetheme{CambridgeUS}&quot;</span>,
+            <span class="hljs-string">&quot;%%define new comand&quot;</span>,
+            <span class="hljs-string">&quot;\\def\\argmin{\\mathop{\\rm arg~min}\\limits}&quot;</span>, 
+            <span class="hljs-string">&quot;\\def\\argmin{\\mathop{\\rm arg~min}\\limits}&quot;</span>, 
+            <span class="hljs-string">&quot;\newcommand{\bbeta}{\boldsymbol{\beta}}&quot;</span>, 
+            <span class="hljs-string">&quot;\\newcommand{\\bdelta}{\\boldsymbol{\\delta}}&quot;</span>, 
+            <span class="hljs-string">&quot;\\newcommand{\\bSigma}{\\boldsymbol{\\Sigma}}&quot;</span>,
+            <span class="hljs-string">&quot;\\newcommand{\\brho}{\\displaystyle{\\large{\\boldsymbol{\\rho}}}}&quot;</span>, 
+            <span class="hljs-string">&quot;\\newcommand{\\bgamma}{\\boldsymbol{\\gamma}}&quot;</span>, 
+            <span class="hljs-string">&quot;\\newcommand{\\bfeta}{\\boldsymbol{\\eta}}&quot;</span>, 
+            <span class="hljs-string">&quot;\\newcommand{\\bPsi}{\\boldsymbol{\\Psi}}&quot;</span>, 
+            <span class="hljs-string">&quot;\\newcommand{\\bmu}{\\boldsymbol{\\mu}}&quot;</span>, 
+            <span class="hljs-string">&quot;\\newcommand{\\bvartheta}{\\boldsymbol{\\vartheta}}&quot;</span>,
+            <span class="hljs-string">&quot;\\newcommand{\\bzero}{\\mathbf{0}}&quot;</span>,
+            <span class="hljs-string">&quot;\\newcommand{\\bone}{\\mathbf{1}}&quot;</span>, 
+            <span class="hljs-string">&quot;\\newcommand{\\bA}{\\mathbf{A}}&quot;</span>, 
+            <span class="hljs-string">&quot;\\newcommand{\\ba}{\\mathbf{a}}&quot;</span>, 
+            <span class="hljs-string">&quot;\\newcommand{\\bB}{\\mathbf{B}}&quot;</span>, 
+            <span class="hljs-string">&quot;\\newcommand{\\bb}{\\mathbf{b}}&quot;</span>, 
+            <span class="hljs-string">&quot;\\newcommand{\\bD}{\\mathbf{D}}&quot;</span>, 
+            <span class="hljs-string">&quot;\\newcommand{\\bU}{\\mathbf{U}}&quot;</span>, 
+            <span class="hljs-string">&quot;\\newcommand{\\bu}{\\mathbf{u}}&quot;</span>,
+            <span class="hljs-string">&quot;\\newcommand{\\bV}{\\mathbf{V}}&quot;</span>, 
+            <span class="hljs-string">&quot;\\newcommand{\\bW}{\\mathbf{W}}&quot;</span>, 
+            <span class="hljs-string">&quot;\\newcommand{\\bw}{\\mathbf{w}}&quot;</span>, 
+            <span class="hljs-string">&quot;\\newcommand{\\bX}{\\mathbf{X}}&quot;</span>, 
+            <span class="hljs-string">&quot;\\newcommand{\\bx}{\\mathbf{x}}&quot;</span>, 
+            <span class="hljs-string">&quot;\\newcommand{\\bY}{\\mathbf{Y}}&quot;</span>, 
+            <span class="hljs-string">&quot;\\newcommand{\\by}{\\mathbf{y}}&quot;</span>, 
+            <span class="hljs-string">&quot;\\newcommand{\\bZ}{\\mathbf{Z}}&quot;</span>, 
+            <span class="hljs-string">&quot;\\newcommand{\\bz}{\\mathbf{z}}&quot;</span>,
+            <span class="hljs-string">&quot;\\newcommand{\\suit}[1]{\\left(#1\\right)}&quot;</span>,
+            <span class="hljs-string">&quot;\\newcommand{\\abs}[1]{\\left\\vert#1\\right\\vert}&quot;</span>,
+            <span class="hljs-string">&quot;\\newcommand{\\set}[1]{\\left\\{#1\\right\\}}&quot;</span>,
+            <span class="hljs-string">&quot;\\newcommand{\\msuit}[1]{\\left[ #1 \\right]}&quot;</span>,
+            <span class="hljs-string">&quot;\\author{Liujun Chen}&quot;</span>,
+            <span class="hljs-string">&quot;\\title{}&quot;</span>,
+            <span class="hljs-string">&quot;\\begin{document}&quot;</span>,
+            <span class="hljs-string">&quot;\\begin{frame}&quot;</span>,
+                <span class="hljs-string">&quot;\\titlepage&quot;</span>,
+            <span class="hljs-string">&quot;\\end{frame}&quot;</span>,
+            <span class="hljs-string">&quot;\\end{document}&quot;</span>
+    ],
+    <span class="hljs-string">&quot;description&quot;</span>: <span class="hljs-string">&quot;beamer header&quot;</span>
+    },
+    <span class="hljs-string">&quot;ctexbeamer&quot;</span>:{
+        <span class="hljs-string">&quot;prefix&quot;</span>:<span class="hljs-string">&quot;ctexbeamer&quot;</span>,
+        <span class="hljs-string">&quot;body&quot;</span>:[
+            <span class="hljs-string">&quot;%!TEX program =xelatex&quot;</span>,
+            <span class="hljs-string">&quot;\\documentclass{ctexbeamer}&quot;</span>,
+            <span class="hljs-string">&quot;\\usetheme{CambridgeUS}&quot;</span>,
+            <span class="hljs-string">&quot;%%define new comand&quot;</span>,
+            <span class="hljs-string">&quot;\\def\\argmin{\\mathop{\\rm arg~min}\\limits}&quot;</span>, 
+            <span class="hljs-string">&quot;\\def\\argmin{\\mathop{\\rm arg~min}\\limits}&quot;</span>, 
+            <span class="hljs-string">&quot;\newcommand{\bbeta}{\boldsymbol{\beta}}&quot;</span>, 
+            <span class="hljs-string">&quot;\\newcommand{\\bdelta}{\\boldsymbol{\\delta}}&quot;</span>, 
+            <span class="hljs-string">&quot;\\newcommand{\\bSigma}{\\boldsymbol{\\Sigma}}&quot;</span>,
+            <span class="hljs-string">&quot;\\newcommand{\\brho}{\\displaystyle{\\large{\\boldsymbol{\\rho}}}}&quot;</span>, 
+            <span class="hljs-string">&quot;\\newcommand{\\bgamma}{\\boldsymbol{\\gamma}}&quot;</span>, 
+            <span class="hljs-string">&quot;\\newcommand{\\bfeta}{\\boldsymbol{\\eta}}&quot;</span>, 
+            <span class="hljs-string">&quot;\\newcommand{\\bPsi}{\\boldsymbol{\\Psi}}&quot;</span>, 
+            <span class="hljs-string">&quot;\\newcommand{\\bmu}{\\boldsymbol{\\mu}}&quot;</span>, 
+            <span class="hljs-string">&quot;\\newcommand{\\bvartheta}{\\boldsymbol{\\vartheta}}&quot;</span>,
+            <span class="hljs-string">&quot;\\newcommand{\\bzero}{\\mathbf{0}}&quot;</span>,
+            <span class="hljs-string">&quot;\\newcommand{\\bone}{\\mathbf{1}}&quot;</span>, 
+            <span class="hljs-string">&quot;\\newcommand{\\bA}{\\mathbf{A}}&quot;</span>, 
+            <span class="hljs-string">&quot;\\newcommand{\\ba}{\\mathbf{a}}&quot;</span>, 
+            <span class="hljs-string">&quot;\\newcommand{\\bB}{\\mathbf{B}}&quot;</span>, 
+            <span class="hljs-string">&quot;\\newcommand{\\bb}{\\mathbf{b}}&quot;</span>, 
+            <span class="hljs-string">&quot;\\newcommand{\\bD}{\\mathbf{D}}&quot;</span>, 
+            <span class="hljs-string">&quot;\\newcommand{\\bU}{\\mathbf{U}}&quot;</span>, 
+            <span class="hljs-string">&quot;\\newcommand{\\bu}{\\mathbf{u}}&quot;</span>,
+            <span class="hljs-string">&quot;\\newcommand{\\bV}{\\mathbf{V}}&quot;</span>, 
+            <span class="hljs-string">&quot;\\newcommand{\\bW}{\\mathbf{W}}&quot;</span>, 
+            <span class="hljs-string">&quot;\\newcommand{\\bw}{\\mathbf{w}}&quot;</span>, 
+            <span class="hljs-string">&quot;\\newcommand{\\bX}{\\mathbf{X}}&quot;</span>, 
+            <span class="hljs-string">&quot;\\newcommand{\\bx}{\\mathbf{x}}&quot;</span>, 
+            <span class="hljs-string">&quot;\\newcommand{\\bY}{\\mathbf{Y}}&quot;</span>, 
+            <span class="hljs-string">&quot;\\newcommand{\\by}{\\mathbf{y}}&quot;</span>, 
+            <span class="hljs-string">&quot;\\newcommand{\\bZ}{\\mathbf{Z}}&quot;</span>, 
+            <span class="hljs-string">&quot;\\newcommand{\\bz}{\\mathbf{z}}&quot;</span>,
+            <span class="hljs-string">&quot;\\newcommand{\\suit}[1]{\\left(#1\\right)}&quot;</span>,
+            <span class="hljs-string">&quot;\\newcommand{\\abs}[1]{\\left\\vert#1\\right\\vert}&quot;</span>,
+            <span class="hljs-string">&quot;\\newcommand{\\set}[1]{\\left\\{#1\\right\\}}&quot;</span>,
+            <span class="hljs-string">&quot;\\newcommand{\\msuit}[1]{\\left[ #1 \\right]}&quot;</span>,
+            <span class="hljs-string">&quot;\\author{Liujun Chen}&quot;</span>,
+            <span class="hljs-string">&quot;\\title{}&quot;</span>,
+            <span class="hljs-string">&quot;\\begin{document}&quot;</span>,
+            <span class="hljs-string">&quot;\\begin{frame}&quot;</span>,
+                <span class="hljs-string">&quot;\\titlepage&quot;</span>,
+            <span class="hljs-string">&quot;\\end{frame}&quot;</span>,
+            <span class="hljs-string">&quot;\\end{document}&quot;</span>
+    ],
+    <span class="hljs-string">&quot;description&quot;</span>: <span class="hljs-string">&quot;beamer header&quot;</span>
+    },
+    <span class="hljs-string">&quot;paper&quot;</span>:{
+        <span class="hljs-string">&quot;prefix&quot;</span>: <span class="hljs-string">&quot;paper&quot;</span>,
+        <span class="hljs-string">&quot;body&quot;</span>: [
+            <span class="hljs-string">&quot;%!TEX program = pdflatex&quot;</span>,
+            <span class="hljs-string">&quot;%!BIB program = bibtex&quot;</span>,
+            <span class="hljs-string">&quot;\\documentclass[12pt]{article}&quot;</span>,
+
+            <span class="hljs-string">&quot;%%Package&quot;</span>,
+            <span class="hljs-string">&quot;\\usepackage{amsmath,amsthm,amssymb}&quot;</span>,
+            <span class="hljs-string">&quot;\\usepackage{color}&quot;</span>,
+            <span class="hljs-string">&quot;\\usepackage{graphicx,subfigure,float}&quot;</span>,
+            <span class="hljs-string">&quot;\\usepackage[round]{natbib}&quot;</span>,
+
+            <span class="hljs-string">&quot;%%theorem style&quot;</span>,
+            <span class="hljs-string">&quot;\\theoremstyle{remark}&quot;</span>,
+            <span class="hljs-string">&quot;\\newtheorem{theorem}{{\\sc Theorem}}&quot;</span>,
+            <span class="hljs-string">&quot;\\newtheorem{prop}{Proposition}[section]&quot;</span>,
+            <span class="hljs-string">&quot;\\newtheorem{corollary}{{\\sc Corollary}}&quot;</span>,
+            <span class="hljs-string">&quot;\\newtheorem{lemma}{{\\sc Lemma}}&quot;</span>,
+            <span class="hljs-string">&quot;\\newtheorem{remark}{{\\sc Remark}}&quot;</span>,
+            <span class="hljs-string">&quot;\\newtheorem{exam}{{\\sc Example}}&quot;</span>,
+
+            <span class="hljs-string">&quot;\numberwithin{equation}{section}&quot;</span>,
+            <span class="hljs-string">&quot;\numberwithin{theorem}{section}&quot;</span>,
+            <span class="hljs-string">&quot;\numberwithin{lemma}{section}&quot;</span>,
+            <span class="hljs-string">&quot;\numberwithin{corollary}{section}&quot;</span>,
+            <span class="hljs-string">&quot;\numberwithin{remark}{section}&quot;</span>,
+            <span class="hljs-string">&quot;\numberwithin{exam}{section}&quot;</span>,
+
+            <span class="hljs-string">&quot;%% define of comment&quot;</span>,
+            <span class="hljs-string">&quot;\\def\\boxit#1{\\vbox{\\hrule\\hbox{\\vrule\\kern6pt\\vbox{\\kern6pt#1\\kern6pt}\\kern6pt\\vrule}\\hrule}}&quot;</span>,
+            <span class="hljs-string">&quot;\\def\\chencomment#1{\\vskip 2mm\\boxit{\\vskip 2mm{\\color{blue}\\bf#1} {\\color{red}\\bf -- Liujun\\vskip 2mm}}\\vskip 2mm}&quot;</span>,
+
+
+            <span class="hljs-string">&quot;%%define new comand&quot;</span>,
+            <span class="hljs-string">&quot;\\def\\argmin{\\mathop{\\rm arg~min}\\limits}&quot;</span>, 
+            <span class="hljs-string">&quot;\\def\\argmin{\\mathop{\\rm arg~min}\\limits}&quot;</span>, 
+            <span class="hljs-string">&quot;\newcommand{\bbeta}{\boldsymbol{\beta}}&quot;</span>, 
+            <span class="hljs-string">&quot;\\newcommand{\\bdelta}{\\boldsymbol{\\delta}}&quot;</span>, 
+            <span class="hljs-string">&quot;\\newcommand{\\bSigma}{\\boldsymbol{\\Sigma}}&quot;</span>,
+            <span class="hljs-string">&quot;\\newcommand{\\brho}{\\displaystyle{\\large{\\boldsymbol{\\rho}}}}&quot;</span>, 
+            <span class="hljs-string">&quot;\\newcommand{\\bgamma}{\\boldsymbol{\\gamma}}&quot;</span>, 
+            <span class="hljs-string">&quot;\\newcommand{\\bfeta}{\\boldsymbol{\\eta}}&quot;</span>, 
+            <span class="hljs-string">&quot;\\newcommand{\\bPsi}{\\boldsymbol{\\Psi}}&quot;</span>, 
+            <span class="hljs-string">&quot;\\newcommand{\\bmu}{\\boldsymbol{\\mu}}&quot;</span>, 
+            <span class="hljs-string">&quot;\\newcommand{\\bvartheta}{\\boldsymbol{\\vartheta}}&quot;</span>,
+            <span class="hljs-string">&quot;\\newcommand{\\bzero}{\\mathbf{0}}&quot;</span>,
+            <span class="hljs-string">&quot;\\newcommand{\\bone}{\\mathbf{1}}&quot;</span>, 
+            <span class="hljs-string">&quot;\\newcommand{\\bA}{\\mathbf{A}}&quot;</span>, 
+            <span class="hljs-string">&quot;\\newcommand{\\ba}{\\mathbf{a}}&quot;</span>, 
+            <span class="hljs-string">&quot;\\newcommand{\\bB}{\\mathbf{B}}&quot;</span>, 
+            <span class="hljs-string">&quot;\\newcommand{\\bb}{\\mathbf{b}}&quot;</span>, 
+            <span class="hljs-string">&quot;\\newcommand{\\bD}{\\mathbf{D}}&quot;</span>, 
+            <span class="hljs-string">&quot;\\newcommand{\\bU}{\\mathbf{U}}&quot;</span>, 
+            <span class="hljs-string">&quot;\\newcommand{\\bu}{\\mathbf{u}}&quot;</span>,
+            <span class="hljs-string">&quot;\\newcommand{\\bV}{\\mathbf{V}}&quot;</span>, 
+            <span class="hljs-string">&quot;\\newcommand{\\bW}{\\mathbf{W}}&quot;</span>, 
+            <span class="hljs-string">&quot;\\newcommand{\\bw}{\\mathbf{w}}&quot;</span>, 
+            <span class="hljs-string">&quot;\\newcommand{\\bX}{\\mathbf{X}}&quot;</span>, 
+            <span class="hljs-string">&quot;\\newcommand{\\bx}{\\mathbf{x}}&quot;</span>, 
+            <span class="hljs-string">&quot;\\newcommand{\\bY}{\\mathbf{Y}}&quot;</span>, 
+            <span class="hljs-string">&quot;\\newcommand{\\by}{\\mathbf{y}}&quot;</span>, 
+            <span class="hljs-string">&quot;\\newcommand{\\bZ}{\\mathbf{Z}}&quot;</span>, 
+            <span class="hljs-string">&quot;\\newcommand{\\bz}{\\mathbf{z}}&quot;</span>,
+            <span class="hljs-string">&quot;\\newcommand{\\suit}[1]{\\left(#1\\right)}&quot;</span>,
+            <span class="hljs-string">&quot;\\newcommand{\\abs}[1]{\\left\\vert#1\\right\\vert}&quot;</span>,
+            <span class="hljs-string">&quot;\\newcommand{\\set}[1]{\\left\\{#1\\right\\}}&quot;</span>,
+            <span class="hljs-string">&quot;\\newcommand{\\msuit}[1]{\\left[ #1 \\right]}&quot;</span>,
+            <span class="hljs-string">&quot;\\begin{document}&quot;</span>, 
+
+
+            <span class="hljs-string">&quot; %% Title information&quot;</span>,
+            <span class="hljs-string">&quot;\\begin{center}&quot;</span>,
+
+                <span class="hljs-string">&quot;{\\LARGE ****}&quot;</span>, 
+                <span class="hljs-string">&quot;\\bigskip\\ \\\\ \\&quot;</span>,
+                <span class="hljs-string">&quot;Liujun Chen&quot;</span>,
+
+            <span class="hljs-string">&quot;version: *****&quot;</span>,
+            <span class="hljs-string">&quot;\\end{center}&quot;</span>, 
+
+
+            <span class="hljs-string">&quot;%% Abstract information and keywords&quot;</span>, 
+            <span class="hljs-string">&quot;\\begin{abstract}&quot;</span>, 
+            <span class="hljs-string">&quot;********&quot;</span>,
+            <span class="hljs-string">&quot;\\end{abstract}&quot;</span>, 
+            <span class="hljs-string">&quot;\\noindent {\\it Keywords: ***, ***, *** }&quot;</span>,
+            <span class="hljs-string">&quot;$1&quot;</span>, 
+            <span class="hljs-string">&quot;\\end{document}&quot;</span>,
+        ],
+    <span class="hljs-string">&quot;description&quot;</span>: <span class="hljs-string">&quot;paper header&quot;</span>
+    },
+    <span class="hljs-string">&quot;frame&quot;</span>:{
+        <span class="hljs-string">&quot;prefix&quot;</span>:<span class="hljs-string">&quot;frame&quot;</span>,
+        <span class="hljs-string">&quot;body&quot;</span>: [
+            <span class="hljs-string">&quot;\\begin{frame}&quot;</span>,
+            <span class="hljs-string">&quot;$1&quot;</span>,
+            <span class="hljs-string">&quot;\\end{frame}&quot;</span>
+        ]
+    }
+}
+</code></pre>
+<h4 id="pythonjson">Python.json</h4>
+<p>{
+    // Place your snippets for python here. Each snippet is defined under a snippet name and has a prefix, body and 
+    // description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+    // $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the 
+    // same ids are connected.
+    // Example:
+    // &quot;Print to console&quot;: {
+    //     &quot;prefix&quot;: &quot;log&quot;,
+    //     &quot;body&quot;: [
+    //         &quot;console.log(&apos;$1&apos;);&quot;,
+    //         &quot;$2&quot;
+    //     ],
+    //     &quot;description&quot;: &quot;Log output to console&quot;
+    // }
+    &quot;header&quot;:{
+        &quot;prefix&quot;: &quot;header&quot;,
+        &quot;body&quot;: [
+            &quot;#author=Liujun Chen&quot;,
+            &quot;#create time $CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE $CURRENT_HOUR:$CURRENT_MINUTE:$CURRENT_SECOND&quot;,
+        ]
+    }
+}</p>
 
                                 
                                 </section>
@@ -1199,7 +1427,7 @@ R&#x91CC;&#x9762;&#x5355;&#x884C;&#x8FD0;&#x884C;&#x7684;&#x5FEB;&#x6377;&#x952E
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"VScode配置","level":"3.3.5","depth":2,"next":{"title":"其他软件","level":"3.3.6","depth":2,"path":"Other/Other.md","ref":"Other/Other.md","articles":[]},"previous":{"title":"Vim的使用","level":"3.3.4","depth":2,"path":"Other/Vim.md","ref":"Other/Vim.md","articles":[]},"dir":"ltr"},"config":{"plugins":["katex","copy-code-button","github","github-buttons","splitter","-sharing","back-to-top-button"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/LjunChen/Cook_Book_of_Data_Science"},"splitter":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"fontSettings":{"theme":"white","family":"msyh","size":2},"highlight":{},"back-to-top-button":{},"github-buttons":{"repo":"LjunChen/Cook_Book_of_Data_Science","types":["star","watch","fork"],"size":"small"},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true}},"theme":"default","author":"陈刘军","pdf":{"pageNumbers":true,"fontSize":14,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"数据科学实用手册","gitbook":"*"},"file":{"path":"Other/VSCode.md","mtime":"2020-09-06T16:06:58.588Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-09-10T05:58:53.494Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"VScode配置","level":"3.3.5","depth":2,"next":{"title":"其他软件","level":"3.3.6","depth":2,"path":"Other/Other.md","ref":"Other/Other.md","articles":[]},"previous":{"title":"Vim的使用","level":"3.3.4","depth":2,"path":"Other/Vim.md","ref":"Other/Vim.md","articles":[]},"dir":"ltr"},"config":{"plugins":["katex","copy-code-button","github","github-buttons","splitter","-sharing","back-to-top-button"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/LjunChen/Cook_Book_of_Data_Science"},"splitter":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"fontSettings":{"theme":"white","family":"msyh","size":2},"highlight":{},"back-to-top-button":{},"github-buttons":{"repo":"LjunChen/Cook_Book_of_Data_Science","types":["star","watch","fork"],"size":"small"},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true}},"theme":"default","author":"陈刘军","pdf":{"pageNumbers":true,"fontSize":14,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"数据科学实用手册","gitbook":"*"},"file":{"path":"Other/VSCode.md","mtime":"2020-10-14T04:53:45.425Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-10-14T04:54:07.186Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

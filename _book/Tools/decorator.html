@@ -279,14 +279,14 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.10" data-path="../Python/rpy2.html">
+        <li class="chapter " data-level="1.2.10" data-path="../Python/Speed.html">
             
-                <a href="../Python/rpy2.html">
+                <a href="../Python/Speed.html">
             
                     
                         <b>1.2.10.</b>
                     
-                    rpy2模块:R与Python的结合
+                    Python运行加速技巧
             
                 </a>
             
@@ -294,14 +294,29 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.11" data-path="../Python/cython.html">
+        <li class="chapter " data-level="1.2.11" data-path="../Python/Other.html">
             
-                <a href="../Python/cython.html">
+                <a href="../Python/Other.html">
             
                     
                         <b>1.2.11.</b>
                     
-                    Cython:将Python代码编译为C，加快代码的运行
+                    其他注意事项
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.12" data-path="../Python/rpy2.html">
+            
+                <a href="../Python/rpy2.html">
+            
+                    
+                        <b>1.2.12.</b>
+                    
+                    rpy2模块:R与Python的结合
             
                 </a>
             
@@ -501,21 +516,6 @@
                         <b>2.1.5.</b>
                     
                     SVM
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="2.1.6" data-path="../Statistical_Learning/Empirical_Likelihood.html">
-            
-                <a href="../Statistical_Learning/Empirical_Likelihood.html">
-            
-                    
-                        <b>2.1.6.</b>
-                    
-                    经验似然
             
                 </a>
             
@@ -756,7 +756,7 @@
                     
                         <b>3.3.2.</b>
                     
-                    git使用
+                    git & ssh
             
                 </a>
             
@@ -1019,6 +1019,22 @@ fib2(<span class="hljs-number">30</span>)
 result = myfunc(<span class="hljs-number">4</span>)
 print(result)
 </code></pre>
+<p>&#x53E6;&#x5916;&#xFF0C;&#x5BF9;&#x4E8E;&#x9012;&#x5F52;&#x7B97;&#x6CD5;&#xFF0C;&#x6709;&#x4E2A;&#x5F88;&#x7279;&#x6B8A;&#x7684;&#x88C5;&#x9970;&#x5668;&#xFF0C;<code>functions.lru_cache</code>&#x4ED6;&#x53EF;&#x4EE5;&#x7F13;&#x5B58;&#x4E00;&#x4E9B;&#x4E2D;&#x95F4;&#x7ED3;&#x679C;&#xFF0C;&#x4ECE;&#x800C;&#x4F7F;&#x5F97;&#x7C7B;&#x4F3C;&#x6211;&#x4EEC;&#x524D;&#x9762;&#x90A3;&#x79CD;&#x9012;&#x5F52;&#x6C42;&#x6590;&#x6CE2;&#x90A3;&#x5951;&#x6570;&#x5217;&#x7B49;&#x95EE;&#x9898;&#x53D8;&#x5F97;&#x66F4;&#x6709;&#x6548;&#x7387;&#x3002;</p>
+<pre><code class="lang-python"><span class="hljs-keyword">import</span> functions
+<span class="hljs-meta">@functions.lru_cache()</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">fib</span><span class="hljs-params">(n)</span>:</span>
+    <span class="hljs-keyword">if</span> n&lt;=<span class="hljs-number">2</span>:
+        <span class="hljs-keyword">return</span> n
+    <span class="hljs-keyword">else</span>:
+        <span class="hljs-keyword">return</span> fib(n<span class="hljs-number">-1</span>)+fib(n<span class="hljs-number">-2</span>)
+</code></pre>
+<p>&#x52A0;&#x4E86;&#x8FD9;&#x4E48;&#x4E00;&#x53E5;&#x4E4B;&#x540E;&#xFF0C;&#x8FD9;&#x5C31;&#x662F;&#x4E00;&#x4E2A;&#x9AD8;&#x6548;&#x7684;&#x7B97;&#x6CD5;&#x4E86;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x4E4B;&#x524D;&#x7684;&#x8BA1;&#x7B97;&#x65F6;&#x95F4;&#x7684;&#x88C5;&#x9970;&#x5668;&#x6765;&#x8BA1;&#x7B97;&#x8FD9;&#x4E2A;&#x51FD;&#x6570;&#x6267;&#x884C;&#x7684;&#x65F6;&#x95F4;</p>
+<pre><code class="lang-python"><span class="hljs-meta">@functime</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">fib3</span><span class="hljs-params">(n)</span>:</span>
+    <span class="hljs-keyword">return</span> fib(n)
+
+print(fib(<span class="hljs-number">20</span>))
+</code></pre>
 
                                 
                                 </section>
@@ -1062,7 +1078,7 @@ print(result)
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Python的装饰器","level":"3.4.4","depth":2,"next":{"title":"Python的日志模块","level":"3.4.5","depth":2,"path":"Tools/logging.md","ref":"Tools/logging.md","articles":[]},"previous":{"title":"R从console读取输入","level":"3.4.3","depth":2,"path":"Tools/R_console.md","ref":"Tools/R_console.md","articles":[]},"dir":"ltr"},"config":{"plugins":["katex","copy-code-button","github","github-buttons","splitter","-sharing","back-to-top-button"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/LjunChen/Cook_Book_of_Data_Science"},"splitter":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"fontSettings":{"theme":"white","family":"msyh","size":2},"highlight":{},"back-to-top-button":{},"github-buttons":{"repo":"LjunChen/Cook_Book_of_Data_Science","types":["star","watch","fork"],"size":"small"},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true}},"theme":"default","author":"陈刘军","pdf":{"pageNumbers":true,"fontSize":14,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"数据科学实用手册","gitbook":"*"},"file":{"path":"Tools/decorator.md","mtime":"2020-08-30T05:29:35.103Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-09-10T05:58:53.494Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Python的装饰器","level":"3.4.4","depth":2,"next":{"title":"Python的日志模块","level":"3.4.5","depth":2,"path":"Tools/logging.md","ref":"Tools/logging.md","articles":[]},"previous":{"title":"R从console读取输入","level":"3.4.3","depth":2,"path":"Tools/R_console.md","ref":"Tools/R_console.md","articles":[]},"dir":"ltr"},"config":{"plugins":["katex","copy-code-button","github","github-buttons","splitter","-sharing","back-to-top-button"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/LjunChen/Cook_Book_of_Data_Science"},"splitter":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"fontSettings":{"theme":"white","family":"msyh","size":2},"highlight":{},"back-to-top-button":{},"github-buttons":{"repo":"LjunChen/Cook_Book_of_Data_Science","types":["star","watch","fork"],"size":"small"},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true}},"theme":"default","author":"陈刘军","pdf":{"pageNumbers":true,"fontSize":14,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"数据科学实用手册","gitbook":"*"},"file":{"path":"Tools/decorator.md","mtime":"2020-10-09T01:51:29.191Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-10-14T04:54:07.186Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

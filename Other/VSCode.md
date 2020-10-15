@@ -224,6 +224,20 @@ Latex的配置直接在setting区加上以下代码(记得软件的地址要改.
 #### latex.json: 定义了beamer,ctexbeamer和paper的常用命令
 ```json
 {
+	// Place your snippets for latex here. Each snippet is defined under a snippet name and has a prefix, body and 
+	// description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the 
+	// same ids are connected.
+	// Example:
+	// "Print to console": {
+	// 	"prefix": "log",
+	// 	"body": [
+	// 		"console.log('$1');",
+	// 		"$2"
+	// 	],
+	// 	"description": "Log output to console"
+	// }
+
 	"beamer":{
 		"prefix":"beamer",
 		"body":[
@@ -233,8 +247,8 @@ Latex的配置直接在setting区加上以下代码(记得软件的地址要改.
 			"%%define new comand",
 			"\\def\\argmin{\\mathop{\\rm arg~min}\\limits}", 
 			"\\def\\argmin{\\mathop{\\rm arg~min}\\limits}", 
-			"\newcommand{\bbeta}{\boldsymbol{\beta}}", 
 			"\\newcommand{\\bdelta}{\\boldsymbol{\\delta}}", 
+			"\\newcommand{\\bbeta}{\\boldsymbol{\\beta}",
 			"\\newcommand{\\bSigma}{\\boldsymbol{\\Sigma}}",
 			"\\newcommand{\\brho}{\\displaystyle{\\large{\\boldsymbol{\\rho}}}}", 
 			"\\newcommand{\\bgamma}{\\boldsymbol{\\gamma}}", 
@@ -262,7 +276,7 @@ Latex的配置直接在setting区加上以下代码(记得软件的地址要改.
 			"\\newcommand{\\bz}{\\mathbf{z}}",
 			"\\newcommand{\\suit}[1]{\\left(#1\\right)}",
 			"\\newcommand{\\abs}[1]{\\left\\vert#1\\right\\vert}",
-			"\\newcommand{\\set}[1]{\\left\\{#1\\right\\}}",
+			"\\newcommand{\\set}[1]{\\left\\{#1\\right\\\\}}",
 			"\\newcommand{\\msuit}[1]{\\left[ #1 \\right]}",
 			"\\author{Liujun Chen}",
 			"\\title{}",
@@ -283,7 +297,7 @@ Latex的配置直接在setting区加上以下代码(记得软件的地址要改.
 			"%%define new comand",
 			"\\def\\argmin{\\mathop{\\rm arg~min}\\limits}", 
 			"\\def\\argmin{\\mathop{\\rm arg~min}\\limits}", 
-			"\newcommand{\bbeta}{\boldsymbol{\beta}}", 
+			"\\newcommand{\\bbeta}{\\boldsymbol{\\beta}}", 
 			"\\newcommand{\\bdelta}{\\boldsymbol{\\delta}}", 
 			"\\newcommand{\\bSigma}{\\boldsymbol{\\Sigma}}",
 			"\\newcommand{\\brho}{\\displaystyle{\\large{\\boldsymbol{\\rho}}}}", 
@@ -312,7 +326,7 @@ Latex的配置直接在setting区加上以下代码(记得软件的地址要改.
 			"\\newcommand{\\bz}{\\mathbf{z}}",
 			"\\newcommand{\\suit}[1]{\\left(#1\\right)}",
 			"\\newcommand{\\abs}[1]{\\left\\vert#1\\right\\vert}",
-			"\\newcommand{\\set}[1]{\\left\\{#1\\right\\}}",
+			"\\newcommand{\\set}[1]{\\left\\{#1\\right\\\\}}",
 			"\\newcommand{\\msuit}[1]{\\left[ #1 \\right]}",
 			"\\author{Liujun Chen}",
 			"\\title{}",
@@ -328,7 +342,7 @@ Latex的配置直接在setting区加上以下代码(记得软件的地址要改.
 		"prefix": "paper",
 		"body": [
 			"%!TEX program = pdflatex",
-			"%!BIB program = bibtex",
+			"%%!BIB program = bibtex",
 			"\\documentclass[12pt]{article}",
 
 			"%%Package",
@@ -346,12 +360,12 @@ Latex的配置直接在setting区加上以下代码(记得软件的地址要改.
 			"\\newtheorem{remark}{{\\sc Remark}}",
 			"\\newtheorem{exam}{{\\sc Example}}",
 
-			"\numberwithin{equation}{section}",
-			"\numberwithin{theorem}{section}",
-			"\numberwithin{lemma}{section}",
-			"\numberwithin{corollary}{section}",
-			"\numberwithin{remark}{section}",
-			"\numberwithin{exam}{section}",
+			"\\numberwithin{equation}{section}",
+			"\\numberwithin{theorem}{section}",
+			"\\numberwithin{lemma}{section}",
+			"\\numberwithin{corollary}{section}",
+			"\\numberwithin{remark}{section}",
+			"\\numberwithin{exam}{section}",
 
 			"%% define of comment",
 			"\\def\\boxit#1{\\vbox{\\hrule\\hbox{\\vrule\\kern6pt\\vbox{\\kern6pt#1\\kern6pt}\\kern6pt\\vrule}\\hrule}}",
@@ -361,7 +375,7 @@ Latex的配置直接在setting区加上以下代码(记得软件的地址要改.
 			"%%define new comand",
 			"\\def\\argmin{\\mathop{\\rm arg~min}\\limits}", 
 			"\\def\\argmin{\\mathop{\\rm arg~min}\\limits}", 
-			"\newcommand{\bbeta}{\boldsymbol{\beta}}", 
+			"\\newcommand{\\bbeta}{\\boldsymbol{\\beta}}", 
 			"\\newcommand{\\bdelta}{\\boldsymbol{\\delta}}", 
 			"\\newcommand{\\bSigma}{\\boldsymbol{\\Sigma}}",
 			"\\newcommand{\\brho}{\\displaystyle{\\large{\\boldsymbol{\\rho}}}}", 
@@ -390,40 +404,27 @@ Latex的配置直接在setting区加上以下代码(记得软件的地址要改.
 			"\\newcommand{\\bz}{\\mathbf{z}}",
 			"\\newcommand{\\suit}[1]{\\left(#1\\right)}",
 			"\\newcommand{\\abs}[1]{\\left\\vert#1\\right\\vert}",
-			"\\newcommand{\\set}[1]{\\left\\{#1\\right\\}}",
+			"\\newcommand{\\set}[1]{\\left\\{#1\\right\\\\}}",
 			"\\newcommand{\\msuit}[1]{\\left[ #1 \\right]}",
 			"\\begin{document}", 
-
-
-			" %% Title information",
-			"\\begin{center}",
-
-				"{\\LARGE ****}", 
-				"\\bigskip\\ \\\\ \\",
-				"Liujun Chen",
-				
-			"version: *****",
-			"\\end{center}", 
-
-
+			"%% Title information",
+			"\\title{***}",
+			"\\author{",
+			"   \\textsc{**}\\thanks{} \\\\\\[1ex]",
+			"}",
+			"\\date{Version:}",
+			"\\maketitle",
 			"%% Abstract information and keywords", 
 			"\\begin{abstract}", 
 			"********",
 			"\\end{abstract}", 
 			"\\noindent {\\it Keywords: ***, ***, *** }",
 			"$1", 
+			"%------------------------------------------------------------------------",
+			"\\bibliographystyle{apalike}",
+			"\\bibliography{mybib_EP}",
 			"\\end{document}",
-		],
-	"description": "paper header"
-	},
-	"frame":{
-		"prefix":"frame",
-		"body": [
-			"\\begin{frame}",
-			"$1",
-			"\\end{frame}"
 		]
-	}
 }
 
 

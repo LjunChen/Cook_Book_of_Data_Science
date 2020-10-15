@@ -971,7 +971,35 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="vim&#x7684;&#x4F7F;&#x7528;">Vim&#x7684;&#x4F7F;&#x7528;</h1>
+<p>&#x6211;&#x7684;vim&#x4F7F;&#x7528;&#x7684;&#x5F88;&#x5C11;&#xFF0C;&#x5927;&#x90E8;&#x5206;&#x65F6;&#x5019;&#x7528;VScode&#x662F;&#x6BD4;vim&#x65B9;&#x4FBF;&#x7684;&#xFF0C;&#x5076;&#x5C14;&#x7528;&#x5230;&#xFF0C;&#x4E00;&#x4E9B;&#x57FA;&#x7840;&#x7684;&#x914D;&#x7F6E;&#x5982;&#x4E0B;.</p>
+<pre><code>&quot;&#x7F16;&#x7801;&quot;
+set encoding=utf-8 
+set termencoding=utf-8
+set fileencoding=utf-8
+set nocompatible &quot;&#x53BB;&#x9664;&#x548C;vi&#x7684;&#x4E00;&#x81F4;&#x6027;&quot;
+set number &quot;&#x663E;&#x793A;&#x884C;&#x53F7;&quot;
+set cursorline &quot;&#x9AD8;&#x4EAE;&#x5F53;&#x524D;&#x884C;&quot;
 
+&quot;&#x542F;&#x7528;&#x9F20;&#x6807;&quot;
+set mouse=a 
+set selection=exclusive
+set selectmode=mouse,key
+set showmatch &quot;&#x663E;&#x793A;&#x62EC;&#x53F7;&#x5339;&#x914D;&quot;
+
+&quot;&#x8BBE;&#x7F6E;&#x7F29;&#x8FDB;&quot;
+set tabstop=4
+set shiftwidth=4
+set autoindent
+set cindent
+
+set paste   &quot;&#x7C98;&#x8D34;&quot;
+set wrap    &quot;&#x4EE3;&#x7801;&#x6298;&#x53E0;&quot;
+syntax on &quot;&#x8BED;&#x6CD5;&#x9AD8;&#x4EAE;&quot;
+&quot;&#x8BBE;&#x7F6E;&#x641C;&#x7D22;&quot;
+set incsearch
+set hlsearch
+set ignorecase
+</code></pre>
                                 
                                 </section>
                             
@@ -1014,7 +1042,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Vim的使用","level":"3.3.4","depth":2,"next":{"title":"VScode配置","level":"3.3.5","depth":2,"path":"Other/VSCode.md","ref":"Other/VSCode.md","articles":[]},"previous":{"title":"Pandoc使用","level":"3.3.3","depth":2,"path":"Other/pandoc.md","ref":"Other/pandoc.md","articles":[]},"dir":"ltr"},"config":{"plugins":["katex","copy-code-button","github","github-buttons","splitter","-sharing","back-to-top-button"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/LjunChen/Cook_Book_of_Data_Science"},"splitter":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"fontSettings":{"theme":"white","family":"msyh","size":2},"highlight":{},"back-to-top-button":{},"github-buttons":{"repo":"LjunChen/Cook_Book_of_Data_Science","types":["star","watch","fork"],"size":"small"},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true}},"theme":"default","author":"陈刘军","pdf":{"pageNumbers":true,"fontSize":14,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"数据科学实用手册","gitbook":"*"},"file":{"path":"Other/Vim.md","mtime":"2020-10-09T01:51:29.171Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-10-15T05:39:19.072Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Vim的使用","level":"3.3.4","depth":2,"next":{"title":"VScode配置","level":"3.3.5","depth":2,"path":"Other/VSCode.md","ref":"Other/VSCode.md","articles":[]},"previous":{"title":"Pandoc使用","level":"3.3.3","depth":2,"path":"Other/pandoc.md","ref":"Other/pandoc.md","articles":[]},"dir":"ltr"},"config":{"plugins":["katex","copy-code-button","github","github-buttons","splitter","-sharing","back-to-top-button"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/LjunChen/Cook_Book_of_Data_Science"},"splitter":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"fontSettings":{"theme":"white","family":"msyh","size":2},"highlight":{},"back-to-top-button":{},"github-buttons":{"repo":"LjunChen/Cook_Book_of_Data_Science","types":["star","watch","fork"],"size":"small"},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true}},"theme":"default","author":"陈刘军","pdf":{"pageNumbers":true,"fontSize":14,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"数据科学实用手册","gitbook":"*"},"file":{"path":"Other/Vim.md","mtime":"2020-10-15T06:22:17.807Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-10-15T06:22:40.208Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

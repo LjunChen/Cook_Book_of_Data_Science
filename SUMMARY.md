@@ -40,7 +40,8 @@
     * [服务器配置](Linux/Initial_Configureation.md)
     * [权限管理](Linux/Authorization.md)
     * [文件操作](Linux/files.md)
-    * [维护](Linux/Skills.md)
+    * [维护](Linux/maintainess.md)
+    * [小技巧](Linux/skills.md)
 * 其他软件介绍
     * [Gitbook使用](Other/Gitbook.md)
     * [git & ssh](Other/git.md)
